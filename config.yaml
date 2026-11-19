@@ -1,0 +1,36 @@
+# Configuration unique du projet "température des coups d'échecs"
+seed: 20261119
+
+data:
+  url: https://database.lichess.org/standard/lichess_db_standard_rated_2026-10.pgn.zst
+  max_bytes: 2147483648          # on ne télécharge que les 2 premiers Go (préfixe du mois)
+  raw_file: data/raw/lichess_2026-10_first2GB.pgn.zst
+
+sample:
+  cadences: [Blitz, Rapid]       # d'après le tag Event de Lichess
+  elo_min: 800
+  elo_max: 2600
+  elo_step: 200                  # les deux joueurs doivent être dans la même tranche
+  reservoir_per_cell: 3500       # parties tirées par case (cadence x tranche), sur-échantillonnage
+  skip_first_plies: 10           # exclut les 10 premiers demi-coups
+  min_legal_moves: 2             # une position à coup forcé n'apporte aucune information
+  output: data/sample_positions.csv
+
+engine:
+  path: bin/stockfish            # Stockfish 18 (binaire officiel ubuntu-x86-64-avx2)
+  depth: 16
+  multipv: 5
+  hash_mb: 64
+  workers: 3                     # tous les cœurs sauf un
+  output: data/evals.jsonl
+
+filter:
+  max_abs_cp: 500                # exclut |éval du meilleur coup| > 500 cp
+  target_per_cell: 1000          # positions retenues par case après filtrage (pilote B ; 2000 possible ensuite)
+
+fit:
+  cp_clip: 1000                  # variante 1 : centipions écrêtés à ±1000 (mat -> ±1000)
+  wp_coef: 0.00368208            # variante 2 : proba de gain Lichess, en % (0-100)
+  n_boot: 200
+  ci: 0.95
+  outdir: results

@@ -1,0 +1,7 @@
+chess==1.11.2
+zstandard
+numpy
+pandas
+scipy
+matplotlib
+pyyaml

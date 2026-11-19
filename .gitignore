@@ -1,0 +1,6 @@
+.venv/
+bin/
+data/raw/
+__pycache__/
+*.log
+.pipeline_done
