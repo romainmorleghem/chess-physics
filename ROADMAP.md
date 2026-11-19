@@ -9,6 +9,19 @@
   la forme serait universelle, seule l'échelle s change avec le niveau.
   f(ΔE) non paramétrique : saut d'environ 1 nat entre 0 et 25 cp (prime au meilleur coup), puis croissance lente.
 
+## Contrôles de la piste 1 (faits)
+- B, bruit : réévaluation à profondeur 20 de 1000 positions -> c = 0,48 dans les deux cas,
+  Δc = -0,003 [-0,07 ; +0,07]. Le c ≈ 0,5 n'est PAS un artefact de bruit (meilleur coup changé dans 23 % des cas).
+- A, spectre complet (tous les coups légaux, profondeur 12, 17 542 positions) : c = 0,44 à 0,58 (IC ±0,05),
+  Boltzmann rejeté (LR 108 à 290). Légère hausse possible de c avec l'Elo (0,45 à 900 -> 0,55 à 2500), à confirmer.
+  f(ΔE) ≈ ΔE^0,6 entre 10 et 700 cp (le point à 1000 cp est déformé par l'écrêtage).
+- Test IIA : un modèle ajusté sur les 5 premiers coups SURPRÉDIT le taux de coups hors top-5
+  (préd. 0,25-0,57 contre obs. 0,17-0,37), pour Boltzmann comme pour l'exponentielle étirée.
+  Les ~27 coups « mauvais » ne sont pas « thermiquement accessibles » comme le voudrait un logit :
+  les joueurs n'envisagent qu'un sous-ensemble de coups (déficit d'entropie).
+  Piste nouvelle (7) : modèle à deux étages, ensemble de coups envisagés + choix ; mesurer la taille
+  effective de cet ensemble (une « entropie ») en fonction de l'Elo et du temps.
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».
