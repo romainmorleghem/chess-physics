@@ -4,3 +4,5 @@ data/raw/
 __pycache__/
 *.log
 .pipeline_done
+.venv
+bin

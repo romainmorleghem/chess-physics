@@ -34,3 +34,7 @@ fit:
   n_boot: 200
   ci: 0.95
   outdir: results
+
+shape:                           # piste 1 : forme de la loi de choix
+  n_boot: 100
+  elo_groups: [[800, 1400], [1400, 2000], [2000, 2600]]

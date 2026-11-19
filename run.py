@@ -1,6 +1,6 @@
 """Point d'entrée unique. Usage :
     python run.py all            # tout le pipeline
-    python run.py download | sample | timing | evaluate | fit
+    python run.py download | sample | timing | evaluate | fit | shape
 Toutes les options sont dans config.yaml.
 """
 import argparse
@@ -92,15 +92,13 @@ def step_evaluate(cfg):
     print("Évaluations terminées.")
 
 
-def step_fit(cfg):
-    import plot
-    f, flt = cfg["fit"], cfg["filter"]
-    os.makedirs(f["outdir"], exist_ok=True)
+def select_records(cfg):
+    """Pour chaque case : les target_per_cell premières positions (ordre aléatoire fixe)
+    qui passent le filtre. Renvoie {(cadence, band): [résultats Stockfish]}."""
+    flt = cfg["filter"]
     df = pd.read_csv(cfg["sample"]["output"]).sort_values(["cadence", "band", "order"])
     done = ev.load_done(cfg["engine"]["output"])
-    rng = np.random.default_rng(cfg["seed"])
-    alpha = (1 - f["ci"]) / 2
-    rows = []
+    out = {}
     for (cad, band), g in df.groupby(["cadence", "band"]):
         recs = []
         for o in g.order:
@@ -109,6 +107,18 @@ def step_fit(cfg):
                 recs.append(r)
             if len(recs) >= flt["target_per_cell"]:
                 break
+        out[(cad, band)] = recs
+    return out
+
+
+def step_fit(cfg):
+    import plot
+    f = cfg["fit"]
+    os.makedirs(f["outdir"], exist_ok=True)
+    rng = np.random.default_rng(cfg["seed"])
+    alpha = (1 - f["ci"]) / 2
+    rows = []
+    for (cad, band), recs in select_records(cfg).items():
         inc = [r for r in recs if r["in_cands"]]
         row = dict(cadence=cad, elo_band=f"{band}-{band + cfg['sample']['elo_step']}",
                    elo_mid=band + cfg["sample"]["elo_step"] / 2, n_positions=len(recs),
@@ -134,8 +144,51 @@ def step_fit(cfg):
     print(res[cols].to_string(index=False, float_format=lambda x: f"{x:.3g}"))
 
 
+def step_shape(cfg):
+    """Piste 1 : forme de la loi de choix (exp. étirée par case, f non paramétrique par groupe)."""
+    import plot
+    import shape as sh
+    f, n_boot = cfg["fit"], cfg["shape"]["n_boot"]
+    rng = np.random.default_rng(cfg["seed"] + 1)
+    alpha = (1 - f["ci"]) / 2
+    recs_all = select_records(cfg)
+    rows = []
+    for (cad, band), recs in recs_all.items():
+        E, idx = ft.build([r for r in recs if r["in_cands"]], "cp", f)
+        (s, c), nll_s = sh.fit_stretched(E, idx)
+        T, _ = ft.fit_T(E, idx)
+        lr = 2 * (ft.nll(np.log(T), E, idx) - nll_s)  # test du rapport de vraisemblance c = 1
+        bs = np.array([sh.fit_stretched(E[i], idx[i])[0] for i in
+                       (rng.integers(0, len(idx), len(idx)) for _ in range(n_boot))])
+        rows.append(dict(cadence=cad, elo_mid=band + 100, n=len(idx), s=s, c=c,
+                         c_lo=np.quantile(bs[:, 1], alpha), c_hi=np.quantile(bs[:, 1], 1 - alpha),
+                         LR_vs_boltzmann=lr))
+        print(f"  {cad} {band}: c={c:.2f} [{rows[-1]['c_lo']:.2f}-{rows[-1]['c_hi']:.2f}]  s={s:.0f}  LR={lr:.1f}", flush=True)
+    st = pd.DataFrame(rows)
+    st.to_csv(os.path.join(f["outdir"], "shape_stretched.csv"), index=False, float_format="%.4g")
+    # f(ΔE) non paramétrique par groupes d'Elo (tranches regroupées par 3)
+    groups = cfg["shape"]["elo_groups"]
+    curves = []
+    for cad in sorted({k[0] for k in recs_all}):
+        for lo, hi in groups:
+            recs = [r for (c2, b), rs in recs_all.items() if c2 == cad and lo <= b < hi
+                    for r in rs if r["in_cands"]]
+            E, idx = ft.build(recs, "cp", f)
+            fk = sh.fit_nonparam(E, idx)
+            bs = np.array([sh.fit_nonparam(E[i], idx[i]) for i in
+                           (rng.integers(0, len(idx), len(idx)) for _ in range(n_boot))])
+            for k, dE in enumerate(sh.KNOTS):
+                curves.append(dict(cadence=cad, elo_group=f"{lo}-{hi}", dE=dE, f=fk[k],
+                                   f_lo=np.quantile(bs[:, k], alpha), f_hi=np.quantile(bs[:, k], 1 - alpha)))
+    cv = pd.DataFrame(curves)
+    cv.to_csv(os.path.join(f["outdir"], "shape_nonparam.csv"), index=False, float_format="%.4g")
+    plot.make_shape(st, cv, f["outdir"])
+    print(st[["cadence", "elo_mid", "c", "c_lo", "c_hi", "LR_vs_boltzmann"]].to_string(
+        index=False, float_format=lambda x: f"{x:.2f}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
-             evaluate=step_evaluate, fit=step_fit)
+             evaluate=step_evaluate, fit=step_fit, shape=step_shape)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -143,6 +196,6 @@ if __name__ == "__main__":
     ap.add_argument("--config", default="config.yaml")
     a = ap.parse_args()
     cfg = load_cfg(a.config)
-    for s in (["download", "sample", "evaluate", "fit"] if a.step == "all" else [a.step]):
+    for s in (["download", "sample", "evaluate", "fit", "shape"] if a.step == "all" else [a.step]):
         print(f"== {s} ==")
         STEPS[s](cfg)

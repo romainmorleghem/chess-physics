@@ -53,3 +53,42 @@ def make(res, outdir):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "T_vs_elo.png"))
     plt.close(fig)
+
+
+SEQ = ["#86b6ef", "#3987e5", "#184f95"]  # rampe séquentielle (bleu clair -> foncé) : Elo croissant
+
+
+def make_shape(st, cv, outdir):
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.6), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    ax = axes[0]
+    _style(ax, "exposant c")
+    ax.set_title("Exposant c de exp(−(ΔE/s)^c)  (c = 1 : Boltzmann)", color=INK, fontsize=11, loc="left")
+    ax.axhline(1, color=MUTED, lw=1, ls="--")
+    for cad, g in st.groupby("cadence"):
+        g = g.sort_values("elo_mid")
+        x = g.elo_mid + (-12 if cad == "Blitz" else 12)
+        ax.errorbar(x, g.c, yerr=[g.c - g.c_lo, g.c_hi - g.c], fmt="-o", color=COLORS[cad], lw=2,
+                    ms=6, capsize=3, elinewidth=1.2, label=cad, mec="#fcfcfb", mew=1.5)
+    ax.legend(frameon=False, fontsize=9, labelcolor=INK, loc="upper left")
+    for ax, cad in zip(axes[1:], ["Blitz", "Rapid"]):
+        _style(ax, "f(ΔE) = −log(poids relatif)")
+        ax.set_xlabel("ΔE = perte par rapport au meilleur coup (cp)", color=MUTED, fontsize=9)
+        ax.set_title(f"{cad} : f(ΔE) non paramétrique (log-log)", color=INK, fontsize=11, loc="left")
+        ax.set_xscale("log")
+        ax.set_yscale("log")
+        g = cv[(cv.cadence == cad) & (cv.dE > 0)]
+        grps = sorted(g.elo_group.unique(), key=lambda x: int(x.split("-")[0]))
+        for col, grp in zip(SEQ, grps):
+            h = g[g.elo_group == grp]
+            ax.errorbar(h.dE, h.f, yerr=[(h.f - h.f_lo).clip(lower=0), (h.f_hi - h.f).clip(lower=0)],
+                        fmt="-o", color=col, lw=2, ms=5, capsize=2, elinewidth=1, label=f"Elo {grp}",
+                        mec="#fcfcfb", mew=1)
+        xs = [10, 1000]
+        ax.plot(xs, [0.1, 10], color=MUTED, lw=1, ls="--", label="pente 1 (Boltzmann)")
+        ax.legend(frameon=False, fontsize=8, labelcolor=INK, loc="lower right")
+    fig.text(0.01, 0.01, "Vraisemblance conditionnelle aux 5 candidats (valide pour un logit, propriété IIA). "
+             "Barres : IC 95 % bootstrap sur les parties.", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "shape.png"))
+    plt.close(fig)
