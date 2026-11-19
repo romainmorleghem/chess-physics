@@ -65,3 +65,8 @@ phase:                           # contrôle de la piste 2 : temps restant à ph
 lead:                            # piste 3 : champ extérieur (score du joueur au trait)
   n_boot: 100
   eval_edges: [-10000, -300, -100, 100, 300, 10000]   # cp, point de vue du joueur au trait
+
+postype:                         # piste 6 : type de position
+  n_boot: 100
+  gap_edges: [0, 10, 30, 100, 300, 10000]   # écart (cp) entre meilleur et 2e coup ; >300 = coup unique
+  nlegal_edges: [0, 20, 30, 40, 1000]

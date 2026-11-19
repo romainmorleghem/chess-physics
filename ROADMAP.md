@@ -60,6 +60,20 @@
   L'asymétrie vient en partie de la courbure de la sigmoïde ; elle dépend donc du choix de l'énergie.
 - Le demi-coup reste très significatif à score fixé (p < 1e-23) : la chauffe avec la phase n'est pas un effet du score.
 
+## Piste 6 (faite) : type de position — le joueur ou la position qui « chauffe » ?
+- log s = a(Elo) + g(écart 1er-2e coup) + d(demi-coup) + n(coups légaux) + e(score) + échec, c ajusté.
+  `python run.py postype`, results/postype*. Écart : <10, 10-30, 30-100, 100-300, >300 cp (prof. 12).
+- Écart : effet modeste (p = 7e-4 à 0,02) : s x1,15-1,25 quand un coup se détache (écart > 30 cp) vs position calme.
+- En échec : s x4,5 (Blitz) / x2,7 (Rapid), p < 1e-8. Le fort effet apparent « peu de coups légaux » (s x2 sous 20 coups)
+  était entièrement dû à l'échec (52-58 % de ces positions) ; à échec fixé, coups légaux ~sans effet.
+  Robuste à la restriction du choix aux 8 ou 12 meilleurs coups (pas un artefact du logit à un étage, cf. piste 7).
+- Demi-coup à type de position fixé : toujours fort (p < 1e-13) : s x2,0 (Blitz) / x1,5 (Rapid) entre <30 et >70.
+  => c'est surtout le JOUEUR (avancement de la partie) qui chauffe, pas la composition de la position.
+- Forme : c croît avec l'écart, 0,46 [0,44-0,48] (calme) -> 0,62-0,66 (écart 30-300), Blitz et Rapid
+  (profil de vraisemblance). c ≈ 0,5 n'est donc pas strictement universel : la loi étirée moyenne la « prime au
+  meilleur coup » (saut à petit ΔE) et la croissance ~ΔE^0,6 ; le poids relatif change avec le type de position.
+- Limite : écart et ΔE viennent de la même évaluation (prof. 12), le bruit peut les corréler.
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».
@@ -70,7 +84,7 @@
    qu'une seule température ne suffit pas.
 5. **Désordre** : distribution des T individuels dans une tranche (plusieurs positions par joueur,
    nouveau tirage, ≈1-2 h de calcul).
-6. **Type de position** : T dans une position calme ou tactique (écart entre les deux meilleurs coups) : est-ce le joueur ou la position qui « chauffe » ?
+6. **Type de position** (fait) : T dans une position calme ou tactique (écart entre les deux meilleurs coups) : est-ce le joueur ou la position qui « chauffe » ?
 
 ## Références
 - K. Regan, G. Haworth, *Intrinsic Chess Ratings*, AAAI 2011 (modèle à sensibilité s et consistance c).

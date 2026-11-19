@@ -493,12 +493,66 @@ def step_lead(cfg):
     print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
 
 
+def step_postype(cfg):
+    """Piste 6 : type de position. s selon l'écart entre les deux meilleurs coups (position « tactique »
+    à coup unique contre position calme), à Elo, demi-coup, score et nombre de coups légaux fixés.
+    Question : est-ce le joueur (phase) ou la position qui « chauffe » ? Et c dépend-il du type ?"""
+    import covar as cv
+    import plot
+    f, pc = cfg["fit"], cfg["postype"]
+    rng = np.random.default_rng(cfg["seed"] + 9)
+    effs, tests, plys, shapes = [], [], [], []
+    for cad in ("Blitz", "Rapid"):
+        for var in ("cp", "wp"):
+            E, idx, d = cv.dataset(cfg, cad, var)
+            c = cv.fit_c(E, idx)
+            el = d.elo.values
+            gap = cv.binned(d.gap12.values, np.array(pc["gap_edges"], float))
+            nl = cv.binned(d.n_legal.values, np.array(pc["nlegal_edges"], float))
+            lead = cv.binned(d.best_cp.values, np.array(cfg["lead"]["eval_edges"], float))
+            ply = cv.binned(d.ply.values, np.array(cfg["phase"]["ply_edges"], float))
+            chk = d.in_check.values.astype(int)
+            fac, names = [el, gap, ply, nl, lead, chk], ["elo", "gap", "ply", "nlegal", "eval", "check"]
+            eff, te, co, _ = cv.study(E, idx, fac, names, "gap", c, rng, pc["n_boot"])
+            eff = eff.assign(cadence=cad, energy=var, c=c, gap_lo=pc["gap_edges"][:-1], gap_hi=pc["gap_edges"][1:])
+            effs.append(eff); tests.append(te.assign(cadence=cad, energy=var, c=c))
+            # effet du demi-coup (dernier niveau / premier) avec et sans contrôle du type de position
+            co0 = cv.fit_additive(E, idx, [el, ply], c)[0]
+            co1 = cv.fit_additive(E, idx, [el, ply, lead], c)[0]
+            plys.append(dict(cadence=cad, energy=var, ply_effect_elo_only=np.exp(co0[1][-1]),
+                             ply_effect_plus_eval=np.exp(co1[1][-1]), ply_effect_full=np.exp(co[2][-1]),
+                         check_effect=np.exp(co[5][1]), nlegal_effects=" ".join(f"{v:.2f}" for v in np.exp(co[3]))))
+            # forme : c profilé par tranche d'écart (a(Elo) libre)
+            for g in range(len(pc["gap_edges"]) - 1):
+                m = gap == g
+                grid = np.arange(0.2, 1.21, 0.02)
+                nl_ = np.array([cv.fit_additive(E[m], idx[m], [el[m], ply[m]], cc)[1] for cc in grid])
+                ok = grid[nl_ <= nl_.min() + 1.92]                 # IC 95 % par vraisemblance profilée
+                shapes.append(dict(cadence=cad, energy=var, gap_lo=pc["gap_edges"][g], n=int(m.sum()),
+                                   c=grid[nl_.argmin()], c_lo=ok.min(), c_hi=ok.max()))
+            print(f"  {cad} {var}: s(gap)/s(gap<10) = " + "  ".join(f"{r.s_ratio:.2f}[{r.lo:.2f}-{r.hi:.2f}]"
+                  for r in eff.itertuples()) + f" ; demi-coup x{plys[-1]['ply_effect_full']:.2f}, échec x{plys[-1]['check_effect']:.2f}", flush=True)
+    eff, te, pl, sh_ = pd.concat(effs), pd.concat(tests), pd.DataFrame(plys), pd.DataFrame(shapes)
+    eff.to_csv(os.path.join(f["outdir"], "postype.csv"), index=False, float_format="%.4g")
+    te.to_csv(os.path.join(f["outdir"], "postype_tests.csv"), index=False, float_format="%.4g")
+    pl.to_csv(os.path.join(f["outdir"], "postype_ply.csv"), index=False, float_format="%.4g")
+    sh_.to_csv(os.path.join(f["outdir"], "postype_shape.csv"), index=False, float_format="%.4g")
+    plot.make_levels(eff, f["outdir"], "postype.png", "gap_lo", "gap_hi",
+                     "écart entre les deux meilleurs coups (cp, prof. 12)",
+                     "Piste 6 : s selon le type de position (réf. écart <10 cp)",
+                     "log s = a(Elo) + g(écart) + d(demi-coup) + n(coups légaux) + e(score) + échec, c ajusté.")
+    print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
+    print(pl.to_string(index=False, float_format=lambda v: f"{v:.2f}"))
+    print(sh_.to_string(index=False, float_format=lambda v: f"{v:.2f}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
              noise_check=step_noise_check, spectrum_check=step_spectrum_check,
              attention=step_attention, clock=step_clock,
-             phase=step_phase, lead=step_lead)
+             phase=step_phase, lead=step_lead,
+             postype=step_postype)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
