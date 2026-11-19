@@ -1,0 +1,11 @@
+cadence,phase,test,LR,dof,p_value
+Blitz,aucun,temps|phase,161.8,4,5.893e-34
+Blitz,ply,phase|temps,80.19,3,2.796e-17
+Blitz,ply,temps|phase,5.73,4,0.2202
+Blitz,material,phase|temps,21.15,3,9.801e-05
+Blitz,material,temps|phase,58.65,4,5.566e-12
+Rapid,aucun,temps|phase,75.46,4,1.59e-15
+Rapid,ply,phase|temps,62.62,3,1.621e-13
+Rapid,ply,temps|phase,2.914,4,0.5723
+Rapid,material,phase|temps,10.27,3,0.01644
+Rapid,material,temps|phase,40.89,4,2.839e-08

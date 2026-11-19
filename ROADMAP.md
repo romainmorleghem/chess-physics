@@ -35,10 +35,22 @@
 - Superposition s(Elo, t) = A(Elo) * g(t) acceptée : Blitz p = 0,48 ; Rapid p = 0,056 (limite).
 - Limite : confusion avec la phase de jeu (peu de temps = fin de partie) -> contrôler par le numéro de coup.
 
+## Contrôle de la piste 2 (fait) : temps restant à phase de jeu fixée
+- Modèle additif log s = a(tranche Elo) + b(temps) + d(phase), c = 0,5 ; phase = demi-coup (0-30-50-70-fin)
+  ou matériel non-pion (24 au départ ; >20, 14-20, 8-14, <8). `python run.py phase`, results/phase*.
+- Confusion forte : corrélation de Spearman demi-coup / temps restant = -0,84.
+- s(<10 %) / s(>75 %) : sans contrôle x2,2 (Blitz), x1,6 (Rapid) ;
+  à demi-coup fixé x1,3 [IC 1,0-1,6] et x1,1 [0,85-1,5], effet du temps NON significatif (LR p = 0,22 et 0,57) ;
+  à matériel fixé x1,9 et x1,6, toujours significatif (p < 1e-7).
+- Effet du demi-coup à temps fixé, fort (p < 1e-12) : s x2,1 (Blitz) / x1,65 (Rapid) entre <30 et >70 demi-coups.
+- Conclusion : la « chauffe » de la piste 2 suit l'avancement de la partie (demi-coup), pas l'horloge en soi ;
+  le matériel est un moins bon contrôle. Réserve : colinéarité forte, un effet résiduel du temps <= x1,5 n'est pas exclu.
+  Le demi-coup peut porter fatigue, complexité ou temps accumulé : à démêler (piste 6, type de position).
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».
-2. **Temps comme recuit simulé** : T (ou s, c) en fonction du temps restant ([%clk] déjà dans
+2. **Temps comme recuit simulé** (fait, puis contrôlé : effet dû surtout à la phase) : T (ou s, c) en fonction du temps restant ([%clk] déjà dans
    data/sample_positions.csv, colonne clock_before) ; chercher une superposition T(Elo, t) = f(t/τ(Elo)).
 3. **Champ extérieur** : T selon que le joueur mène, est à égalité ou est mené.
 4. **Fluctuation-dissipation** : tester dU/dT = Var(E)/T² entre tranches ; une violation signale

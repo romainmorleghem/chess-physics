@@ -152,3 +152,28 @@ def make_clock(st, outdir):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "clock.png"))
     plt.close(fig)
+
+
+def make_phase(st, outdir):
+    """Effet du temps restant, s rapporté à la tranche <10 % : sans contrôle, à numéro de coup fixé,
+    à matériel fixé."""
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    labs = {"aucun": "sans contrôle", "ply": "à numéro de coup fixé", "material": "à matériel fixé"}
+    for ax, cad in zip(axes, ["Blitz", "Rapid"]):
+        _style(ax, "s / s(tranche <10 %)  (log)")
+        ax.set_yscale("log")
+        ax.set_xlabel("fraction du temps initial restant (milieu de tranche)", color=MUTED, fontsize=9)
+        ax.set_title(f"{cad} : effet du temps, phase contrôlée ou non", color=INK, fontsize=11, loc="left")
+        for k, (ctl, lab) in enumerate(labs.items()):
+            h = st[(st.cadence == cad) & (st.control == ctl)]
+            xm = (h.frac_lo + h.frac_hi.clip(upper=1.0)) / 2 + (k - 1) * 0.012
+            ax.errorbar(xm, h.s_ratio, yerr=[(h.s_ratio - h.lo).clip(lower=0), (h.hi - h.s_ratio).clip(lower=0)], fmt="-o", color=SEQ[k * 2 % len(SEQ)],
+                        lw=2, ms=5, capsize=3, elinewidth=1.1, label=lab, mec="#fcfcfb", mew=1.2)
+        ax.axhline(1, color=MUTED, lw=0.8, ls=":")
+        ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    fig.text(0.01, 0.01, "log s = a(Elo) + b(temps) [+ d(phase)], c = 0,5 fixé, spectre complet prof. 12. "
+             "IC 95 % bootstrap (100).", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "phase.png"))
+    plt.close(fig)

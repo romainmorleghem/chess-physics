@@ -388,11 +388,80 @@ def step_clock(cfg):
     print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
 
 
+def step_phase(cfg):
+    """Contrôle piste 2 : effet du temps restant à phase de jeu fixée (numéro de coup ou matériel)."""
+    import clock as ck
+    import phase as ph
+    import plot
+    from scipy.stats import chi2
+    f, pc = cfg["fit"], cfg["phase"]
+    t_edges = np.array(cfg["clock"]["frac_edges"], dtype=float)
+    df = pd.read_csv(cfg["sample"]["output"])
+    meta = {f"{c}|{b}|{o}": (ck.frac_remaining(cl, tc), p, ph.material(fen)) for c, b, o, cl, tc, p, fen in
+            zip(df.cadence, df.band, df.order, df.clock_before, df.time_control, df.ply, df.fen)}
+    rng = np.random.default_rng(cfg["seed"] + 7)
+    rows, tests = [], []
+    sp = spectrum_records(cfg)
+    for cad in ("Blitz", "Rapid"):
+        recs, el, tb, plyv, matv = [], [], [], [], []
+        bands = sorted(b for c2, b in sp if c2 == cad)
+        for (c2, band), rs in sp.items():
+            if c2 != cad:
+                continue
+            for r in rs:
+                x, p, m = meta[r["key"]]
+                if np.isfinite(x):
+                    recs.append(r); el.append(bands.index(band)); plyv.append(p); matv.append(m)
+                    tb.append(np.clip(np.searchsorted(t_edges, x, side="right") - 1, 0, len(t_edges) - 2))
+        E, idx = ft.build(recs, "cp", f)
+        el, tb = np.array(el), np.array(tb)
+        phases = {"ply": np.searchsorted(pc["ply_edges"], np.array(plyv), side="right") - 1,
+                  "material": len(pc["mat_edges"]) - 2 - (np.searchsorted(pc["mat_edges"], np.array(matv), side="right") - 1)}
+        boots = [rng.integers(0, len(idx), len(idx)) for _ in range(pc["n_boot"])]
+        # sans contrôle (référence)
+        (a0, b0), nll_t, x_t = ph.fit_additive(E, idx, [el, tb])
+        for lab, pv in [("aucun", None)] + list(phases.items()):
+            if pv is None:
+                co, nll_full, xf = (a0, b0), nll_t, x_t
+                nll_np = ph.fit_additive(E, idx, [el])[1]
+                fac = [el, tb]
+            else:
+                pv = np.clip(pv, 0, None)
+                fac = [el, tb, pv]
+                co, nll_full, xf = ph.fit_additive(E, idx, fac)
+                nll_np = ph.fit_additive(E, idx, [el, pv])[1]
+                lr_p = 2 * (nll_t - nll_full)
+                tests.append(dict(cadence=cad, phase=lab, test="phase|temps", LR=lr_p, dof=int(pv.max()),
+                                  p_value=chi2.sf(lr_p, int(pv.max()))))
+            lr_t = 2 * (nll_np - nll_full)
+            tests.append(dict(cadence=cad, phase=lab, test="temps|phase", LR=lr_t, dof=len(t_edges) - 2,
+                              p_value=chi2.sf(lr_t, len(t_edges) - 2)))
+            bb = np.array([ph.fit_additive(E[k], idx[k], [fa[k] for fa in fac], x0=xf)[0][1] for k in boots])
+            for j in range(len(t_edges) - 1):
+                rows.append(dict(cadence=cad, control=lab, frac_lo=t_edges[j], frac_hi=t_edges[j + 1],
+                                 n=int((tb == j).sum()), s_ratio=np.exp(co[1][j]),
+                                 lo=np.exp(np.quantile(bb[:, j], .025)), hi=np.exp(np.quantile(bb[:, j], .975))))
+            if pv is not None:
+                edges = pc["ply_edges"] if lab == "ply" else pc["mat_edges"]
+                for j, d in enumerate(co[2]):
+                    rows.append(dict(cadence=cad, control=f"effet_{lab}", frac_lo=j, frac_hi=np.nan,
+                                     n=int((pv == j).sum()), s_ratio=np.exp(d), lo=np.nan, hi=np.nan))
+            print(f"  {cad} contrôle={lab}: s(<10 %)/s(>75 %) = {np.exp(co[1][0] - co[1][-1]):.2f}, "
+                  f"LR temps|phase = {lr_t:.1f}", flush=True)
+    st, te = pd.DataFrame(rows), pd.DataFrame(tests)
+    st.to_csv(os.path.join(f["outdir"], "phase.csv"), index=False, float_format="%.4g")
+    te.to_csv(os.path.join(f["outdir"], "phase_tests.csv"), index=False, float_format="%.4g")
+    plot.make_phase(st, f["outdir"])
+    print(st[~st.control.str.startswith("effet")].to_string(index=False, float_format=lambda v: f"{v:.2f}"))
+    print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
              noise_check=step_noise_check, spectrum_check=step_spectrum_check,
-             attention=step_attention, clock=step_clock)
+             attention=step_attention, clock=step_clock,
+             phase=step_phase)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
