@@ -31,8 +31,9 @@ def _score(s, turn):
 def analyse_one(task):
     key, fen, played = task
     board = chess.Board(fen)
+    mpv = board.legal_moves.count() if _cfg["multipv"] == "all" else _cfg["multipv"]
     infos = _engine.analyse(board, chess.engine.Limit(depth=_cfg["depth"]),
-                            multipv=_cfg["multipv"], game=object())
+                            multipv=mpv, game=object())
     pvs = []
     for info in infos:
         if "pv" not in info:

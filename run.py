@@ -187,8 +187,115 @@ def step_shape(cfg):
         index=False, float_format=lambda x: f"{x:.2f}"))
 
 
+def _extra_eval(cfg, name, recs_by_cell):
+    """Réévalue des positions déjà retenues avec d'autres réglages (cfg['extra'][name])."""
+    x = cfg["extra"][name]
+    ecfg = dict(cfg["engine"], depth=x["depth"], multipv=x["multipv"])
+    df = pd.read_csv(cfg["sample"]["output"])
+    fen = {f"{c}|{b}|{o}": (f, m) for c, b, o, f, m in zip(df.cadence, df.band, df.order, df.fen, df.move)}
+    tasks = [(r["key"], *fen[r["key"]]) for recs in recs_by_cell.values() for r in recs]
+    if x.get("n_positions"):
+        rng = np.random.default_rng(cfg["seed"] + 2)
+        tasks = [tasks[i] for i in sorted(rng.choice(len(tasks), x["n_positions"], replace=False))]
+    print(f"  {len(tasks)} positions, profondeur {x['depth']}, MultiPV {x['multipv']}", flush=True)
+    done, dt, m = ev.evaluate(tasks, ecfg, x["output"], ecfg["workers"])
+    if m:
+        print(f"  {m} évaluées en {dt / 60:.1f} min ({dt / m:.2f} s/position)")
+
+
+def step_noise_eval(cfg):
+    _extra_eval(cfg, "noise", select_records(cfg))
+
+
+def step_spectrum_eval(cfg):
+    _extra_eval(cfg, "spectrum", select_records(cfg))
+
+
+def step_noise_check(cfg):
+    """B : c à profondeur 16 vs profondeur 20 sur les mêmes positions (bootstrap apparié)."""
+    import shape as sh
+    f, x = cfg["fit"], cfg["extra"]["noise"]
+    d16 = ev.load_done(cfg["engine"]["output"])
+    d20 = ev.load_done(x["output"])
+    keys = [k for k in d20 if d20[k]["in_cands"] and d16[k]["in_cands"] and d20[k]["pvs"]]
+    E16, i16 = ft.build([d16[k] for k in keys], "cp", f)
+    E20, i20 = ft.build([d20[k] for k in keys], "cp", f)
+    same_best = np.mean([d16[k]["pvs"][0]["move"] == d20[k]["pvs"][0]["move"] for k in d20])
+    rng = np.random.default_rng(cfg["seed"] + 3)
+    rows = []
+    boots = [rng.integers(0, len(keys), len(keys)) for _ in range(cfg["shape"]["n_boot"])]
+    for lab, E, idx in (("prof16", E16, i16), ("prof20", E20, i20)):
+        (s, c), _ = sh.fit_stretched(E, idx)
+        T, _ = ft.fit_T(E, idx)
+        bc = np.array([sh.fit_stretched(E[b], idx[b])[0][1] for b in boots])
+        rows.append(dict(depth=lab, n=len(keys), c=c, c_lo=np.quantile(bc, .025),
+                         c_hi=np.quantile(bc, .975), s=s, T=T, _bc=bc))
+    dc = rows[1]["_bc"] - rows[0]["_bc"]
+    res = pd.DataFrame([{k: v for k, v in r.items() if k != "_bc"} for r in rows])
+    res.to_csv(os.path.join(f["outdir"], "noise_check.csv"), index=False, float_format="%.4g")
+    print(res.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
+    print(f"Δc (20-16) = {rows[1]['c'] - rows[0]['c']:+.3f}  IC95 apparié [{np.quantile(dc, .025):+.3f}, {np.quantile(dc, .975):+.3f}]")
+    print(f"Même meilleur coup à prof. 16 et 20 : {same_best:.0%}")
+
+
+def step_spectrum_check(cfg):
+    """A : forme de f(ΔE) sur tous les coups légaux + test IIA (taux hors top-5 prédit vs observé)."""
+    import plot
+    import shape as sh
+    f, x, n_boot = cfg["fit"], cfg["extra"]["spectrum"], cfg["shape"]["n_boot"]
+    dsp = ev.load_done(x["output"])
+    rng = np.random.default_rng(cfg["seed"] + 4)
+    rows, pooled = [], {}
+    for (cad, band), recs in select_records(cfg).items():
+        rs = [dsp[r["key"]] for r in recs if r["key"] in dsp and dsp[r["key"]]["in_cands"]]
+        E, idx = ft.build(rs, "cp", f)
+        obs_out = np.mean(idx >= 5)
+        # ajustements sur le top-5 seul (vraisemblance conditionnelle), puis prédiction hors top-5
+        top = idx < 5
+        E5, i5 = E[top][:, :5], idx[top]
+        T5, _ = ft.fit_T(E5, i5)
+        (s5, c5), _ = sh.fit_stretched(E5, i5)
+        # ajustements sur le spectre complet
+        Tf, _ = ft.fit_T(E, idx)
+        (sf, cf), nll_s = sh.fit_stretched(E, idx)
+        lr = 2 * (ft.nll(np.log(Tf), E, idx) - nll_s)
+        bc = np.array([sh.fit_stretched(E[b], idx[b])[0][1] for b in
+                       (rng.integers(0, len(idx), len(idx)) for _ in range(n_boot))])
+        rows.append(dict(cadence=cad, elo_mid=band + 100, n=len(idx), obs_out_top5=obs_out,
+                         pred_out_boltz_top5fit=sh.predicted_out_rate(E, 5, lambda e: e / T5),
+                         pred_out_stretch_top5fit=sh.predicted_out_rate(E, 5, lambda e: (e / s5) ** c5),
+                         c_top5=c5, T_full=Tf, s=sf, c=cf, c_lo=np.quantile(bc, .025),
+                         c_hi=np.quantile(bc, .975), LR_vs_boltzmann=lr))
+        print(f"  {cad} {band}: c={cf:.2f} [{rows[-1]['c_lo']:.2f}-{rows[-1]['c_hi']:.2f}] hors top5 obs={obs_out:.2f} "
+              f"préd. Boltz={rows[-1]['pred_out_boltz_top5fit']:.2f} étirée={rows[-1]['pred_out_stretch_top5fit']:.2f}", flush=True)
+        pooled.setdefault(cad, []).append((band, E, idx))
+    st = pd.DataFrame(rows)
+    st.to_csv(os.path.join(f["outdir"], "spectrum_fit.csv"), index=False, float_format="%.4g")
+    curves = []
+    for cad, lst in pooled.items():
+        for lo, hi in cfg["shape"]["elo_groups"]:
+            parts = [(E, idx) for b, E, idx in lst if lo <= b < hi]
+            k = max(E.shape[1] for E, _ in parts)
+            E = np.vstack([np.pad(E, ((0, 0), (0, k - E.shape[1])), constant_values=np.nan) for E, _ in parts])
+            idx = np.concatenate([i for _, i in parts])
+            fk = sh.fit_nonparam(E, idx)
+            bs = np.array([sh.fit_nonparam(E[b], idx[b]) for b in
+                           (rng.integers(0, len(idx), len(idx)) for _ in range(n_boot))])
+            for j, dE in enumerate(sh.KNOTS):
+                curves.append(dict(cadence=cad, elo_group=f"{lo}-{hi}", dE=dE, f=fk[j],
+                                   f_lo=np.quantile(bs[:, j], .025), f_hi=np.quantile(bs[:, j], .975)))
+    cv = pd.DataFrame(curves)
+    cv.to_csv(os.path.join(f["outdir"], "spectrum_nonparam.csv"), index=False, float_format="%.4g")
+    plot.make_shape(st, cv, f["outdir"], "spectrum.png",
+                    note="Tous les coups légaux, Stockfish 18 profondeur 12. Barres : IC 95 % bootstrap sur les parties.")
+    print(st[["cadence", "elo_mid", "c", "c_lo", "c_hi", "obs_out_top5", "pred_out_boltz_top5fit",
+              "pred_out_stretch_top5fit"]].to_string(index=False, float_format=lambda v: f"{v:.2f}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
-             evaluate=step_evaluate, fit=step_fit, shape=step_shape)
+             evaluate=step_evaluate, fit=step_fit, shape=step_shape,
+             noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
+             noise_check=step_noise_check, spectrum_check=step_spectrum_check)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

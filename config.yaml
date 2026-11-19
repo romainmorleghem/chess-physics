@@ -38,3 +38,14 @@ fit:
 shape:                           # piste 1 : forme de la loi de choix
   n_boot: 100
   elo_groups: [[800, 1400], [1400, 2000], [2000, 2600]]
+
+extra:                           # réévaluations des positions retenues (contrôles de la piste 1)
+  noise:                         # B : bruit d'évaluation, profondeur 20 (22 : 4,1 s/position, trop lent) sur un sous-échantillon
+    depth: 20
+    multipv: 5
+    n_positions: 1000
+    output: data/evals_noise_d20.jsonl
+  spectrum:                      # A : spectre complet, tous les coups légaux
+    depth: 12
+    multipv: all
+    output: data/evals_spectrum_d12.jsonl

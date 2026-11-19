@@ -11,7 +11,7 @@ import numpy as np
 from scipy.optimize import minimize
 from scipy.special import logsumexp
 
-KNOTS = np.array([0, 10, 25, 50, 100, 200, 400, 1000.0])
+KNOTS = np.array([0, 10, 25, 50, 100, 200, 400, 700, 1000.0])
 
 
 def _nll_from_util(U, idx):
@@ -73,3 +73,11 @@ def fit_nonparam(E, idx):
 
     r = minimize(nll_grad, x0=np.full(len(KNOTS) - 1, 0.01), jac=True, method="L-BFGS-B")
     return np.concatenate([[0.0], r.x])
+
+
+def predicted_out_rate(E_full, k, f):
+    """Proba prédite que le coup joué soit hors des k premiers, moyennée sur les positions.
+    E_full : énergies de TOUS les coups légaux, triées (NaN en bourrage) ; f : ΔE -> f(ΔE)."""
+    U = np.where(np.isnan(E_full), -np.inf, -f(np.nan_to_num(E_full, nan=0.0)))
+    P = np.exp(U - logsumexp(U, axis=1)[:, None])
+    return P[:, k:].sum(1).mean()

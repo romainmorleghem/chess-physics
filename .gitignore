@@ -6,3 +6,5 @@ __pycache__/
 .pipeline_done
 .venv
 bin
+*.log
+.extra_done

@@ -58,7 +58,7 @@ def make(res, outdir):
 SEQ = ["#86b6ef", "#3987e5", "#184f95"]  # rampe séquentielle (bleu clair -> foncé) : Elo croissant
 
 
-def make_shape(st, cv, outdir):
+def make_shape(st, cv, outdir, fname="shape.png", note=None):
     fig, axes = plt.subplots(1, 3, figsize=(15, 4.6), dpi=150)
     fig.patch.set_facecolor("#fcfcfb")
     ax = axes[0]
@@ -87,8 +87,8 @@ def make_shape(st, cv, outdir):
         xs = [10, 1000]
         ax.plot(xs, [0.1, 10], color=MUTED, lw=1, ls="--", label="pente 1 (Boltzmann)")
         ax.legend(frameon=False, fontsize=8, labelcolor=INK, loc="lower right")
-    fig.text(0.01, 0.01, "Vraisemblance conditionnelle aux 5 candidats (valide pour un logit, propriété IIA). "
-             "Barres : IC 95 % bootstrap sur les parties.", color=MUTED, fontsize=8)
+    fig.text(0.01, 0.01, note or ("Vraisemblance conditionnelle aux 5 candidats (valide pour un logit, propriété IIA). "
+             "Barres : IC 95 % bootstrap sur les parties."), color=MUTED, fontsize=8)
     fig.tight_layout(rect=(0, 0.04, 1, 1))
-    fig.savefig(os.path.join(outdir, "shape.png"))
+    fig.savefig(os.path.join(outdir, fname))
     plt.close(fig)
