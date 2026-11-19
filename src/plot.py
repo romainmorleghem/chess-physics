@@ -1,6 +1,8 @@
 """Graphiques : T(Elo) avec barres d'erreur (2 variantes) et taux de coups hors candidats."""
 import os
 
+import numpy as np
+
 import matplotlib
 
 matplotlib.use("Agg")
@@ -176,4 +178,29 @@ def make_phase(st, outdir):
              "IC 95 % bootstrap (100).", color=MUTED, fontsize=8)
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "phase.png"))
+    plt.close(fig)
+
+
+def make_levels(eff, outdir, fname, xlo, xhi, xlabel, title, note):
+    """Effet d'une covariable par niveau (s rapporté au niveau de référence), par cadence et énergie."""
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    for ax, var in zip(axes, ["cp", "wp"]):
+        _style(ax, "s / s(référence)  (log)")
+        ax.set_yscale("log")
+        ax.set_xlabel(xlabel, color=MUTED, fontsize=9)
+        ax.set_title(f"{title} ({'centipions' if var == 'cp' else 'proba. de gain'})", color=INK, fontsize=10, loc="left")
+        for k, (cad, col) in enumerate((("Blitz", SEQ[1]), ("Rapid", SEQ[2]))):
+            h = eff[(eff.cadence == cad) & (eff.energy == var)]
+            x = np.arange(len(h)) + (k - 0.5) * 0.12
+            ax.errorbar(x, h.s_ratio, yerr=[(h.s_ratio - h.lo).clip(lower=0), (h.hi - h.s_ratio).clip(lower=0)],
+                        fmt="-o", color=col, lw=2, ms=5, capsize=3, elinewidth=1.1, label=cad, mec="#fcfcfb", mew=1.2)
+            ax.set_xticks(np.arange(len(h)))
+            ax.set_xticklabels([f"{a:g}…{b:g}".replace("-10000", "−∞").replace("10000", "∞") for a, b in zip(h[xlo], h[xhi])],
+                               fontsize=7, color=MUTED)
+        ax.axhline(1, color=MUTED, lw=0.8, ls=":")
+        ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    fig.text(0.01, 0.01, note + " IC 95 % bootstrap.", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, fname))
     plt.close(fig)

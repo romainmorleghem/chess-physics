@@ -1,0 +1,13 @@
+factor,controls,LR,dof,p_value,cadence,energy,c
+eval,elo+ply,27.69,4,1.443e-05,Blitz,cp,0.4809
+ply,elo+eval,184.1,3,1.164e-39,Blitz,cp,0.4809
+asym(mène/mené),elo+ply,1.153,,0.22,Blitz,cp,0.4809
+eval,elo+ply,130.8,4,2.619e-27,Blitz,wp,0.5139
+ply,elo+eval,158.5,3,3.877e-34,Blitz,wp,0.5139
+asym(mène/mené),elo+ply,2.09,,0,Blitz,wp,0.5139
+eval,elo+ply,18.45,4,0.001007,Rapid,cp,0.4977
+ply,elo+eval,110.5,3,8.664e-24,Rapid,cp,0.4977
+asym(mène/mené),elo+ply,0.9902,,0.98,Rapid,cp,0.4977
+eval,elo+ply,87.4,4,4.696e-18,Rapid,wp,0.5302
+ply,elo+eval,92.33,3,6.925e-20,Rapid,wp,0.5302
+asym(mène/mené),elo+ply,1.786,,0,Rapid,wp,0.5302

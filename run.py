@@ -456,12 +456,49 @@ def step_phase(cfg):
     print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
 
 
+def step_lead(cfg):
+    """Piste 3 : « champ extérieur » : s selon que le joueur au trait mène, est à égalité ou est mené."""
+    import covar as cv
+    import plot
+    f, pc = cfg["fit"], cfg["lead"]
+    rng = np.random.default_rng(cfg["seed"] + 8)
+    effs, tests = [], []
+    for cad in ("Blitz", "Rapid"):
+        for var in ("cp", "wp"):
+            E, idx, d = cv.dataset(cfg, cad, var)
+            c = cv.fit_c(E, idx)
+            lead = cv.binned(d.best_cp.values, np.array(pc["eval_edges"], float))
+            ply = cv.binned(d.ply.values, np.array(cfg["phase"]["ply_edges"], float))
+            ref = len(pc["eval_edges"]) // 2 - 1          # tranche centrale (égalité)
+            eff, te, co, bb = cv.study(E, idx, [d.elo.values, lead, ply], ["elo", "eval", "ply"], "eval",
+                                       c, rng, pc["n_boot"], ref=ref)
+            nb = len(pc["eval_edges"]) - 1
+            asym = bb[:, -1] - bb[:, 0]                   # mène largement / mené largement
+            eff = eff.assign(cadence=cad, energy=var, c=c,
+                             eval_lo=pc["eval_edges"][:-1], eval_hi=pc["eval_edges"][1:])
+            te = te.assign(cadence=cad, energy=var, c=c)
+            te = pd.concat([te, pd.DataFrame([dict(factor="asym(mène/mené)", controls="elo+ply", cadence=cad,
+                            energy=var, c=c, LR=np.exp(co[1][nb - 1] - co[1][0]),
+                            dof=np.nan, p_value=2 * min(np.mean(asym > 0), np.mean(asym < 0)))])])
+            effs.append(eff); tests.append(te)
+            print(f"  {cad} {var} (c={c:.2f}): " + "  ".join(f"{r.s_ratio:.2f}[{r.lo:.2f}-{r.hi:.2f}]"
+                                                        for r in eff.itertuples()), flush=True)
+    eff, te = pd.concat(effs), pd.concat(tests)
+    eff.to_csv(os.path.join(f["outdir"], "lead.csv"), index=False, float_format="%.4g")
+    te.to_csv(os.path.join(f["outdir"], "lead_tests.csv"), index=False, float_format="%.4g")
+    plot.make_levels(eff, f["outdir"], "lead.png", "eval_lo", "eval_hi",
+                     "évaluation du meilleur coup pour le joueur au trait (cp, prof. 12)",
+                     "Piste 3 : s selon le score (rapporté à l'égalité)",
+                     "log s = a(Elo) + e(score) + d(demi-coup), c ajusté par cadence et par énergie.")
+    print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
              noise_check=step_noise_check, spectrum_check=step_spectrum_check,
              attention=step_attention, clock=step_clock,
-             phase=step_phase)
+             phase=step_phase, lead=step_lead)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

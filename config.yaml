@@ -61,3 +61,7 @@ phase:                           # contrôle de la piste 2 : temps restant à ph
   n_boot: 30
   ply_edges: [0, 30, 50, 70, 1000]   # demi-coups ; niveau 0 = ouverture
   mat_edges: [0, 8, 14, 20, 100]      # matériel non-pion (24 au départ) ; niveau 0 = matériel le plus élevé
+
+lead:                            # piste 3 : champ extérieur (score du joueur au trait)
+  n_boot: 100
+  eval_edges: [-10000, -300, -100, 100, 300, 10000]   # cp, point de vue du joueur au trait

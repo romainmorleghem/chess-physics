@@ -47,12 +47,25 @@
   le matériel est un moins bon contrôle. Réserve : colinéarité forte, un effet résiduel du temps <= x1,5 n'est pas exclu.
   Le demi-coup peut porter fatigue, complexité ou temps accumulé : à démêler (piste 6, type de position).
 
+## Piste 3 (faite) : champ extérieur (mène / égalité / mené)
+- log s = a(Elo) + e(score) + d(demi-coup), c ajusté ; score = éval. du meilleur coup pour le joueur au trait
+  (prof. 12), tranches <-300, -300..-100, ±100, 100..300, >300 cp. `python run.py lead`, results/lead*.
+- En centipions : effet faible et SYMÉTRIQUE (p = 1e-5 Blitz, 1e-3 Rapid) : s x1,1 à x1,3 dès qu'on s'éloigne
+  de l'égalité, dans les deux sens ; asymétrie mène/mené non significative (rapport 1,15 p = 0,22 ; 0,99 p = 0,98).
+- En probabilité de gain : effet fort et MONOTONE (p < 1e-17) : s(mené >300) / s(égal) = 0,59 [0,53-0,67],
+  s(mène >300) / s(égal) = 1,23 (Blitz) ; asymétrie x2 (p < 0,01) dans les deux cadences.
+- Les deux énergies ne se valent pas : avec le score en covariable, la vraisemblance favorise la proba. de gain
+  (Δnll = -45 Blitz, -32 Rapid, même nombre de paramètres). Lecture : en enjeu réel (chances de gain),
+  le joueur mené joue « froid » (se bat), le joueur qui mène accepte de petites pertes (simplifie).
+  L'asymétrie vient en partie de la courbure de la sigmoïde ; elle dépend donc du choix de l'énergie.
+- Le demi-coup reste très significatif à score fixé (p < 1e-23) : la chauffe avec la phase n'est pas un effet du score.
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».
 2. **Temps comme recuit simulé** (fait, puis contrôlé : effet dû surtout à la phase) : T (ou s, c) en fonction du temps restant ([%clk] déjà dans
    data/sample_positions.csv, colonne clock_before) ; chercher une superposition T(Elo, t) = f(t/τ(Elo)).
-3. **Champ extérieur** : T selon que le joueur mène, est à égalité ou est mené.
+3. **Champ extérieur** (fait) : T selon que le joueur mène, est à égalité ou est mené.
 4. **Fluctuation-dissipation** : tester dU/dT = Var(E)/T² entre tranches ; une violation signale
    qu'une seule température ne suffit pas.
 5. **Désordre** : distribution des T individuels dans une tranche (plusieurs positions par joueur,
