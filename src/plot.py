@@ -92,3 +92,63 @@ def make_shape(st, cv, outdir, fname="shape.png", note=None):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, fname))
     plt.close(fig)
+
+
+def make_attention(st, outdir):
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.6), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    specs = [("omega_eff", "Ω_eff (coups)", "Taille effective de l'ensemble envisagé", True),
+             ("p_all", "probabilité", "P(tous les coups envisagés)", False),
+             ("obs_out_top5", "fraction des coups", "Coups hors top 5 : observé (●) et prédit 2 étages (○)", False)]
+    for ax, (col, ylab, title, ci) in zip(axes, specs):
+        _style(ax, ylab)
+        ax.set_title(title, color=INK, fontsize=11, loc="left")
+        for cad, g in st.groupby("cadence"):
+            g = g.sort_values("elo_mid")
+            x = g.elo_mid + (-12 if cad == "Blitz" else 12)
+            if ci:
+                ax.errorbar(x, g[col], yerr=[g[col] - g.omega_lo, g.omega_hi - g[col]], fmt="-o",
+                            color=COLORS[cad], lw=2, ms=6, capsize=3, elinewidth=1.2, label=cad,
+                            mec="#fcfcfb", mew=1.5)
+            else:
+                ax.plot(x, g[col], "-o", color=COLORS[cad], lw=2, ms=6, label=cad, mec="#fcfcfb", mew=1.5)
+            if col == "obs_out_top5":
+                ax.plot(x, g.pred_out_top5_two_stage, "--o", color=COLORS[cad], lw=1.2, ms=6, mfc="#fcfcfb")
+        ax.legend(frameon=False, fontsize=9, labelcolor=INK)
+    fig.text(0.01, 0.01, "Modèle : K coups les mieux classés envisagés (K aléatoire), puis choix ∝ exp(−(ΔE/s)^c). "
+             "Spectre complet, profondeur 12. IC 95 % bootstrap (50).", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "attention.png"))
+    plt.close(fig)
+
+
+def make_clock(st, outdir):
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.6), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    grps = sorted(st.elo_group.unique(), key=lambda x: int(x.split("-")[0]))
+    for ax, cad in zip(axes[:2], ["Blitz", "Rapid"]):
+        _style(ax, "échelle s (cp, log), c = 0,5 fixé")
+        ax.set_yscale("log")
+        ax.set_xlabel("fraction du temps initial restant (milieu de tranche)", color=MUTED, fontsize=9)
+        ax.set_title(f"{cad} : température en fonction du temps restant", color=INK, fontsize=11, loc="left")
+        for col, grp in zip(SEQ, grps):
+            h = st[(st.cadence == cad) & (st.elo_group == grp)]
+            xm = (h.frac_lo + h.frac_hi.clip(upper=1.0)) / 2
+            ax.errorbar(xm, h.s, yerr=[h.s - h.s_lo, h.s_hi - h.s], fmt="-o", color=col, lw=2, ms=6,
+                        capsize=3, elinewidth=1.2, label=f"Elo {grp}", mec="#fcfcfb", mew=1.5)
+        ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    ax = axes[2]
+    _style(ax, "s / s(Elo)  (modèle factorisé)")
+    ax.set_xlabel("fraction du temps initial restant (milieu de tranche)", color=MUTED, fontsize=9)
+    ax.set_title("Superposition : s normalisé par niveau", color=INK, fontsize=11, loc="left")
+    for cad, ls in (("Blitz", "-"), ("Rapid", "--")):
+        for col, grp in zip(SEQ, grps):
+            h = st[(st.cadence == cad) & (st.elo_group == grp)]
+            xm = (h.frac_lo + h.frac_hi.clip(upper=1.0)) / 2
+            ax.plot(xm, h.s_norm, ls, marker="o", color=col, lw=1.6, ms=5, label=f"{cad} {grp}")
+    ax.legend(frameon=False, fontsize=7, labelcolor=INK, ncol=2)
+    fig.text(0.01, 0.01, "Spectre complet (profondeur 12), une position par partie. IC 95 % bootstrap (100). "
+             "Bleu clair → foncé : Elo croissant ; trait plein Blitz, tirets Rapid.", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "clock.png"))
+    plt.close(fig)

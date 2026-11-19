@@ -292,10 +292,107 @@ def step_spectrum_check(cfg):
               "pred_out_stretch_top5fit"]].to_string(index=False, float_format=lambda v: f"{v:.2f}"))
 
 
+def spectrum_records(cfg):
+    """{(cadence, band): [records du spectre complet]} pour les positions retenues."""
+    dsp = ev.load_done(cfg["extra"]["spectrum"]["output"])
+    return {k: [dsp[r["key"]] for r in recs if r["key"] in dsp and dsp[r["key"]]["in_cands"]]
+            for k, recs in select_records(cfg).items()}
+
+
+def step_attention(cfg):
+    """Piste 7 : modèle à deux étages, taille effective de l'ensemble de coups envisagés."""
+    import attention as at
+    import plot
+    f, n_boot = cfg["fit"], cfg["attention"]["n_boot"]
+    rng = np.random.default_rng(cfg["seed"] + 5)
+    rows = []
+    for (cad, band), rs in spectrum_records(cfg).items():
+        E, idx = ft.build(rs, "cp", f)
+        th1, nll1 = at.fit(E, idx, two_stage=False)
+        th2, nll2 = at.fit(E, idx, two_stage=True)
+        sm = at.summarize(th2, E)
+        bo = []
+        for _ in range(n_boot):
+            b = rng.integers(0, len(idx), len(idx))
+            bo.append(at.summarize(at.fit(E[b], idx[b], x0=th2)[0], E[b])["omega_eff"])
+        rows.append(dict(cadence=cad, elo_mid=band + 100, n=len(idx), N_legal_mean=(~np.isnan(E)).sum(1).mean(),
+                         obs_out_top5=np.mean(idx >= 5), pred_out_top5_two_stage=at.pred_out_top5(th2, E),
+                         LR_two_vs_one=2 * (nll1 - nll2), omega_lo=np.quantile(bo, .025),
+                         omega_hi=np.quantile(bo, .975), **sm))
+        r = rows[-1]
+        print(f"  {cad} {band}: Ω_eff={r['omega_eff']:.1f} [{r['omega_lo']:.1f}-{r['omega_hi']:.1f}] / {r['N_legal_mean']:.0f} coups, "
+              f"P(tous)={r['p_all']:.2f}, c={r['c']:.2f}, LR={r['LR_two_vs_one']:.0f}", flush=True)
+    st = pd.DataFrame(rows)
+    st.to_csv(os.path.join(f["outdir"], "attention.csv"), index=False, float_format="%.4g")
+    plot.make_attention(st, f["outdir"])
+    print(st[["cadence", "elo_mid", "omega_eff", "omega_lo", "omega_hi", "p_all", "c", "s",
+              "obs_out_top5", "pred_out_top5_two_stage", "LR_two_vs_one"]].to_string(
+        index=False, float_format=lambda v: f"{v:.2f}"))
+
+
+def step_clock(cfg):
+    """Piste 2 : échelle s (c fixé) en fonction de la fraction de temps restant ; test de superposition."""
+    import clock as ck
+    import plot
+    f, n_boot = cfg["fit"], cfg["clock"]["n_boot"]
+    edges = np.array(cfg["clock"]["frac_edges"], dtype=float)
+    groups = cfg["shape"]["elo_groups"]
+    df = pd.read_csv(cfg["sample"]["output"])
+    meta = {f"{c}|{b}|{o}": ck.frac_remaining(cl, tc) for c, b, o, cl, tc in
+            zip(df.cadence, df.band, df.order, df.clock_before, df.time_control)}
+    rng = np.random.default_rng(cfg["seed"] + 6)
+    rows, tests = [], []
+    G, B = len(groups), len(edges) - 1
+    for cad in ("Blitz", "Rapid"):
+        recs, gl, bl = [], [], []
+        for (c2, band), rs in spectrum_records(cfg).items():
+            if c2 != cad:
+                continue
+            gi = next(i for i, (lo, hi) in enumerate(groups) if lo <= band < hi)
+            for r in rs:
+                x = meta[r["key"]]
+                if np.isfinite(x):
+                    recs.append(r); gl.append(gi); bl.append(np.searchsorted(edges, x, side="right") - 1)
+        E, idx = ft.build(recs, "cp", f)
+        g, b = np.array(gl), np.clip(np.array(bl), 0, B - 1)
+        counts = np.zeros((G, B), int)
+        np.add.at(counts, (g, b), 1)
+        keep = counts[g, b] >= 30
+        E, idx, g, b = E[keep], idx[keep], g[keep], b[keep]
+        logs, nll_free = ck.fit_free(E, idx, g, b, G, B)
+        (a, bb), nll_fac = ck.fit_factorized(E, idx, g, b, G, B)
+        boots = []
+        for _ in range(n_boot):
+            k = rng.integers(0, len(idx), len(idx))
+            boots.append(ck.fit_free(E[k], idx[k], g[k], b[k], G, B)[0])
+        boots = np.array(boots)
+        df_ = np.isfinite(logs).sum() - (G + B - 1)
+        from scipy.stats import chi2
+        lr = 2 * (nll_fac - nll_free)
+        tests.append(dict(cadence=cad, LR_factorized_vs_free=lr, dof=df_, p_value=chi2.sf(lr, df_)))
+        for gi in range(G):
+            for bi in range(B):
+                if np.isfinite(logs[gi, bi]):
+                    rows.append(dict(cadence=cad, elo_group=f"{groups[gi][0]}-{groups[gi][1]}",
+                                     frac_lo=edges[bi], frac_hi=edges[bi + 1], n=counts[gi, bi],
+                                     s=np.exp(logs[gi, bi]),
+                                     s_lo=np.exp(np.nanquantile(boots[:, gi, bi], .025)),
+                                     s_hi=np.exp(np.nanquantile(boots[:, gi, bi], .975)),
+                                     s_norm=np.exp(logs[gi, bi] - a[gi]), s_fact=np.exp(a[gi] + bb[bi])))
+    st, te = pd.DataFrame(rows), pd.DataFrame(tests)
+    st.to_csv(os.path.join(f["outdir"], "clock.csv"), index=False, float_format="%.4g")
+    te.to_csv(os.path.join(f["outdir"], "clock_collapse_test.csv"), index=False, float_format="%.4g")
+    plot.make_clock(st, f["outdir"])
+    print(st[["cadence", "elo_group", "frac_lo", "n", "s", "s_lo", "s_hi", "s_norm"]].to_string(
+        index=False, float_format=lambda v: f"{v:.2f}"))
+    print(te.to_string(index=False, float_format=lambda v: f"{v:.3g}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
-             noise_check=step_noise_check, spectrum_check=step_spectrum_check)
+             noise_check=step_noise_check, spectrum_check=step_spectrum_check,
+             attention=step_attention, clock=step_clock)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

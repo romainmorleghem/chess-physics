@@ -22,6 +22,19 @@
   Piste nouvelle (7) : modèle à deux étages, ensemble de coups envisagés + choix ; mesurer la taille
   effective de cet ensemble (une « entropie ») en fonction de l'Elo et du temps.
 
+## Piste 7 (faite) : modèle à deux étages
+- K coups les mieux classés envisagés (K aléatoire, loi libre), puis choix ∝ exp(-(ΔE/s)^c).
+- Bien meilleur que le logit à un étage (LR 38 à 167, 6 ddl) ; reproduit le taux de coups hors top-5.
+- Ω_eff (coups envisagés en moyenne, sur ~33 légaux) : ~20 (Elo 900) -> ~14 (Elo 2300-2500), Blitz et Rapid.
+  Les joueurs forts « élaguent » davantage (cohérent avec de Groot). c reste ≈ 0,5-0,6.
+- Limite : la saillance est approchée par le rang Stockfish ; Ω_eff dépend de ce choix.
+
+## Piste 2 (faite) : temps restant
+- c fixé à 0,5 ; échelle s par (groupe d'Elo x fraction du temps initial restant).
+- s augmente quand le temps diminue (« chauffe » sous la pression) : x ~2 en Blitz entre >75 % et <10 % du temps.
+- Superposition s(Elo, t) = A(Elo) * g(t) acceptée : Blitz p = 0,48 ; Rapid p = 0,056 (limite).
+- Limite : confusion avec la phase de jeu (peu de temps = fin de partie) -> contrôler par le numéro de coup.
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».

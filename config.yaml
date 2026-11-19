@@ -49,3 +49,10 @@ extra:                           # réévaluations des positions retenues (contr
     depth: 12
     multipv: all
     output: data/evals_spectrum_d12.jsonl
+
+attention:                       # piste 7 : modèle à deux étages (coups envisagés puis choix)
+  n_boot: 50
+
+clock:                           # piste 2 : température en fonction du temps restant
+  n_boot: 100
+  frac_edges: [0, 0.1, 0.25, 0.5, 0.75, 10]   # fraction du temps initial restant (> 1 possible avec l'incrément)
