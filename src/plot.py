@@ -204,3 +204,27 @@ def make_levels(eff, outdir, fname, xlo, xhi, xlabel, title, note):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, fname))
     plt.close(fig)
+
+
+def make_fdt(st, outdir):
+    """Rapport de fluctuation R (observé / prédit) par Elo : Boltzmann, loi étirée, deux étages."""
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    for ax, cad in zip(axes, ["Blitz", "Rapid"]):
+        _style(ax, "R = fluctuations observées / prédites  (log)")
+        ax.set_yscale("log")
+        ax.set_xlabel("Elo (milieu de tranche)", color=MUTED, fontsize=9)
+        ax.set_title(f"{cad} : test de fluctuation-dissipation (ΔE en cp)", color=INK, fontsize=10, loc="left")
+        h = st[(st.cadence == cad) & (st.energy == "cp")]
+        for k, (lab, col, name) in enumerate((("boltz", SEQ[0], "Boltzmann"), ("stretchE", SEQ[1], "exp. étirée"),
+                                              ("two", SEQ[2], "deux étages"))):
+            y, lo, hi = h[f"{lab}_R"], h[f"{lab}_R_lo"], h[f"{lab}_R_hi"]
+            ax.errorbar(h.elo_mid + (k - 1) * 15, y, yerr=[(y - lo).clip(lower=0), (hi - y).clip(lower=0)], fmt="-o",
+                        color=col, lw=2, ms=5, capsize=3, elinewidth=1.1, label=name, mec="#fcfcfb", mew=1.2)
+        ax.axhline(1, color=MUTED, lw=0.8, ls=":")
+        ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    fig.text(0.01, 0.01, "R = 1 : une seule température rend compte des fluctuations de ΔE (spectre complet, prof. 12). "
+             "IC 95 % bootstrap.", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "fdt.png"))
+    plt.close(fig)

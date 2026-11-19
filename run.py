@@ -546,13 +546,60 @@ def step_postype(cfg):
     print(sh_.to_string(index=False, float_format=lambda v: f"{v:.2f}"))
 
 
+def step_fdt(cfg):
+    """Piste 4 : fluctuation-dissipation (β des moments d'ordre 1 et 2, rapport de fluctuation R)."""
+    import attention as at
+    import fdt
+    import plot
+    import covar as cv
+    f, n_boot = cfg["fit"], cfg["fdt"]["n_boot"]
+    rng = np.random.default_rng(cfg["seed"] + 10)
+    rows = []
+    for (cad, band), rs in spectrum_records(cfg).items():
+        for var in ("cp", "wp"):
+            E, idx = ft.build(rs, var, f)
+            c = cv.fit_c(E, idx)
+            row = dict(cadence=cad, elo_mid=band + 100, energy=var, n=len(idx), c=c)
+            boots = [rng.integers(0, len(idx), len(idx)) for _ in range(n_boot)]
+            for lab, H in (("boltz", E), ("stretch", E ** c)):
+                bU, bV = fdt.beta_match(H, idx, 1), fdt.beta_match(H, idx, 2)
+                R = fdt.fluct_ratio(H, idx, bU)
+                bb = np.array([(fdt.beta_match(H[k], idx[k], 1) / fdt.beta_match(H[k], idx[k], 2),
+                                fdt.fluct_ratio(H[k], idx[k], fdt.beta_match(H[k], idx[k], 1))) for k in boots])
+                row.update({f"{lab}_TV_over_TU": bU / bV, f"{lab}_TV_over_TU_lo": np.quantile(bb[:, 0], .025),
+                            f"{lab}_TV_over_TU_hi": np.quantile(bb[:, 0], .975), f"{lab}_R": R,
+                            f"{lab}_R_lo": np.quantile(bb[:, 1], .025), f"{lab}_R_hi": np.quantile(bb[:, 1], .975)})
+            if var == "cp":
+                import shape as sh
+                (s_, c_), _ = sh.fit_stretched(E, idx)
+                U = np.where(np.isnan(E), -np.inf, -(np.nan_to_num(E) / s_) ** c_)
+                Ps = np.exp(U - U.max(1, keepdims=True)); Ps /= Ps.sum(1, keepdims=True)
+                R1, _, hm1 = fdt.ratio_from_P(Ps, E, idx)
+                bb = np.array([fdt.ratio_from_P(Ps[k], E[k], idx[k])[0] for k in boots])
+                row.update(stretchE_R=R1, stretchE_R_lo=np.quantile(bb, .025), stretchE_R_hi=np.quantile(bb, .975),
+                           stretchE_mean_model=hm1)
+                th, _ = at.fit(E, idx, two_stage=True)
+                P = fdt.two_stage_P(th, E)
+                R2, hobs, hmod = fdt.ratio_from_P(P, E, idx)
+                bb = np.array([fdt.ratio_from_P(P[k], E[k], idx[k])[0] for k in boots])
+                row.update(two_R=R2, two_R_lo=np.quantile(bb, .025), two_R_hi=np.quantile(bb, .975),
+                           two_mean_obs=hobs, two_mean_model=hmod)
+            rows.append(row)
+            print(f"  {cad} {band} {var}: T_V/T_U Boltz={row['boltz_TV_over_TU']:.2f} R={row['boltz_R']:.2f} ; "
+                  f"étirée T_V/T_U={row['stretch_TV_over_TU']:.2f} R={row['stretch_R']:.2f}"
+                  + (f" ; en ΔE : étirée R={row['stretchE_R']:.2f}, 2 étages R={row['two_R']:.2f}" if var == "cp" else ""), flush=True)
+    st = pd.DataFrame(rows)
+    st.to_csv(os.path.join(f["outdir"], "fdt.csv"), index=False, float_format="%.4g")
+    plot.make_fdt(st, f["outdir"])
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
              noise_check=step_noise_check, spectrum_check=step_spectrum_check,
              attention=step_attention, clock=step_clock,
              phase=step_phase, lead=step_lead,
-             postype=step_postype)
+             postype=step_postype, fdt=step_fdt)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

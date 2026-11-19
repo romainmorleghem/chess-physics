@@ -74,13 +74,28 @@
   meilleur coup » (saut à petit ΔE) et la croissance ~ΔE^0,6 ; le poids relatif change avec le type de position.
 - Limite : écart et ΔE viennent de la même évaluation (prof. 12), le bruit peut les corréler.
 
+## Piste 4 (faite) : fluctuation-dissipation
+- Logit p ∝ exp(-β H) : le maximum de vraisemblance égale Σ H_obs et Σ <H>_β (énergie moyenne U) ;
+  la relation dU/dβ = -Var(H) prédit alors les fluctuations. Deux mesures par case (spectre complet, prof. 12) :
+  T_V/T_U (β du 2e moment contre β du 1er ; global) et R = Σ(H_obs - <H>)² / Σ Var(H) (position par position).
+  Une seule température <=> T_V/T_U = 1 et R = 1. `python run.py fdt`, results/fdt*.
+- Boltzmann (H = ΔE) : violation nette partout : T_V/T_U = 1,3-1,7, R = 2,9 [2,75-3,0] (moyenne pondérée des 18 cases).
+- Loi étirée, H = ΔE^c : T_V/T_U = 1,02 (IC inclut 1 dans la plupart des cases) : dans la variable ΔE^0,5 une seule
+  « température » rend compte des fluctuations globales. Mais R (en H) = 1,15-1,30.
+- Comparaison des modèles en ΔE (même grandeur) : R = 2,9 (Boltzmann), 1,54 [1,43-1,64] (étirée),
+  1,26 [1,18-1,34] (deux étages). Le modèle à deux étages capte l'essentiel ; il reste ~25 % de fluctuations
+  en excès, homogène entre cases (χ²/ddl = 0,4) : hétérogénéité non modélisée (T dépendant de la phase, de l'échec,
+  du joueur : pistes 2, 6, 5). R > 1 avec T_V ≈ T_U signifie une pente < 1 de ΔE observé sur ΔE prédit
+  (positions prédites « chaudes » plus froides que prévu et inversement).
+- Limite : moments d'ordre 2 dominés par les grosses gaffes (écrêtage à 1000 cp) ; résultats similaires en proba. de gain.
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».
 2. **Temps comme recuit simulé** (fait, puis contrôlé : effet dû surtout à la phase) : T (ou s, c) en fonction du temps restant ([%clk] déjà dans
    data/sample_positions.csv, colonne clock_before) ; chercher une superposition T(Elo, t) = f(t/τ(Elo)).
 3. **Champ extérieur** (fait) : T selon que le joueur mène, est à égalité ou est mené.
-4. **Fluctuation-dissipation** : tester dU/dT = Var(E)/T² entre tranches ; une violation signale
+4. **Fluctuation-dissipation** (fait) : tester dU/dT = Var(E)/T² entre tranches ; une violation signale
    qu'une seule température ne suffit pas.
 5. **Désordre** : distribution des T individuels dans une tranche (plusieurs positions par joueur,
    nouveau tirage, ≈1-2 h de calcul).

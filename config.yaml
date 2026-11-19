@@ -70,3 +70,6 @@ postype:                         # piste 6 : type de position
   n_boot: 100
   gap_edges: [0, 10, 30, 100, 300, 10000]   # écart (cp) entre meilleur et 2e coup ; >300 = coup unique
   nlegal_edges: [0, 20, 30, 40, 1000]
+
+fdt:                             # piste 4 : fluctuation-dissipation
+  n_boot: 50
