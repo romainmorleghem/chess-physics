@@ -89,6 +89,30 @@
   (positions prédites « chaudes » plus froides que prévu et inversement).
 - Limite : moments d'ordre 2 dominés par les grosses gaffes (écrêtage à 1000 cp) ; résultats similaires en proba. de gain.
 
+## Piste 5 (faite) : désordre (températures individuelles)
+- Nouvel échantillon : préfixe de 1 Go du même mois (~45 h), Blitz, 160 joueurs actifs (>= 40 parties dans le préfixe),
+  20 par tranche d'Elo 800-2400 (Elo médian du joueur), 25 parties par joueur, une position par partie (joueur au trait),
+  tous les coups légaux à prof. 10 (6 min). 3320 positions après filtre |éval| <= 500 cp. Noms hachés.
+  `python run.py players_sample | players_eval | players`, results/players*.
+- Modèle : log s = a(tranche) + d(demi-coup) + échec + u_joueur, u ~ N(0, σ²), c = 0,51 fixé, Gauss-Hermite.
+  Validé sur simulation (mêmes tailles) : σ = 0,3 retrouvé (0,31, LR = 19) ; σ = 0 -> 0,08 non significatif.
+- Résultat : σ = 0,00, IC 95 % [0 ; 0,12] (vraisemblance profilée), LR = 0. Joueurs permutés : σ = 0 aussi.
+  Fiabilité moitié/moitié nulle (Spearman -0,06) ; effet joueur sans lien avec l'Elo dans la tranche (-0,02).
+  Pour comparaison, s varie d'un facteur 2,8 entre 800 et 2200 (29 -> 10 cp) et x2 avec la phase.
+- Conclusion : à Elo, phase et échec fixés, les joueurs actifs ont la même « température » à ±12 % près :
+  l'Elo est (presque) une statistique suffisante de T. L'excès de fluctuations de la piste 4 (R ≈ 1,26)
+  ne vient donc pas des joueurs mais des positions (forme de f, saillance).
+- Limites : joueurs très actifs seulement, Blitz, effet joueur sur s seulement (pas sur c ni sur Ω_eff).
+
+## Synthèse (après les pistes 1 à 7)
+- Loi de choix p ∝ exp(-(ΔE/s)^c), c ≈ 0,5 (0,45 positions calmes -> 0,65 quand un coup se détache),
+  avec un étage d'attention (Ω_eff ~ 20 -> 14 coups envisagés).
+- s est fixé par l'Elo (x2,8), l'avancement de la partie (x1,5-2), l'échec (x2,7-4,5), et, en proba. de gain,
+  le score (mené : plus froid). Pas d'effet propre de l'horloge à phase fixée ; pas de désordre entre joueurs.
+- Pistes ouvertes : (a) saillance mieux que le rang Stockfish (Maia) pour l'étage 1 ; (b) effets de phase/échec
+  sur Ω_eff plutôt que sur s ; (c) démêler demi-coup = fatigue / complexité / temps consommé (temps par coup,
+  positions de même structure à demi-coups différents) ; (d) désordre en Rapid et sur c.
+
 ## Pistes
 1. **Forme de la loi de choix** (en cours) : c ≈ 0,5 universel ? À vérifier : bruit d'évaluation à petit ΔE,
    spectre complet de tous les coups légaux, modèle de mélange « voit le meilleur coup / Boltzmann ».
@@ -97,7 +121,7 @@
 3. **Champ extérieur** (fait) : T selon que le joueur mène, est à égalité ou est mené.
 4. **Fluctuation-dissipation** (fait) : tester dU/dT = Var(E)/T² entre tranches ; une violation signale
    qu'une seule température ne suffit pas.
-5. **Désordre** : distribution des T individuels dans une tranche (plusieurs positions par joueur,
+5. **Désordre** (fait) : distribution des T individuels dans une tranche (plusieurs positions par joueur,
    nouveau tirage, ≈1-2 h de calcul).
 6. **Type de position** (fait) : T dans une position calme ou tactique (écart entre les deux meilleurs coups) : est-ce le joueur ou la position qui « chauffe » ?
 
@@ -106,5 +130,6 @@
 - R. McIlroy-Young et al., *Aligning Superhuman AI with Human Behavior: Chess as a Model System* (Maia), KDD 2020.
 
 ## Coûts mesurés (Stockfish 18, 3 workers)
+- Tous les coups légaux, prof. 10, échantillon joueurs : 0,09 s/position (4 cœurs). Modèle additif (gradient analytique) : 0,2 s/ajustement.
 - MultiPV 5, profondeur 16 : 0,37 s/position.
 - Tous les coups légaux (~32) : prof. 10 : 0,21 s ; prof. 12 : 0,29 s ; prof. 16 : 2,18 s par position.

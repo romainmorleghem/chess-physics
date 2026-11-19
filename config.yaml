@@ -73,3 +73,16 @@ postype:                         # piste 6 : type de position
 
 fdt:                             # piste 4 : fluctuation-dissipation
   n_boot: 50
+
+players:                         # piste 5 : désordre (températures individuelles), Blitz
+  raw_file: data/raw/lichess_2026-10_first1GB.pgn.zst   # préfixe de 1 Go (~45 h de parties)
+  elo_min: 800
+  elo_max: 2400
+  elo_step: 200
+  min_games: 40                  # parties Blitz éligibles du joueur dans le préfixe
+  players_per_band: 20
+  n_games: 25                    # une position par partie, le joueur étant au trait
+  depth: 10                      # tous les coups légaux (0,21 s/position)
+  positions: data/players_positions.csv
+  evals: data/evals_players_d10.jsonl
+  n_perm: 10

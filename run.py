@@ -593,13 +593,110 @@ def step_fdt(cfg):
     plot.make_fdt(st, f["outdir"])
 
 
+def step_players_sample(cfg):
+    """Piste 5 : choix des joueurs et des positions (2 passages sur le préfixe du fichier)."""
+    import players as pl
+    chosen = pl.select_players(cfg)
+    rows = pl.sample_positions(cfg, chosen)
+    out = cfg["players"]["positions"]
+    pd.DataFrame(rows).to_csv(out, index=False)
+    print(f"  {len(rows)} positions, {len(chosen)} joueurs -> {out}")
+
+
+def step_players_eval(cfg):
+    p = cfg["players"]
+    df = pd.read_csv(p["positions"])
+    ecfg = dict(cfg["engine"], depth=p["depth"], multipv="all")
+    tasks = [(f"P|{r.player}|{r.k}", r.fen, r.move) for r in df.itertuples()]
+    print(f"  {len(tasks)} positions, profondeur {p['depth']}, tous les coups", flush=True)
+    done, dt, m = ev.evaluate(tasks, ecfg, p["evals"], ecfg["workers"])
+    if m:
+        print(f"  {m} évaluées en {dt / 60:.1f} min ({dt / m:.2f} s/position)")
+
+
+def step_players(cfg):
+    """Piste 5 : dispersion des températures individuelles (modèle à effets aléatoires) et contrôles."""
+    import chess
+    import covar as cv
+    import players as pl
+    import plot
+    from scipy.optimize import minimize
+    from scipy.stats import chi2, spearmanr
+    f, p = cfg["fit"], cfg["players"]
+    df = pd.read_csv(p["positions"])
+    done = ev.load_done(p["evals"])
+    recs, meta = [], []
+    for r in df.itertuples():
+        e = done.get(f"P|{r.player}|{r.k}")
+        if e is None or not e["in_cands"] or not ev.keep(e, cfg["filter"]["max_abs_cp"]):
+            continue
+        recs.append(e); meta.append(dict(player=r.player, band=r.band, elo=r.elo, ply=r.ply,
+                                         check=chess.Board(r.fen).is_check()))
+    md = pd.DataFrame(meta)
+    E, idx = ft.build(recs, "cp", f)
+    pid = pd.factorize(md.player)[0]
+    bands = sorted(md.band.unique())
+    band = md.band.map({b: i for i, b in enumerate(bands)}).values
+    ply = cv.binned(md.ply.values, np.array(cfg["phase"]["ply_edges"], float))
+    chk = md.check.values.astype(int)
+    c = cv.fit_c(E, idx)
+    m = pl.RE(E, idx, [band, ply, chk], pid, c)
+    x, nll1 = m.fit()
+    x0, nll0 = m.fit(x0=x, sigma0=True)
+    sig = np.exp(x[-1])
+    lr = 2 * (nll0 - nll1)
+    pval = 0.5 * chi2.sf(lr, 1)
+    print(f"  {len(idx)} positions, {m.P} joueurs, c = {c:.2f} ; σ(log s) = {sig:.3f} ; LR = {lr:.1f}, p = {pval:.2g}", flush=True)
+    # intervalle de σ par vraisemblance profilée
+    grid = np.linspace(0.0, max(0.6, 2.5 * sig), 31)
+    prof = []
+    for g in grid:
+        r = minimize(lambda z: m.nll(np.append(z, 0.0), sigma=g), x[:-1], method="L-BFGS-B")
+        prof.append(r.fun)
+    prof = np.array(prof)
+    ok = grid[prof <= prof.min() + 1.92]
+    # contrôle 1 : permutations des joueurs au sein de chaque tranche (σ doit être ~0)
+    rng = np.random.default_rng(cfg["seed"] + 12)
+    sig_null = []
+    for _ in range(p["n_perm"]):
+        perm = pid.copy()
+        for b in range(len(bands)):
+            w = np.where(band == b)[0]
+            perm[w] = pid[rng.permutation(w)]
+        mp = pl.RE(E, idx, [band, ply, chk], perm, c)
+        sig_null.append(np.exp(mp.fit(x0=x)[0][-1]))
+    sig_null = np.array(sig_null)
+    # contrôle 2 : fiabilité moitié/moitié (positions paires / impaires de chaque joueur)
+    k = md.groupby("player").cumcount().values
+    u_a, u_b = m.player_effects(x, k % 2 == 0), m.player_effects(x, k % 2 == 1)
+    rho = spearmanr(u_a, u_b).correlation
+    # u contre l'écart d'Elo à la tranche
+    u = m.player_effects(x)
+    pe = md.assign(pid=pid).groupby("pid").agg(band=("band", "first"), elo=("elo", "mean"), n=("ply", "size"))
+    rho_elo = spearmanr(u, pe.elo - pe.band).correlation
+    a = np.exp(x[:len(bands)])
+    res = pd.DataFrame([dict(n_positions=len(idx), n_players=m.P, c=c, sigma=sig, sigma_lo=ok.min(), sigma_hi=ok.max(),
+                             LR=lr, p_value=pval, sigma_perm_mean=sig_null.mean(), sigma_perm_max=sig_null.max(),
+                             split_half_spearman=rho, spearman_brown=2 * rho / (1 + rho),
+                             spearman_u_vs_elo_in_band=rho_elo, s_band_min=a.min(), s_band_max=a.max())])
+    res.to_csv(os.path.join(f["outdir"], "players.csv"), index=False, float_format="%.4g")
+    pe.assign(u=u, u_even=u_a, u_odd=u_b, s_rel=np.exp(u)).to_csv(os.path.join(f["outdir"], "players_effects.csv"),
+                                                                     index=False, float_format="%.4g")
+    pd.DataFrame(dict(sigma=grid, nll=prof)).to_csv(os.path.join(f["outdir"], "players_profile.csv"), index=False,
+                                                    float_format="%.6g")
+    plot.make_players(pe.assign(u=u, u_even=u_a, u_odd=u_b), grid, prof, sig_null, bands, a, f["outdir"])
+    print(res.T.to_string(float_format=lambda v: f"{v:.3g}"))
+    print("  s par tranche :", " ".join(f"{b}:{v:.0f}" for b, v in zip(bands, a)))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
              noise_check=step_noise_check, spectrum_check=step_spectrum_check,
              attention=step_attention, clock=step_clock,
              phase=step_phase, lead=step_lead,
-             postype=step_postype, fdt=step_fdt)
+             postype=step_postype, fdt=step_fdt, players_sample=step_players_sample,
+             players_eval=step_players_eval, players=step_players)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

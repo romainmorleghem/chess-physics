@@ -228,3 +228,38 @@ def make_fdt(st, outdir):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "fdt.png"))
     plt.close(fig)
+
+
+def make_players(pe, grid, prof, sig_null, bands, a, outdir):
+    """Piste 5 : profil de σ, fiabilité moitié/moitié, s par joueur."""
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    ax = axes[0]
+    _style(ax, "−Δ log-vraisemblance profilée")
+    ax.plot(grid, prof - prof.min(), "-o", color=SEQ[2], lw=2, ms=4)
+    ax.axhline(1.92, color=MUTED, lw=0.8, ls=":")
+    for v in sig_null:
+        ax.axvline(v, color=SEQ[0], lw=0.8, alpha=0.7)
+    ax.set_xlabel("σ = dispersion de log s entre joueurs (traits clairs : joueurs permutés)", color=MUTED, fontsize=8)
+    ax.set_title("Désordre : profil de σ", color=INK, fontsize=11, loc="left")
+    ax.set_ylim(0, max(10, 1.2 * (prof[0] - prof.min())))
+    ax = axes[1]
+    _style(ax, "u (positions impaires)")
+    ax.scatter(pe.u_even, pe.u_odd, s=14, color=SEQ[1], alpha=0.8, edgecolors="none")
+    ax.set_xlabel("u (positions paires)", color=MUTED, fontsize=9)
+    ax.set_title("Fiabilité moitié/moitié de l'effet joueur", color=INK, fontsize=11, loc="left")
+    ax = axes[2]
+    _style(ax, "s du joueur (cp, log)")
+    ax.set_yscale("log")
+    bi = {b: i for i, b in enumerate(bands)}
+    ax.scatter(pe.band + 100 + np.random.default_rng(0).uniform(-40, 40, len(pe)),
+               a[pe.band.map(bi).values] * np.exp(pe.u), s=14, color=SEQ[1], alpha=0.8, edgecolors="none")
+    ax.plot(np.array(bands) + 100, a, "-", color=INK, lw=1.5, label="s de la tranche")
+    ax.set_xlabel("Elo (tranche du joueur)", color=MUTED, fontsize=9)
+    ax.set_title("Températures individuelles (a posteriori)", color=INK, fontsize=11, loc="left")
+    ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    fig.text(0.01, 0.01, "Blitz, 25 positions par joueur, tous les coups légaux (prof. 10). log s = a(Elo) + d(demi-coup) + échec + u, "
+             "u ~ N(0, σ²), c fixé.", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "players.png"))
+    plt.close(fig)

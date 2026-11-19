@@ -1,0 +1,2 @@
+n_positions,n_players,c,sigma,sigma_lo,sigma_hi,LR,p_value,sigma_perm_mean,sigma_perm_max,split_half_spearman,spearman_brown,spearman_u_vs_elo_in_band,s_band_min,s_band_max
+3320,160,0.5115,0.001,0,0.12,-0.0001447,0.5,0.001,0.001,-0.05662,-0.12,-0.01995,10.39,29.14
