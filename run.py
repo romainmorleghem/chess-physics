@@ -689,6 +689,201 @@ def step_players(cfg):
     print("  s par tranche :", " ".join(f"{b}:{v:.0f}" for b, v in zip(bands, a)))
 
 
+def _entropy_positions(cfg):
+    """Positions Blitz du pilote : les n_per_band premières (ordre aléatoire fixe) de chaque tranche."""
+    e = cfg["entropy"]
+    out = []
+    for (cad, band), rs in spectrum_records(cfg).items():
+        if cad == e["cadence"]:
+            out += [(band, r) for r in rs[:e["n_per_band"]]]
+    return out
+
+
+def step_entropy_eval(cfg):
+    """Pilote piste 8 : évalue les positions filles (K meilleurs coups) puis petites-filles (meilleure réponse)."""
+    import chess
+    e = cfg["entropy"]
+    ecfg = dict(cfg["engine"], depth=e["depth"], multipv="all", workers=e["workers"])
+    df = pd.read_csv(cfg["sample"]["output"])
+    fen = {f"{c}|{b}|{o}": f for c, b, o, f in zip(df.cadence, df.band, df.order, df.fen)}
+    pos = _entropy_positions(cfg)
+    t1 = []
+    for band, r in pos:
+        b = chess.Board(fen[r["key"]])
+        for k, pv in enumerate(r["pvs"][:e["K"]]):
+            c = b.copy(); c.push_uci(pv["move"])
+            if not c.is_game_over():
+                t1.append((f"{r['key']}|{k}", c.fen(), "0000"))
+    print(f"  {len(pos)} positions, {len(t1)} positions filles", flush=True)
+    d1, dt, m = ev.evaluate(t1, ecfg, e["out_children"], ecfg["workers"])
+    if m:
+        print(f"  filles : {m} en {dt / 60:.1f} min", flush=True)
+    t2 = []
+    for key, f2, _ in t1:
+        r = d1[key]
+        if r["pvs"]:
+            c = chess.Board(f2); c.push_uci(r["pvs"][0]["move"])
+            if not c.is_game_over():
+                t2.append((key, c.fen(), "0000"))
+    d2, dt, m = ev.evaluate(t2, ecfg, e["out_grand"], ecfg["workers"])
+    if m:
+        print(f"  petites-filles : {m} en {dt / 60:.1f} min", flush=True)
+
+
+def step_entropy(cfg):
+    """Pilote piste 8 : le choix dépend-il de l'entropie des positions atteintes ? (modèles A et B)"""
+    import chess
+    import entropy as en
+    from scipy.stats import chi2
+    e, f = cfg["entropy"], cfg["fit"]
+    sf = pd.read_csv(os.path.join(f["outdir"], "spectrum_fit.csv"))
+    sc = {int(r.elo_mid) - 100: (r.s, r.c) for r in sf[sf.cadence == e["cadence"]].itertuples()}
+    d1, d2 = ev.load_done(e["out_children"]), ev.load_done(e["out_grand"])
+    df = pd.read_csv(cfg["sample"]["output"])
+    fen = {f"{c}|{b}|{o}": f for c, b, o, f in zip(df.cadence, df.band, df.order, df.fen)}
+    pos = _entropy_positions(cfg)
+    K = e["K"]
+    bands = sorted({b for b, _ in pos})
+    n = len(pos)
+    dE = np.full((n, K), np.nan); Sm, Sa, Lm, La, Na, chk, cap = (np.full((n, K), np.nan) for _ in range(7))
+    idx = np.full(n, -1); band = np.zeros(n, int)
+    for j, (b, r) in enumerate(pos):
+        s_, c_ = sc[b]
+        board = chess.Board(fen[r["key"]])
+        v = en.values(r["pvs"], f)
+        for k, pv in enumerate(r["pvs"][:K]):
+            key = f"{r['key']}|{k}"
+            mv = chess.Move.from_uci(pv["move"])
+            dE[j, k] = v.max() - v[k]
+            cap[j, k] = board.is_capture(mv); chk[j, k] = board.gives_check(mv)
+            if key in d1 and d1[key]["pvs"]:
+                a = en.summarize(d1[key]["pvs"], f, e["good_cp"], s_, c_)
+                Sa[j, k], La[j, k], Na[j, k] = a["S"], a["L"], np.log(a["N"])
+            else:                       # mat ou pat après le coup : l'adversaire n'a aucun coup
+                Sa[j, k], La[j, k], Na[j, k] = 0.0, 0.0, 0.0
+            if key in d2 and d2[key]["pvs"]:
+                g = en.summarize(d2[key]["pvs"], f, e["good_cp"], s_, c_)
+                Sm[j, k], Lm[j, k] = g["S"], g["L"]
+            else:
+                Sm[j, k], Lm[j, k] = 0.0, 0.0
+        if r["played"] in [p["move"] for p in r["pvs"][:K]]:
+            idx[j] = [p["move"] for p in r["pvs"][:K]].index(r["played"])
+        band[j] = bands.index(b)
+    keep = idx >= 0
+    print(f"  {n} positions, coup joué parmi les {K} premiers : {keep.sum()}", flush=True)
+    dE, Sm, Sa, Lm, La, Na, chk, cap, idx, band = (x[keep] for x in (dE, Sm, Sa, Lm, La, Na, chk, cap, idx, band))
+    nb, c = len(bands), 0.5
+    x0 = np.full(nb, np.log(20.0))
+    rows = []
+    specs = {"énergie seule": [],
+             "A1 : S_moi, S_adv": [Sm, Sa],
+             "A2 : + mobilité adv., capture, échec": [Sm, Sa, Na, cap, chk]}
+    base_nll = None
+    for lab, cols in specs.items():
+        X = np.stack(cols, axis=2) if cols else np.zeros(dE.shape + (0,))
+        th, nll = en.fit(en.nll_entropic, np.concatenate([x0, np.zeros(X.shape[2])]), dE, X, idx, band, nb, c)
+        se = en.hessian_se(en.nll_entropic, th, dE, X, idx, band, nb, c)
+        base_nll = nll if base_nll is None else base_nll
+        names = ["lam_S_moi", "lam_S_adv", "lam_logN_adv", "lam_capture", "lam_check"][:X.shape[2]]
+        row = dict(model=lab, n=len(idx), nll=nll, LR_vs_energy=2 * (base_nll - nll), dof=X.shape[2],
+                   p_value=chi2.sf(2 * (base_nll - nll), max(X.shape[2], 1)) if X.shape[2] else np.nan)
+        for nm, v_, s_ in zip(names, th[nb:], se[nb:]):
+            row[nm], row[nm + "_se"] = v_, s_
+        rows.append(row)
+        print(f"  {lab}: nll={nll:.1f} " + " ".join(f"{nm}={v_:+.3f}±{s_:.3f}" for nm, v_, s_ in zip(names, th[nb:], se[nb:])), flush=True)
+    # modèle B : évaluation pratique (énergie libre), κ libres, et κ = 1 imposé
+    th, nll = en.fit(en.nll_practical, np.concatenate([x0, [0.0, 0.0]]), dE, Lm, La, idx, band, nb, c)
+    se = en.hessian_se(en.nll_practical, th, dE, Lm, La, idx, band, nb, c)
+    nll1 = en.fit(lambda z, *a: en.nll_practical(np.concatenate([z, [1.0, 1.0]]), *a), x0, dE, Lm, La, idx, band, nb, c)[1]
+    rows.append(dict(model="B : énergie libre (κ libres)", n=len(idx), nll=nll, LR_vs_energy=2 * (base_nll - nll), dof=2,
+                     p_value=chi2.sf(2 * (base_nll - nll), 2), kappa_moi=th[nb], kappa_moi_se=se[nb],
+                     kappa_adv=th[nb + 1], kappa_adv_se=se[nb + 1]))
+    rows.append(dict(model="B : κ = 1 (joueur rationnel)", n=len(idx), nll=nll1, LR_vs_energy=2 * (base_nll - nll1),
+                     dof=0, p_value=chi2.sf(2 * (nll1 - nll), 2)))
+    print(f"  B: κ_moi={th[nb]:+.3f}±{se[nb]:.3f}  κ_adv={th[nb + 1]:+.3f}±{se[nb + 1]:.3f} ; κ=1 : nll={nll1:.1f} (p vs κ libres = {rows[-1]['p_value']:.2g})", flush=True)
+    # par groupe d'Elo (modèle A1 et B)
+    for lo, hi in cfg["shape"]["elo_groups"]:
+        m = np.isin(band, [i for i, b in enumerate(bands) if lo <= b < hi])
+        bm = band[m] - band[m].min()
+        nbm = bm.max() + 1
+        X = np.stack([Sm, Sa], axis=2)[m]
+        tA, _ = en.fit(en.nll_entropic, np.concatenate([np.full(nbm, np.log(20.0)), [0, 0]]), dE[m], X, idx[m], bm, nbm, c)
+        sA = en.hessian_se(en.nll_entropic, tA, dE[m], X, idx[m], bm, nbm, c)
+        tB, _ = en.fit(en.nll_practical, np.concatenate([np.full(nbm, np.log(20.0)), [0, 0]]), dE[m], Lm[m], La[m], idx[m], bm, nbm, c)
+        sB = en.hessian_se(en.nll_practical, tB, dE[m], Lm[m], La[m], idx[m], bm, nbm, c)
+        rows.append(dict(model=f"groupe {lo}-{hi}", n=int(m.sum()), lam_S_moi=tA[nbm], lam_S_moi_se=sA[nbm],
+                         lam_S_adv=tA[nbm + 1], lam_S_adv_se=sA[nbm + 1], kappa_moi=tB[nbm], kappa_moi_se=sB[nbm],
+                         kappa_adv=tB[nbm + 1], kappa_adv_se=sB[nbm + 1]))
+        r = rows[-1]
+        print(f"  {lo}-{hi}: λ_moi={r['lam_S_moi']:+.2f}±{r['lam_S_moi_se']:.2f} λ_adv={r['lam_S_adv']:+.2f}±{r['lam_S_adv_se']:.2f} "
+              f"κ_moi={r['kappa_moi']:+.2f}±{r['kappa_moi_se']:.2f} κ_adv={r['kappa_adv']:+.2f}±{r['kappa_adv_se']:.2f}", flush=True)
+    # corrélations descriptives entre ΔE et les entropies (confusion)
+    ok = ~np.isnan(dE)
+    cor = pd.DataFrame(dict(dE=dE[ok], S_moi=Sm[ok], S_adv=Sa[ok], L_moi=Lm[ok], L_adv=La[ok],
+                            check=chk[ok], capture=cap[ok])).corr("spearman").round(2)
+    cor.to_csv(os.path.join(f["outdir"], "entropy_corr.csv"))
+    res = pd.DataFrame(rows)
+    res.to_csv(os.path.join(f["outdir"], "entropy.csv"), index=False, float_format="%.4g")
+    print(cor.to_string())
+
+
+def step_heat(cfg):
+    """Chaleur spécifique C = β² Var(H), H = ΔE^c, β = s^-c (loi étirée ajustée par case).
+    C mesure la sensibilité du choix à la température : grande quand plusieurs coups sont en compétition."""
+    import covar as cv
+    import plot
+    from scipy.special import logsumexp
+    f, h = cfg["fit"], cfg["heat"]
+    sf = pd.read_csv(os.path.join(f["outdir"], "spectrum_fit.csv"))
+    sc = {(r.cadence, int(r.elo_mid) - 100): (r.s, r.c) for r in sf.itertuples()}
+    gap_edges = np.array(cfg["postype"]["gap_edges"], float)
+
+    def per_pos(E, s, c):
+        H = np.nan_to_num(E) ** c
+        U = np.where(np.isnan(E), -np.inf, -H / s ** c)
+        P = np.exp(U - logsumexp(U, axis=1, keepdims=True))
+        m1 = (P * H).sum(1)
+        return (P * H ** 2).sum(1) - m1 ** 2, m1, P
+
+    rows, curves = [], []
+    for cad in ("Blitz", "Rapid"):
+        E, idx, d = cv.dataset(cfg, cad)
+        gap = cv.binned(d.gap12.values, gap_edges)
+        for k, b in enumerate(sorted(d.band.unique())):
+            m = (d.band == b).values
+            s, c = sc[(cad, b)]
+            beta = s ** -c
+            var, m1, _ = per_pos(E[m], s, c)
+            hobs = np.nan_to_num(E[m][np.arange(m.sum()), idx[m]]) ** c
+            for g in range(len(gap_edges) - 1):
+                mg = gap[m] == g
+                rows.append(dict(cadence=cad, elo_mid=b + 100, gap_lo=gap_edges[g], n=int(mg.sum()), s=s, c=c,
+                                 C_model=beta ** 2 * var[mg].mean(),
+                                 C_obs=beta ** 2 * ((hobs[mg] - m1[mg]) ** 2).mean()))
+            rows.append(dict(cadence=cad, elo_mid=b + 100, gap_lo=-1, n=int(m.sum()), s=s, c=c,
+                             C_model=beta ** 2 * var.mean(), C_obs=beta ** 2 * ((hobs - m1) ** 2).mean()))
+        # C(s) sur l'ensemble de toutes les positions de la cadence (c = médiane), par tranche d'écart
+        cm = float(np.median([sc[(cad, b)][1] for b in d.band.unique()]))
+        for s in np.geomspace(1, 2000, h["n_grid"]):
+            var, _, _ = per_pos(E, s, cm)
+            C = s ** (-2 * cm) * var
+            curves.append(dict(cadence=cad, s=s, c=cm, gap_lo=-1, C=C.mean()))
+            for g in range(len(gap_edges) - 1):
+                curves.append(dict(cadence=cad, s=s, c=cm, gap_lo=gap_edges[g], C=C[gap == g].mean()))
+    st, cv_ = pd.DataFrame(rows), pd.DataFrame(curves)
+    st.to_csv(os.path.join(f["outdir"], "heat.csv"), index=False, float_format="%.4g")
+    cv_.to_csv(os.path.join(f["outdir"], "heat_curve.csv"), index=False, float_format="%.4g")
+    plot.make_heat(st, cv_, f["outdir"])
+    tot = st[st.gap_lo == -1]
+    print(tot[["cadence", "elo_mid", "s", "C_model", "C_obs"]].to_string(index=False, float_format=lambda v: f"{v:.3f}"))
+    for cad in ("Blitz", "Rapid"):
+        q = cv_[(cv_.cadence == cad)]
+        for g, gg in q.groupby("gap_lo"):
+            print(f"  {cad} écart>={g:g}: pic de C à s = {gg.s.values[gg.C.argmax()]:.1f} cp (C max = {gg.C.max():.3f})")
+    piv = st[st.gap_lo >= 0].groupby(["cadence", "gap_lo"])[["C_model", "C_obs"]].mean()
+    print(piv.to_string(float_format=lambda v: f"{v:.3f}"))
+
+
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
              noise_eval=step_noise_eval, spectrum_eval=step_spectrum_eval,
@@ -696,7 +891,8 @@ STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              attention=step_attention, clock=step_clock,
              phase=step_phase, lead=step_lead,
              postype=step_postype, fdt=step_fdt, players_sample=step_players_sample,
-             players_eval=step_players_eval, players=step_players)
+             players_eval=step_players_eval, players=step_players,
+             entropy_eval=step_entropy_eval, entropy=step_entropy, heat=step_heat)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

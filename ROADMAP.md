@@ -104,6 +104,20 @@
   ne vient donc pas des joueurs mais des positions (forme de f, saillance).
 - Limites : joueurs très actifs seulement, Blitz, effet joueur sur s seulement (pas sur c ni sur Ω_eff).
 
+## Chaleur spécifique (faite)
+- C = β² Var(H), H = ΔE^c, β = s^-c (loi étirée par case) : sensibilité du choix à la température
+  (C = -β d<H>/dβ, k_B = 1). `python run.py heat`, results/heat*.
+- C(s) sur l'ensemble des positions : pic à s* ≈ 10 (Blitz) / 13 cp (Rapid), juste sous les s humains (12-31 cp) :
+  tous les niveaux sont sur le plateau près du maximum (C ≈ 1,4-1,6, sans tendance avec l'Elo).
+- Par type de position, le pic se déplace avec l'écart entre les deux meilleurs coups : s* ≈ 3-5 cp (écart < 30),
+  10 (30-100), 19-23 (100-300), 33-41 (> 300). Les positions où un coup se détache de 100 à 300 cp ont leur pic
+  DANS la plage humaine : ce sont elles qui « discriminent » les niveaux (lien : points de bascule de Barthelemy 2023,
+  difficulté d'Anderson et al. 2016, c croissant avec l'écart, piste 6). Les positions calmes sont « saturées »
+  (choix quasi aléatoire entre coups équivalents, sans conséquence).
+- C observé / C modèle = R de la piste 4 : excès concentré dans les positions à coup unique (écart > 300 :
+  ×2,1 Blitz, ×2,1 Rapid ; ailleurs ×1,0-1,3). On y trouve le coup ou on gaffe lourdement : comportement
+  bimodal que la loi continue ne capte pas (cf. modèle de mélange « voit / ne voit pas », piste 1).
+
 ## Synthèse (après les pistes 1 à 7)
 - Loi de choix p ∝ exp(-(ΔE/s)^c), c ≈ 0,5 (0,45 positions calmes -> 0,65 quand un coup se détache),
   avec un étage d'attention (Ω_eff ~ 20 -> 14 coups envisagés).

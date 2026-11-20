@@ -263,3 +263,39 @@ def make_players(pe, grid, prof, sig_null, bands, a, outdir):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "players.png"))
     plt.close(fig)
+
+
+def make_heat(st, cv_, outdir):
+    """Chaleur spécifique : C(s) de l'ensemble des positions (par écart) et C par tranche d'Elo."""
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    ax = axes[0]
+    _style(ax, "chaleur spécifique C = β² Var(ΔE^c)")
+    ax.set_xscale("log")
+    ax.set_xlabel("échelle s (cp) — « température »", color=MUTED, fontsize=9)
+    ax.set_title("Blitz : C(s) sur l'ensemble des positions", color=INK, fontsize=10, loc="left")
+    q = cv_[cv_.cadence == "Blitz"]
+    gl = sorted(g for g in q.gap_lo.unique() if g >= 0)
+    cols = plt.cm.Blues(np.linspace(0.35, 0.95, len(gl)))
+    for g, col in zip(gl, cols):
+        h = q[q.gap_lo == g]
+        ax.plot(h.s, h.C, color=col, lw=1.6, label=f"écart ≥ {g:g} cp")
+    h = q[q.gap_lo == -1]
+    ax.plot(h.s, h.C, color=INK, lw=2.2, label="toutes")
+    sb = st[(st.cadence == "Blitz") & (st.gap_lo == -1)].s
+    ax.axvspan(sb.min(), sb.max(), color="#eb6834", alpha=0.15, label="s humains (800-2600)")
+    ax.legend(frameon=False, fontsize=7, labelcolor=INK)
+    ax = axes[1]
+    _style(ax, "C moyen par position")
+    ax.set_xlabel("Elo (milieu de tranche)", color=MUTED, fontsize=9)
+    ax.set_title("C prédit (modèle) et « observé » (fluctuations)", color=INK, fontsize=10, loc="left")
+    for cad, col in (("Blitz", "#2a78d6"), ("Rapid", "#eb6834")):
+        h = st[(st.cadence == cad) & (st.gap_lo == -1)]
+        ax.plot(h.elo_mid, h.C_model, "-o", color=col, lw=2, ms=5, label=f"{cad} modèle")
+        ax.plot(h.elo_mid, h.C_obs, "--s", color=col, lw=1.4, ms=4, label=f"{cad} observé")
+    ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    fig.text(0.01, 0.01, "Loi étirée ajustée par case (spectre complet, prof. 12). C observé = β²(H_obs − ⟨H⟩)² ; "
+             "rapport observé/modèle = R de la piste 4.", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "heat.png"))
+    plt.close(fig)
