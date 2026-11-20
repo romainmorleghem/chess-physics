@@ -68,3 +68,26 @@ def hessian_se(fun, x, *args, h=1e-3):
             ei, ej = np.eye(n)[i] * h, np.eye(n)[j] * h
             H[i, j] = H[j, i] = (fun(x + ei + ej, *args) - fun(x + ei, *args) - fun(x + ej, *args) + f0) / h ** 2
     return np.sqrt(np.clip(np.diag(np.linalg.pinv(H)), 0, None))
+
+
+def profile_kappa(dE, Lm, La, idx, band, nb, c, grid):
+    """Profil de vraisemblance du modèle B sur une grille (κ_moi, κ_adv) ; log s par tranche optimisé
+    à chaque point (la nll n'est pas dérivable en κ à cause du décalage par le minimum)."""
+    out = np.full((len(grid), len(grid)), np.nan)
+    x = np.full(nb, np.log(20.0))
+    for a, km in enumerate(grid):
+        for b, ka in enumerate(grid):
+            r = minimize(lambda z: nll_practical(np.concatenate([z, [km, ka]]), dE, Lm, La, idx, band, nb, c),
+                         x, method="L-BFGS-B")
+            out[a, b] = r.fun
+            x = r.x
+    return out
+
+
+def profile_summary(P, grid):
+    """Meilleur point et IC 95 % marginaux (profil : Δnll <= 1,92)."""
+    a, b = np.unravel_index(np.nanargmin(P), P.shape)
+    pm, pa = P.min(1), P.min(0)
+    okm, oka = grid[pm <= P.min() + 1.92], grid[pa <= P.min() + 1.92]
+    return dict(kappa_moi=grid[a], kappa_moi_lo=okm.min(), kappa_moi_hi=okm.max(),
+                kappa_adv=grid[b], kappa_adv_lo=oka.min(), kappa_adv_hi=oka.max(), nll_best=P.min())

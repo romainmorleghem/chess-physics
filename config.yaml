@@ -96,6 +96,9 @@ entropy:                         # piste 8 (pilote) : énergie contre entropie d
   good_cp: 50                    # « bon coup » : à moins de 50 cp du meilleur
   out_children: data/evals_entropy_children_d10.jsonl
   out_grand: data/evals_entropy_grand_d10.jsonl
+  kappa_min: -0.5
+  kappa_max: 1.5
+  kappa_step: 0.1
 
 heat:                            # chaleur spécifique C = β² Var(ΔE^c)
   n_grid: 40

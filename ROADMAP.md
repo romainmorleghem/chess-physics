@@ -118,6 +118,21 @@
   ×2,1 Blitz, ×2,1 Rapid ; ailleurs ×1,0-1,3). On y trouve le coup ou on gaffe lourdement : comportement
   bimodal que la loi continue ne capte pas (cf. modèle de mélange « voit / ne voit pas », piste 1).
 
+## Piste 8 (pilote fait) : énergie contre entropie (tactique / stratégie)
+- 1008 positions Blitz (112 par tranche), 8 meilleurs coups ; positions filles (adversaire au trait) et petites-filles
+  (après la meilleure réponse) évaluées sur tous les coups, prof. 10 (25 min). `run.py entropy_eval | entropy`.
+- S = log N_bons (coups à < 50 cp du meilleur) ; L = <ΔE> sous la loi de la tranche (perte attendue).
+- (A) p ∝ exp[-(ΔE/s)^c + λ_moi S_moi + λ_adv S_adv] : LR = 55 vs énergie seule.
+  λ_moi = +0,27 ± 0,06 (garder ses options), λ_adv = -0,37 ± 0,06 (priver l'adversaire des siennes) ;
+  ~10-15 cp par doublement d'options. Robuste : capture/échec contrôlés (capture +1,1 : saillance),
+  énergie non paramétrique, c = 0,35-0,7. Corrélation ΔE / S_adv (-0,45) joue contre l'effet.
+  Par Elo : λ_moi 0,40 -> 0,27 -> 0,15 (faibles = tiennent plus à leurs options, ~2σ) ; λ_adv ≈ -0,3 à -0,5.
+- (B) énergie libre « rationnelle » E_prat = ΔE + κ_moi L_moi - κ_adv L_adv (profil sur grille, la nll n'est pas
+  dérivable en κ) : κ ≈ 0,2 [0 ; 0,3] pour les deux ; LR = 8,5 seulement ; κ = 1 rejeté (LR = 91).
+  => les joueurs réagissent au NOMBRE de bonnes options (heuristique), pas à un calcul de leurs chances d'erreur.
+- À faire : échantillon complet (~3 h), λ selon le score (lien piste 3 : « simplifier » = réduire l'entropie),
+  seuil de 50 cp à faire varier, Rapid, entropie comme saillance de l'étage 1 (piste 7).
+
 ## Synthèse (après les pistes 1 à 7)
 - Loi de choix p ∝ exp(-(ΔE/s)^c), c ≈ 0,5 (0,45 positions calmes -> 0,65 quand un coup se détache),
   avec un étage d'attention (Ω_eff ~ 20 -> 14 coups envisagés).

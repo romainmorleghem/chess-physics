@@ -277,9 +277,10 @@ def make_heat(st, cv_, outdir):
     q = cv_[cv_.cadence == "Blitz"]
     gl = sorted(g for g in q.gap_lo.unique() if g >= 0)
     cols = plt.cm.Blues(np.linspace(0.35, 0.95, len(gl)))
-    for g, col in zip(gl, cols):
+    for k, (g, col) in enumerate(zip(gl, cols)):
         h = q[q.gap_lo == g]
-        ax.plot(h.s, h.C, color=col, lw=1.6, label=f"écart ≥ {g:g} cp")
+        lab = f"écart {g:g}–{gl[k + 1]:g} cp" if k + 1 < len(gl) else f"écart > {g:g} cp"
+        ax.plot(h.s, h.C, color=col, lw=1.6, label=lab)
     h = q[q.gap_lo == -1]
     ax.plot(h.s, h.C, color=INK, lw=2.2, label="toutes")
     sb = st[(st.cadence == "Blitz") & (st.gap_lo == -1)].s
@@ -298,4 +299,41 @@ def make_heat(st, cv_, outdir):
              "rapport observé/modèle = R de la piste 4.", color=MUTED, fontsize=8)
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "heat.png"))
+    plt.close(fig)
+
+
+def make_entropy(res, P, grid, outdir):
+    """Pilote énergie/entropie : λ par groupe d'Elo et profil de vraisemblance de (κ_moi, κ_adv)."""
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    ax = axes[0]
+    _style(ax, "λ (log-cote par nat d'entropie)")
+    g = res[res.model.str.startswith("B profil, groupe")]
+    x = np.arange(len(g))
+    for k, (col, nm, lab) in enumerate((("#2a78d6", "lam_S_moi", "λ_moi : garder ses options"),
+                                        ("#eb6834", "lam_S_adv", "λ_adv : options de l'adversaire"))):
+        ax.errorbar(x + (k - 0.5) * 0.1, g[nm], yerr=1.96 * g[nm + "_se"], fmt="-o", color=col, lw=2, ms=6,
+                    capsize=3, label=lab, mec="#fcfcfb", mew=1.2)
+    ax.axhline(0, color=MUTED, lw=0.8, ls=":")
+    ax.set_xticks(x)
+    ax.set_xticklabels([m.split("groupe ")[1] for m in g.model], color=MUTED, fontsize=9)
+    ax.set_xlabel("groupe d'Elo", color=MUTED, fontsize=9)
+    ax.set_title("Préférence pour l'entropie des positions atteintes", color=INK, fontsize=10, loc="left")
+    ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    ax = axes[1]
+    D = P - P.min()
+    im = ax.imshow(np.minimum(D, 60).T, origin="lower", extent=[grid[0], grid[-1], grid[0], grid[-1]],
+                   cmap="Blues_r", aspect="auto")
+    ax.contour(grid, grid, D.T, levels=[3.0], colors=INK, linewidths=1.2)
+    ax.plot([1], [1], "o", color="#eb6834", ms=8, label="joueur « rationnel » (κ = 1)")
+    ax.plot([0], [0], "s", color=MUTED, ms=6, label="énergie seule (κ = 0)")
+    ax.set_xlabel("κ_moi (poids de mes erreurs futures)", color=MUTED, fontsize=9)
+    ax.set_ylabel("κ_adv (poids des erreurs adverses)", color=MUTED, fontsize=9)
+    ax.set_title("Énergie libre : profil de −log-vraisemblance", color=INK, fontsize=10, loc="left")
+    ax.legend(frameon=False, fontsize=8, labelcolor=INK, loc="upper left")
+    fig.colorbar(im, ax=ax, fraction=0.046)
+    fig.text(0.01, 0.01, "Pilote Blitz, 837 positions, 8 coups candidats ; entropies et pertes attendues à prof. 10. "
+             "Barres : IC 95 % ; contour : région de confiance 95 % (Δnll = 3).", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "entropy.png"))
     plt.close(fig)

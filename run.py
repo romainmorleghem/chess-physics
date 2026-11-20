@@ -791,32 +791,31 @@ def step_entropy(cfg):
             row[nm], row[nm + "_se"] = v_, s_
         rows.append(row)
         print(f"  {lab}: nll={nll:.1f} " + " ".join(f"{nm}={v_:+.3f}±{s_:.3f}" for nm, v_, s_ in zip(names, th[nb:], se[nb:])), flush=True)
-    # modèle B : évaluation pratique (énergie libre), κ libres, et κ = 1 imposé
-    th, nll = en.fit(en.nll_practical, np.concatenate([x0, [0.0, 0.0]]), dE, Lm, La, idx, band, nb, c)
-    se = en.hessian_se(en.nll_practical, th, dE, Lm, La, idx, band, nb, c)
-    nll1 = en.fit(lambda z, *a: en.nll_practical(np.concatenate([z, [1.0, 1.0]]), *a), x0, dE, Lm, La, idx, band, nb, c)[1]
-    rows.append(dict(model="B : énergie libre (κ libres)", n=len(idx), nll=nll, LR_vs_energy=2 * (base_nll - nll), dof=2,
-                     p_value=chi2.sf(2 * (base_nll - nll), 2), kappa_moi=th[nb], kappa_moi_se=se[nb],
-                     kappa_adv=th[nb + 1], kappa_adv_se=se[nb + 1]))
-    rows.append(dict(model="B : κ = 1 (joueur rationnel)", n=len(idx), nll=nll1, LR_vs_energy=2 * (base_nll - nll1),
-                     dof=0, p_value=chi2.sf(2 * (nll1 - nll), 2)))
-    print(f"  B: κ_moi={th[nb]:+.3f}±{se[nb]:.3f}  κ_adv={th[nb + 1]:+.3f}±{se[nb + 1]:.3f} ; κ=1 : nll={nll1:.1f} (p vs κ libres = {rows[-1]['p_value']:.2g})", flush=True)
-    # par groupe d'Elo (modèle A1 et B)
-    for lo, hi in cfg["shape"]["elo_groups"]:
-        m = np.isin(band, [i for i, b in enumerate(bands) if lo <= b < hi])
+    # modèle B : évaluation pratique (énergie libre), profil sur grille de (κ_moi, κ_adv)
+    grid = np.round(np.arange(e["kappa_min"], e["kappa_max"] + 1e-9, e["kappa_step"]), 3)
+    i1 = int(np.argmin(np.abs(grid - 1.0)))
+    i0 = int(np.argmin(np.abs(grid)))
+    for lab, m in [("tous", np.ones(len(idx), bool))] + [
+            (f"groupe {lo}-{hi}", np.isin(band, [i for i, b in enumerate(bands) if lo <= b < hi]))
+            for lo, hi in cfg["shape"]["elo_groups"]]:
         bm = band[m] - band[m].min()
         nbm = bm.max() + 1
+        P = en.profile_kappa(dE[m], Lm[m], La[m], idx[m], bm, nbm, c, grid)
+        smy = en.profile_summary(P, grid)
         X = np.stack([Sm, Sa], axis=2)[m]
-        tA, _ = en.fit(en.nll_entropic, np.concatenate([np.full(nbm, np.log(20.0)), [0, 0]]), dE[m], X, idx[m], bm, nbm, c)
+        tA, nA = en.fit(en.nll_entropic, np.concatenate([np.full(nbm, np.log(20.0)), [0, 0]]), dE[m], X, idx[m], bm, nbm, c)
         sA = en.hessian_se(en.nll_entropic, tA, dE[m], X, idx[m], bm, nbm, c)
-        tB, _ = en.fit(en.nll_practical, np.concatenate([np.full(nbm, np.log(20.0)), [0, 0]]), dE[m], Lm[m], La[m], idx[m], bm, nbm, c)
-        sB = en.hessian_se(en.nll_practical, tB, dE[m], Lm[m], La[m], idx[m], bm, nbm, c)
-        rows.append(dict(model=f"groupe {lo}-{hi}", n=int(m.sum()), lam_S_moi=tA[nbm], lam_S_moi_se=sA[nbm],
-                         lam_S_adv=tA[nbm + 1], lam_S_adv_se=sA[nbm + 1], kappa_moi=tB[nbm], kappa_moi_se=sB[nbm],
-                         kappa_adv=tB[nbm + 1], kappa_adv_se=sB[nbm + 1]))
+        rows.append(dict(model=f"B profil, {lab}", n=int(m.sum()), **smy, nll_energy=P[i0, i0],
+                         LR_vs_energy=2 * (P[i0, i0] - P.min()), LR_kappa1_vs_best=2 * (P[i1, i1] - P.min()),
+                         p_kappa1=chi2.sf(2 * (P[i1, i1] - P.min()), 2),
+                         lam_S_moi=tA[nbm], lam_S_moi_se=sA[nbm], lam_S_adv=tA[nbm + 1], lam_S_adv_se=sA[nbm + 1]))
         r = rows[-1]
-        print(f"  {lo}-{hi}: λ_moi={r['lam_S_moi']:+.2f}±{r['lam_S_moi_se']:.2f} λ_adv={r['lam_S_adv']:+.2f}±{r['lam_S_adv_se']:.2f} "
-              f"κ_moi={r['kappa_moi']:+.2f}±{r['kappa_moi_se']:.2f} κ_adv={r['kappa_adv']:+.2f}±{r['kappa_adv_se']:.2f}", flush=True)
+        print(f"  {lab}: λ_moi={r['lam_S_moi']:+.2f}±{r['lam_S_moi_se']:.2f} λ_adv={r['lam_S_adv']:+.2f}±{r['lam_S_adv_se']:.2f} | "
+              f"κ_moi={r['kappa_moi']:.2f} [{r['kappa_moi_lo']:.2f};{r['kappa_moi_hi']:.2f}] "
+              f"κ_adv={r['kappa_adv']:.2f} [{r['kappa_adv_lo']:.2f};{r['kappa_adv_hi']:.2f}] "
+              f"LR(κ=0)={r['LR_vs_energy']:.1f} LR(κ=1)={r['LR_kappa1_vs_best']:.1f}", flush=True)
+        if lab == "tous":
+            np.save(os.path.join(f["outdir"], "entropy_kappa_profile.npy"), P)
     # corrélations descriptives entre ΔE et les entropies (confusion)
     ok = ~np.isnan(dE)
     cor = pd.DataFrame(dict(dE=dE[ok], S_moi=Sm[ok], S_adv=Sa[ok], L_moi=Lm[ok], L_adv=La[ok],
@@ -824,6 +823,8 @@ def step_entropy(cfg):
     cor.to_csv(os.path.join(f["outdir"], "entropy_corr.csv"))
     res = pd.DataFrame(rows)
     res.to_csv(os.path.join(f["outdir"], "entropy.csv"), index=False, float_format="%.4g")
+    import plot
+    plot.make_entropy(res, np.load(os.path.join(f["outdir"], "entropy_kappa_profile.npy")), grid, f["outdir"])
     print(cor.to_string())
 
 
