@@ -102,3 +102,12 @@ entropy:                         # piste 8 (pilote) : énergie contre entropie d
 
 heat:                            # chaleur spécifique C = β² Var(ΔE^c)
   n_grid: 40
+
+transition:                      # recherche d'une transition : trouve/gaffe, effet de taille
+  seed: 7
+  n_boot: 200
+  n_bins_curve: 8
+  nlegal_edges: [0, 27, 32, 36, 40, 100]   # coups légaux, hors échec (~quintiles)
+  s_min: 1
+  s_max: 1000
+  n_grid: 80

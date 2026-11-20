@@ -884,6 +884,124 @@ def step_heat(cfg):
     piv = st[st.gap_lo >= 0].groupby(["cadence", "gap_lo"])[["C_model", "C_obs"]].mean()
     print(piv.to_string(float_format=lambda v: f"{v:.3f}"))
 
+def step_transition(cfg):
+    """Recherche d'une transition : (1) trouve/gaffe bimodal et raideur de la bascule ;
+    (2) effet de taille sur le pic de C (nombre de coups légaux). Sans Stockfish."""
+    import covar as cv
+    import plot
+    import transition as tr
+    f, t = cfg["fit"], cfg["transition"]
+    rng = np.random.default_rng(t["seed"])
+    sf = pd.read_csv(os.path.join(f["outdir"], "spectrum_fit.csv"))
+    sc = {(r.cadence, int(r.elo_mid) - 100): (r.s, r.c) for r in sf.itertuples()}
+    gap_edges = np.array(cfg["postype"]["gap_edges"], float)
+    n_edges = np.array(t["nlegal_edges"], float)
+    s_grid = np.geomspace(t["s_min"], t["s_max"], t["n_grid"])
+    logs = np.log(s_grid)
+    loss_rows, sharp_rows, curve_rows, fss_rows, size_rows, hist_rows = [], [], [], [], [], []
+    for cad in ("Blitz", "Rapid"):
+        E, idx, d = cv.dataset(cfg, cad)
+        gap = cv.binned(d.gap12.values, gap_edges)
+        P = np.zeros_like(E)
+        for b in d.band.unique():
+            m = (d.band == b).values
+            P[m] = tr.probs(E[m], *sc[(cad, b)])[0]
+        obs, pred = tr.loss_classes(E, idx, P)
+        pm = pred[:, 0]
+        y = obs[:, 0]
+        lp = E[np.arange(len(idx)), idx]
+        for g in range(len(gap_edges) - 1):
+            m = gap == g
+            n = int(m.sum())
+            ab = tr.fit_sharpness(y[m], pm[m])
+            bb = np.array([tr.fit_sharpness(y[m][i], pm[m][i])
+                           for i in (rng.integers(0, n, n) for _ in range(t["n_boot"]))])
+            sharp_rows.append(dict(cadence=cad, gap_lo=gap_edges[g], n=n, a=ab[0], b=ab[1],
+                                   b_lo=np.quantile(bb[:, 1], .025), b_hi=np.quantile(bb[:, 1], .975)))
+            for k, lab in enumerate(("bon<50", "moyen50-300", "gaffe>=300")):
+                ob = np.array([obs[m][i, k].mean() / max(pred[m][i, k].mean(), 1e-12)
+                               for i in (rng.integers(0, n, n) for _ in range(t["n_boot"]))])
+                loss_rows.append(dict(cadence=cad, gap_lo=gap_edges[g], n=n, classe=lab, obs=obs[m, k].mean(),
+                                      pred=pred[m, k].mean(), ratio=obs[m, k].mean() / max(pred[m, k].mean(), 1e-12),
+                                      ratio_lo=np.quantile(ob, .025), ratio_hi=np.quantile(ob, .975)))
+            # courbe P(trouve) observée contre prédite (déciles de p_modèle)
+            q = np.quantile(pm[m], np.linspace(0, 1, t["n_bins_curve"] + 1))
+            kb = np.clip(np.searchsorted(q, pm[m], side="right") - 1, 0, t["n_bins_curve"] - 1)
+            for j in range(t["n_bins_curve"]):
+                w = kb == j
+                curve_rows.append(dict(cadence=cad, gap_lo=gap_edges[g], p_model=pm[m][w].mean(),
+                                       p_obs=y[m][w].mean(), n=int(w.sum())))
+            # histogramme de la perte jouée (log), observé et prédit
+            he = np.concatenate([[0, 1], np.geomspace(5, 1001, 16)])
+            ho = np.histogram(lp[m], he)[0] / n
+            Ef = np.nan_to_num(E[m], nan=-1)
+            hp = np.array([(P[m] * ((Ef >= a) & (Ef < b2))).sum(1).mean() for a, b2 in zip(he[:-1], he[1:])])
+            for a, b2, o, p_ in zip(he[:-1], he[1:], ho, hp):
+                hist_rows.append(dict(cadence=cad, gap_lo=gap_edges[g], lo=a, hi=b2, obs=o, pred=p_))
+        # --- effet de taille ---
+        keep = ~d.in_check.values
+        cm = float(np.median([sc[(cad, b)][1] for b in d.band.unique()]))
+        Cm = tr.heat_matrix(E[keep], s_grid, cm)
+        nb = cv.binned(d.n_legal.values[keep], n_edges)
+        ng = len(gap_edges) - 1
+        ply_b = cv.binned(d.ply.values[keep], np.array(cfg["phase"]["ply_edges"], float))
+        strata = {1: gap[keep], 2: gap[keep] + ng * ply_b}
+
+        def curve(ix, strat=0):
+            if not strat:
+                return Cm[ix].mean(0)
+            gk = strata[strat]
+            wg = np.bincount(gk) / len(gk)
+            out, wt = np.zeros(len(s_grid)), 0.0
+            for g in np.unique(gk):
+                ii = ix[gk[ix] == g]
+                if len(ii):
+                    out += wg[g] * Cm[ii].mean(0)
+                    wt += wg[g]
+            return out / wt
+
+        for strat in (0, 1, 2):
+            for j in range(len(n_edges) - 1):
+                ix = np.where(nb == j)[0]
+                cvv = curve(ix, strat)
+                ps = tr.peak_stats(logs, cvv)
+                bs = np.array([tr.peak_stats(logs, curve(ix[rng.integers(0, len(ix), len(ix))], strat))
+                               for _ in range(t["n_boot"])])
+                lab = ("brut", "repondéré écart", "repondéré écart+phase")[strat]
+                size_rows.append(dict(cadence=cad, mode=lab, n_lo=n_edges[j], n_hi=n_edges[j + 1], n=len(ix),
+                                      n_legal_mean=d.n_legal.values[keep][ix].mean(),
+                                      s_peak=ps[0], s_lo=np.nanquantile(bs[:, 0], .025), s_hi=np.nanquantile(bs[:, 0], .975),
+                                      C_max=ps[1], C_lo=np.nanquantile(bs[:, 1], .025), C_hi=np.nanquantile(bs[:, 1], .975),
+                                      width_dec=ps[2], w_lo=np.nanquantile(bs[:, 2], .025), w_hi=np.nanquantile(bs[:, 2], .975)))
+                for s, v in zip(s_grid, cvv):
+                    fss_rows.append(dict(cadence=cad, mode=lab, n_lo=n_edges[j], s=s, C=v))
+        # témoin : positions à >= 40 coups (hors échec) réduites au hasard à la taille moyenne de chaque tranche
+        big = np.where(nb == len(n_edges) - 2)[0]
+        Eb = E[keep][big]
+        for j in range(len(n_edges) - 1):
+            ix = np.where(nb == j)[0]
+            nt = int(round(d.n_legal.values[keep][ix].mean()))
+            cvv = tr.heat_matrix(tr.subsample_null(Eb, min(nt, int((~np.isnan(Eb)).sum(1).min())), rng), s_grid, cm).mean(0)
+            ps = tr.peak_stats(logs, cvv)
+            size_rows.append(dict(cadence=cad, mode="témoin (>=40 réduits)", n_lo=n_edges[j], n_hi=n_edges[j + 1],
+                                  n=len(big), n_legal_mean=nt, s_peak=ps[0], C_max=ps[1], width_dec=ps[2]))
+            for s, v in zip(s_grid, cvv):
+                fss_rows.append(dict(cadence=cad, mode="témoin (>=40 réduits)", n_lo=n_edges[j], s=s, C=v))
+    out = f["outdir"]
+    lo, sh, cu, hi, sz, fs = (pd.DataFrame(r) for r in (loss_rows, sharp_rows, curve_rows, hist_rows, size_rows, fss_rows))
+    for name, df_ in (("transition_loss", lo), ("transition_sharpness", sh), ("transition_curve", cu),
+                      ("transition_hist", hi), ("transition_size", sz), ("transition_size_curve", fs)):
+        df_.to_csv(os.path.join(out, name + ".csv"), index=False, float_format="%.4g")
+    plot.make_transition(sh, cu, hi, sz, fs, out)
+    fl = lambda v: f"{v:.2f}"  # noqa: E731
+    print("== Test 1 : classes de perte, observé/prédit ==")
+    print(lo.pivot_table(index=["cadence", "gap_lo"], columns="classe", values="ratio").to_string(float_format=fl))
+    print("== Raideur b (1 = modèle continu) ==")
+    print(sh.to_string(index=False, float_format=fl))
+    print("== Test 2 : effet de taille (hors échec) ==")
+    print(sz[["cadence", "mode", "n_lo", "n_hi", "n_legal_mean", "s_peak", "s_lo", "s_hi", "C_max", "C_lo", "C_hi",
+              "width_dec", "w_lo", "w_hi"]].to_string(index=False, float_format=fl))
+
 
 STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              evaluate=step_evaluate, fit=step_fit, shape=step_shape,
@@ -893,7 +1011,8 @@ STEPS = dict(download=step_download, sample=step_sample, timing=step_timing,
              phase=step_phase, lead=step_lead,
              postype=step_postype, fdt=step_fdt, players_sample=step_players_sample,
              players_eval=step_players_eval, players=step_players,
-             entropy_eval=step_entropy_eval, entropy=step_entropy, heat=step_heat)
+             entropy_eval=step_entropy_eval, entropy=step_entropy, heat=step_heat,
+             transition=step_transition)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

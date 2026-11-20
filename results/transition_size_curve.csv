@@ -1,0 +1,3201 @@
+cadence,mode,n_lo,s,C
+Blitz,brut,0,1,0.5866
+Blitz,brut,0,1.091,0.6248
+Blitz,brut,0,1.191,0.6642
+Blitz,brut,0,1.3,0.7047
+Blitz,brut,0,1.419,0.7459
+Blitz,brut,0,1.548,0.7877
+Blitz,brut,0,1.69,0.8298
+Blitz,brut,0,1.844,0.872
+Blitz,brut,0,2.013,0.9138
+Blitz,brut,0,2.197,0.955
+Blitz,brut,0,2.397,0.9953
+Blitz,brut,0,2.617,1.034
+Blitz,brut,0,2.856,1.072
+Blitz,brut,0,3.117,1.107
+Blitz,brut,0,3.401,1.141
+Blitz,brut,0,3.712,1.172
+Blitz,brut,0,4.051,1.201
+Blitz,brut,0,4.421,1.227
+Blitz,brut,0,4.826,1.25
+Blitz,brut,0,5.266,1.27
+Blitz,brut,0,5.748,1.287
+Blitz,brut,0,6.273,1.302
+Blitz,brut,0,6.846,1.313
+Blitz,brut,0,7.472,1.322
+Blitz,brut,0,8.154,1.328
+Blitz,brut,0,8.9,1.331
+Blitz,brut,0,9.713,1.331
+Blitz,brut,0,10.6,1.329
+Blitz,brut,0,11.57,1.324
+Blitz,brut,0,12.63,1.317
+Blitz,brut,0,13.78,1.307
+Blitz,brut,0,15.04,1.294
+Blitz,brut,0,16.41,1.279
+Blitz,brut,0,17.91,1.26
+Blitz,brut,0,19.55,1.239
+Blitz,brut,0,21.34,1.214
+Blitz,brut,0,23.29,1.187
+Blitz,brut,0,25.41,1.156
+Blitz,brut,0,27.74,1.123
+Blitz,brut,0,30.27,1.086
+Blitz,brut,0,33.04,1.047
+Blitz,brut,0,36.05,1.005
+Blitz,brut,0,39.35,0.9612
+Blitz,brut,0,42.94,0.9156
+Blitz,brut,0,46.87,0.8688
+Blitz,brut,0,51.15,0.8212
+Blitz,brut,0,55.83,0.7732
+Blitz,brut,0,60.93,0.7253
+Blitz,brut,0,66.49,0.678
+Blitz,brut,0,72.57,0.6317
+Blitz,brut,0,79.2,0.5868
+Blitz,brut,0,86.44,0.5435
+Blitz,brut,0,94.34,0.5022
+Blitz,brut,0,103,0.463
+Blitz,brut,0,112.4,0.426
+Blitz,brut,0,122.6,0.3913
+Blitz,brut,0,133.8,0.3589
+Blitz,brut,0,146.1,0.3289
+Blitz,brut,0,159.4,0.3011
+Blitz,brut,0,174,0.2754
+Blitz,brut,0,189.9,0.2518
+Blitz,brut,0,207.2,0.2301
+Blitz,brut,0,226.2,0.2102
+Blitz,brut,0,246.8,0.192
+Blitz,brut,0,269.4,0.1753
+Blitz,brut,0,294,0.1601
+Blitz,brut,0,320.9,0.1463
+Blitz,brut,0,350.2,0.1336
+Blitz,brut,0,382.2,0.122
+Blitz,brut,0,417.1,0.1115
+Blitz,brut,0,455.2,0.1019
+Blitz,brut,0,496.8,0.0931
+Blitz,brut,0,542.2,0.0851
+Blitz,brut,0,591.8,0.0778
+Blitz,brut,0,645.8,0.07114
+Blitz,brut,0,704.9,0.06505
+Blitz,brut,0,769.3,0.0595
+Blitz,brut,0,839.6,0.05443
+Blitz,brut,0,916.3,0.0498
+Blitz,brut,0,1000,0.04557
+Blitz,brut,27,1,0.6521
+Blitz,brut,27,1.091,0.7028
+Blitz,brut,27,1.191,0.7556
+Blitz,brut,27,1.3,0.8102
+Blitz,brut,27,1.419,0.8663
+Blitz,brut,27,1.548,0.9235
+Blitz,brut,27,1.69,0.9815
+Blitz,brut,27,1.844,1.04
+Blitz,brut,27,2.013,1.098
+Blitz,brut,27,2.197,1.155
+Blitz,brut,27,2.397,1.212
+Blitz,brut,27,2.617,1.267
+Blitz,brut,27,2.856,1.319
+Blitz,brut,27,3.117,1.37
+Blitz,brut,27,3.401,1.417
+Blitz,brut,27,3.712,1.461
+Blitz,brut,27,4.051,1.501
+Blitz,brut,27,4.421,1.538
+Blitz,brut,27,4.826,1.57
+Blitz,brut,27,5.266,1.599
+Blitz,brut,27,5.748,1.623
+Blitz,brut,27,6.273,1.642
+Blitz,brut,27,6.846,1.658
+Blitz,brut,27,7.472,1.669
+Blitz,brut,27,8.154,1.676
+Blitz,brut,27,8.9,1.68
+Blitz,brut,27,9.713,1.679
+Blitz,brut,27,10.6,1.675
+Blitz,brut,27,11.57,1.667
+Blitz,brut,27,12.63,1.655
+Blitz,brut,27,13.78,1.638
+Blitz,brut,27,15.04,1.618
+Blitz,brut,27,16.41,1.592
+Blitz,brut,27,17.91,1.562
+Blitz,brut,27,19.55,1.527
+Blitz,brut,27,21.34,1.486
+Blitz,brut,27,23.29,1.441
+Blitz,brut,27,25.41,1.39
+Blitz,brut,27,27.74,1.335
+Blitz,brut,27,30.27,1.276
+Blitz,brut,27,33.04,1.214
+Blitz,brut,27,36.05,1.148
+Blitz,brut,27,39.35,1.081
+Blitz,brut,27,42.94,1.014
+Blitz,brut,27,46.87,0.946
+Blitz,brut,27,51.15,0.8791
+Blitz,brut,27,55.83,0.8138
+Blitz,brut,27,60.93,0.7508
+Blitz,brut,27,66.49,0.6905
+Blitz,brut,27,72.57,0.6333
+Blitz,brut,27,79.2,0.5796
+Blitz,brut,27,86.44,0.5294
+Blitz,brut,27,94.34,0.4828
+Blitz,brut,27,103,0.4398
+Blitz,brut,27,112.4,0.4002
+Blitz,brut,27,122.6,0.364
+Blitz,brut,27,133.8,0.3308
+Blitz,brut,27,146.1,0.3007
+Blitz,brut,27,159.4,0.2732
+Blitz,brut,27,174,0.2483
+Blitz,brut,27,189.9,0.2256
+Blitz,brut,27,207.2,0.2051
+Blitz,brut,27,226.2,0.1865
+Blitz,brut,27,246.8,0.1696
+Blitz,brut,27,269.4,0.1544
+Blitz,brut,27,294,0.1405
+Blitz,brut,27,320.9,0.128
+Blitz,brut,27,350.2,0.1166
+Blitz,brut,27,382.2,0.1062
+Blitz,brut,27,417.1,0.09684
+Blitz,brut,27,455.2,0.08832
+Blitz,brut,27,496.8,0.08057
+Blitz,brut,27,542.2,0.07353
+Blitz,brut,27,591.8,0.06713
+Blitz,brut,27,645.8,0.0613
+Blitz,brut,27,704.9,0.056
+Blitz,brut,27,769.3,0.05117
+Blitz,brut,27,839.6,0.04676
+Blitz,brut,27,916.3,0.04275
+Blitz,brut,27,1000,0.03909
+Blitz,brut,32,1,0.6719
+Blitz,brut,32,1.091,0.7271
+Blitz,brut,32,1.191,0.785
+Blitz,brut,32,1.3,0.8455
+Blitz,brut,32,1.419,0.9081
+Blitz,brut,32,1.548,0.9725
+Blitz,brut,32,1.69,1.038
+Blitz,brut,32,1.844,1.105
+Blitz,brut,32,2.013,1.172
+Blitz,brut,32,2.197,1.238
+Blitz,brut,32,2.397,1.303
+Blitz,brut,32,2.617,1.367
+Blitz,brut,32,2.856,1.428
+Blitz,brut,32,3.117,1.487
+Blitz,brut,32,3.401,1.541
+Blitz,brut,32,3.712,1.592
+Blitz,brut,32,4.051,1.638
+Blitz,brut,32,4.421,1.678
+Blitz,brut,32,4.826,1.713
+Blitz,brut,32,5.266,1.743
+Blitz,brut,32,5.748,1.767
+Blitz,brut,32,6.273,1.785
+Blitz,brut,32,6.846,1.798
+Blitz,brut,32,7.472,1.805
+Blitz,brut,32,8.154,1.807
+Blitz,brut,32,8.9,1.804
+Blitz,brut,32,9.713,1.796
+Blitz,brut,32,10.6,1.784
+Blitz,brut,32,11.57,1.767
+Blitz,brut,32,12.63,1.746
+Blitz,brut,32,13.78,1.72
+Blitz,brut,32,15.04,1.689
+Blitz,brut,32,16.41,1.654
+Blitz,brut,32,17.91,1.615
+Blitz,brut,32,19.55,1.57
+Blitz,brut,32,21.34,1.521
+Blitz,brut,32,23.29,1.467
+Blitz,brut,32,25.41,1.41
+Blitz,brut,32,27.74,1.348
+Blitz,brut,32,30.27,1.283
+Blitz,brut,32,33.04,1.216
+Blitz,brut,32,36.05,1.147
+Blitz,brut,32,39.35,1.077
+Blitz,brut,32,42.94,1.007
+Blitz,brut,32,46.87,0.9376
+Blitz,brut,32,51.15,0.8697
+Blitz,brut,32,55.83,0.804
+Blitz,brut,32,60.93,0.7408
+Blitz,brut,32,66.49,0.6808
+Blitz,brut,32,72.57,0.624
+Blitz,brut,32,79.2,0.5708
+Blitz,brut,32,86.44,0.5213
+Blitz,brut,32,94.34,0.4754
+Blitz,brut,32,103,0.433
+Blitz,brut,32,112.4,0.3941
+Blitz,brut,32,122.6,0.3585
+Blitz,brut,32,133.8,0.326
+Blitz,brut,32,146.1,0.2964
+Blitz,brut,32,159.4,0.2695
+Blitz,brut,32,174,0.245
+Blitz,brut,32,189.9,0.2228
+Blitz,brut,32,207.2,0.2027
+Blitz,brut,32,226.2,0.1844
+Blitz,brut,32,246.8,0.1678
+Blitz,brut,32,269.4,0.1528
+Blitz,brut,32,294,0.1392
+Blitz,brut,32,320.9,0.1268
+Blitz,brut,32,350.2,0.1156
+Blitz,brut,32,382.2,0.1054
+Blitz,brut,32,417.1,0.09619
+Blitz,brut,32,455.2,0.08778
+Blitz,brut,32,496.8,0.08013
+Blitz,brut,32,542.2,0.07317
+Blitz,brut,32,591.8,0.06684
+Blitz,brut,32,645.8,0.06107
+Blitz,brut,32,704.9,0.05581
+Blitz,brut,32,769.3,0.05102
+Blitz,brut,32,839.6,0.04665
+Blitz,brut,32,916.3,0.04267
+Blitz,brut,32,1000,0.03903
+Blitz,brut,36,1,0.6711
+Blitz,brut,36,1.091,0.7283
+Blitz,brut,36,1.191,0.7884
+Blitz,brut,36,1.3,0.8511
+Blitz,brut,36,1.419,0.916
+Blitz,brut,36,1.548,0.9828
+Blitz,brut,36,1.69,1.051
+Blitz,brut,36,1.844,1.12
+Blitz,brut,36,2.013,1.189
+Blitz,brut,36,2.197,1.257
+Blitz,brut,36,2.397,1.325
+Blitz,brut,36,2.617,1.39
+Blitz,brut,36,2.856,1.453
+Blitz,brut,36,3.117,1.513
+Blitz,brut,36,3.401,1.569
+Blitz,brut,36,3.712,1.622
+Blitz,brut,36,4.051,1.669
+Blitz,brut,36,4.421,1.713
+Blitz,brut,36,4.826,1.751
+Blitz,brut,36,5.266,1.784
+Blitz,brut,36,5.748,1.812
+Blitz,brut,36,6.273,1.836
+Blitz,brut,36,6.846,1.855
+Blitz,brut,36,7.472,1.869
+Blitz,brut,36,8.154,1.879
+Blitz,brut,36,8.9,1.884
+Blitz,brut,36,9.713,1.884
+Blitz,brut,36,10.6,1.88
+Blitz,brut,36,11.57,1.871
+Blitz,brut,36,12.63,1.857
+Blitz,brut,36,13.78,1.837
+Blitz,brut,36,15.04,1.811
+Blitz,brut,36,16.41,1.779
+Blitz,brut,36,17.91,1.74
+Blitz,brut,36,19.55,1.695
+Blitz,brut,36,21.34,1.642
+Blitz,brut,36,23.29,1.583
+Blitz,brut,36,25.41,1.519
+Blitz,brut,36,27.74,1.449
+Blitz,brut,36,30.27,1.375
+Blitz,brut,36,33.04,1.298
+Blitz,brut,36,36.05,1.219
+Blitz,brut,36,39.35,1.14
+Blitz,brut,36,42.94,1.061
+Blitz,brut,36,46.87,0.9828
+Blitz,brut,36,51.15,0.9074
+Blitz,brut,36,55.83,0.8349
+Blitz,brut,36,60.93,0.766
+Blitz,brut,36,66.49,0.7011
+Blitz,brut,36,72.57,0.6403
+Blitz,brut,36,79.2,0.5838
+Blitz,brut,36,86.44,0.5315
+Blitz,brut,36,94.34,0.4835
+Blitz,brut,36,103,0.4395
+Blitz,brut,36,112.4,0.3993
+Blitz,brut,36,122.6,0.3627
+Blitz,brut,36,133.8,0.3294
+Blitz,brut,36,146.1,0.2992
+Blitz,brut,36,159.4,0.2718
+Blitz,brut,36,174,0.247
+Blitz,brut,36,189.9,0.2245
+Blitz,brut,36,207.2,0.2042
+Blitz,brut,36,226.2,0.1858
+Blitz,brut,36,246.8,0.1691
+Blitz,brut,36,269.4,0.154
+Blitz,brut,36,294,0.1403
+Blitz,brut,36,320.9,0.1278
+Blitz,brut,36,350.2,0.1166
+Blitz,brut,36,382.2,0.1063
+Blitz,brut,36,417.1,0.09702
+Blitz,brut,36,455.2,0.08857
+Blitz,brut,36,496.8,0.08088
+Blitz,brut,36,542.2,0.07388
+Blitz,brut,36,591.8,0.0675
+Blitz,brut,36,645.8,0.0617
+Blitz,brut,36,704.9,0.05641
+Blitz,brut,36,769.3,0.05158
+Blitz,brut,36,839.6,0.04718
+Blitz,brut,36,916.3,0.04316
+Blitz,brut,36,1000,0.03949
+Blitz,brut,40,1,0.651
+Blitz,brut,40,1.091,0.7067
+Blitz,brut,40,1.191,0.7654
+Blitz,brut,40,1.3,0.8267
+Blitz,brut,40,1.419,0.8904
+Blitz,brut,40,1.548,0.956
+Blitz,brut,40,1.69,1.023
+Blitz,brut,40,1.844,1.091
+Blitz,brut,40,2.013,1.16
+Blitz,brut,40,2.197,1.229
+Blitz,brut,40,2.397,1.297
+Blitz,brut,40,2.617,1.364
+Blitz,brut,40,2.856,1.429
+Blitz,brut,40,3.117,1.492
+Blitz,brut,40,3.401,1.553
+Blitz,brut,40,3.712,1.61
+Blitz,brut,40,4.051,1.665
+Blitz,brut,40,4.421,1.716
+Blitz,brut,40,4.826,1.764
+Blitz,brut,40,5.266,1.808
+Blitz,brut,40,5.748,1.849
+Blitz,brut,40,6.273,1.885
+Blitz,brut,40,6.846,1.918
+Blitz,brut,40,7.472,1.946
+Blitz,brut,40,8.154,1.971
+Blitz,brut,40,8.9,1.991
+Blitz,brut,40,9.713,2.005
+Blitz,brut,40,10.6,2.015
+Blitz,brut,40,11.57,2.018
+Blitz,brut,40,12.63,2.014
+Blitz,brut,40,13.78,2.003
+Blitz,brut,40,15.04,1.984
+Blitz,brut,40,16.41,1.956
+Blitz,brut,40,17.91,1.92
+Blitz,brut,40,19.55,1.875
+Blitz,brut,40,21.34,1.821
+Blitz,brut,40,23.29,1.759
+Blitz,brut,40,25.41,1.69
+Blitz,brut,40,27.74,1.614
+Blitz,brut,40,30.27,1.533
+Blitz,brut,40,33.04,1.448
+Blitz,brut,40,36.05,1.361
+Blitz,brut,40,39.35,1.272
+Blitz,brut,40,42.94,1.183
+Blitz,brut,40,46.87,1.096
+Blitz,brut,40,51.15,1.011
+Blitz,brut,40,55.83,0.9299
+Blitz,brut,40,60.93,0.8523
+Blitz,brut,40,66.49,0.7792
+Blitz,brut,40,72.57,0.7107
+Blitz,brut,40,79.2,0.647
+Blitz,brut,40,86.44,0.5882
+Blitz,brut,40,94.34,0.5341
+Blitz,brut,40,103,0.4847
+Blitz,brut,40,112.4,0.4395
+Blitz,brut,40,122.6,0.3985
+Blitz,brut,40,133.8,0.3612
+Blitz,brut,40,146.1,0.3274
+Blitz,brut,40,159.4,0.2969
+Blitz,brut,40,174,0.2692
+Blitz,brut,40,189.9,0.2442
+Blitz,brut,40,207.2,0.2217
+Blitz,brut,40,226.2,0.2012
+Blitz,brut,40,246.8,0.1828
+Blitz,brut,40,269.4,0.1661
+Blitz,brut,40,294,0.151
+Blitz,brut,40,320.9,0.1374
+Blitz,brut,40,350.2,0.125
+Blitz,brut,40,382.2,0.1138
+Blitz,brut,40,417.1,0.1037
+Blitz,brut,40,455.2,0.09447
+Blitz,brut,40,496.8,0.08612
+Blitz,brut,40,542.2,0.07853
+Blitz,brut,40,591.8,0.07163
+Blitz,brut,40,645.8,0.06537
+Blitz,brut,40,704.9,0.05967
+Blitz,brut,40,769.3,0.05448
+Blitz,brut,40,839.6,0.04976
+Blitz,brut,40,916.3,0.04546
+Blitz,brut,40,1000,0.04154
+Blitz,repondéré écart,0,1,0.5778
+Blitz,repondéré écart,0,1.091,0.6185
+Blitz,repondéré écart,0,1.191,0.6606
+Blitz,repondéré écart,0,1.3,0.7042
+Blitz,repondéré écart,0,1.419,0.7488
+Blitz,repondéré écart,0,1.548,0.7942
+Blitz,repondéré écart,0,1.69,0.8403
+Blitz,repondéré écart,0,1.844,0.8865
+Blitz,repondéré écart,0,2.013,0.9326
+Blitz,repondéré écart,0,2.197,0.9783
+Blitz,repondéré écart,0,2.397,1.023
+Blitz,repondéré écart,0,2.617,1.067
+Blitz,repondéré écart,0,2.856,1.109
+Blitz,repondéré écart,0,3.117,1.149
+Blitz,repondéré écart,0,3.401,1.187
+Blitz,repondéré écart,0,3.712,1.222
+Blitz,repondéré écart,0,4.051,1.255
+Blitz,repondéré écart,0,4.421,1.284
+Blitz,repondéré écart,0,4.826,1.31
+Blitz,repondéré écart,0,5.266,1.333
+Blitz,repondéré écart,0,5.748,1.353
+Blitz,repondéré écart,0,6.273,1.369
+Blitz,repondéré écart,0,6.846,1.381
+Blitz,repondéré écart,0,7.472,1.39
+Blitz,repondéré écart,0,8.154,1.395
+Blitz,repondéré écart,0,8.9,1.397
+Blitz,repondéré écart,0,9.713,1.396
+Blitz,repondéré écart,0,10.6,1.391
+Blitz,repondéré écart,0,11.57,1.382
+Blitz,repondéré écart,0,12.63,1.37
+Blitz,repondéré écart,0,13.78,1.355
+Blitz,repondéré écart,0,15.04,1.337
+Blitz,repondéré écart,0,16.41,1.315
+Blitz,repondéré écart,0,17.91,1.289
+Blitz,repondéré écart,0,19.55,1.261
+Blitz,repondéré écart,0,21.34,1.229
+Blitz,repondéré écart,0,23.29,1.194
+Blitz,repondéré écart,0,25.41,1.156
+Blitz,repondéré écart,0,27.74,1.116
+Blitz,repondéré écart,0,30.27,1.073
+Blitz,repondéré écart,0,33.04,1.029
+Blitz,repondéré écart,0,36.05,0.9821
+Blitz,repondéré écart,0,39.35,0.9343
+Blitz,repondéré écart,0,42.94,0.8858
+Blitz,repondéré écart,0,46.87,0.8368
+Blitz,repondéré écart,0,51.15,0.7878
+Blitz,repondéré écart,0,55.83,0.7393
+Blitz,repondéré écart,0,60.93,0.6915
+Blitz,repondéré écart,0,66.49,0.645
+Blitz,repondéré écart,0,72.57,0.5999
+Blitz,repondéré écart,0,79.2,0.5565
+Blitz,repondéré écart,0,86.44,0.5151
+Blitz,repondéré écart,0,94.34,0.4757
+Blitz,repondéré écart,0,103,0.4386
+Blitz,repondéré écart,0,112.4,0.4037
+Blitz,repondéré écart,0,122.6,0.371
+Blitz,repondéré écart,0,133.8,0.3407
+Blitz,repondéré écart,0,146.1,0.3125
+Blitz,repondéré écart,0,159.4,0.2864
+Blitz,repondéré écart,0,174,0.2623
+Blitz,repondéré écart,0,189.9,0.2401
+Blitz,repondéré écart,0,207.2,0.2198
+Blitz,repondéré écart,0,226.2,0.2011
+Blitz,repondéré écart,0,246.8,0.1839
+Blitz,repondéré écart,0,269.4,0.1682
+Blitz,repondéré écart,0,294,0.1539
+Blitz,repondéré écart,0,320.9,0.1407
+Blitz,repondéré écart,0,350.2,0.1287
+Blitz,repondéré écart,0,382.2,0.1177
+Blitz,repondéré écart,0,417.1,0.1077
+Blitz,repondéré écart,0,455.2,0.09854
+Blitz,repondéré écart,0,496.8,0.09016
+Blitz,repondéré écart,0,542.2,0.0825
+Blitz,repondéré écart,0,591.8,0.0755
+Blitz,repondéré écart,0,645.8,0.06911
+Blitz,repondéré écart,0,704.9,0.06326
+Blitz,repondéré écart,0,769.3,0.05791
+Blitz,repondéré écart,0,839.6,0.05302
+Blitz,repondéré écart,0,916.3,0.04855
+Blitz,repondéré écart,0,1000,0.04446
+Blitz,repondéré écart,27,1,0.6518
+Blitz,repondéré écart,27,1.091,0.7031
+Blitz,repondéré écart,27,1.191,0.7564
+Blitz,repondéré écart,27,1.3,0.8116
+Blitz,repondéré écart,27,1.419,0.8684
+Blitz,repondéré écart,27,1.548,0.9263
+Blitz,repondéré écart,27,1.69,0.985
+Blitz,repondéré écart,27,1.844,1.044
+Blitz,repondéré écart,27,2.013,1.103
+Blitz,repondéré écart,27,2.197,1.161
+Blitz,repondéré écart,27,2.397,1.218
+Blitz,repondéré écart,27,2.617,1.274
+Blitz,repondéré écart,27,2.856,1.327
+Blitz,repondéré écart,27,3.117,1.378
+Blitz,repondéré écart,27,3.401,1.426
+Blitz,repondéré écart,27,3.712,1.47
+Blitz,repondéré écart,27,4.051,1.511
+Blitz,repondéré écart,27,4.421,1.548
+Blitz,repondéré écart,27,4.826,1.581
+Blitz,repondéré écart,27,5.266,1.609
+Blitz,repondéré écart,27,5.748,1.633
+Blitz,repondéré écart,27,6.273,1.653
+Blitz,repondéré écart,27,6.846,1.668
+Blitz,repondéré écart,27,7.472,1.679
+Blitz,repondéré écart,27,8.154,1.686
+Blitz,repondéré écart,27,8.9,1.689
+Blitz,repondéré écart,27,9.713,1.688
+Blitz,repondéré écart,27,10.6,1.683
+Blitz,repondéré écart,27,11.57,1.674
+Blitz,repondéré écart,27,12.63,1.661
+Blitz,repondéré écart,27,13.78,1.644
+Blitz,repondéré écart,27,15.04,1.621
+Blitz,repondéré écart,27,16.41,1.595
+Blitz,repondéré écart,27,17.91,1.563
+Blitz,repondéré écart,27,19.55,1.526
+Blitz,repondéré écart,27,21.34,1.484
+Blitz,repondéré écart,27,23.29,1.437
+Blitz,repondéré écart,27,25.41,1.385
+Blitz,repondéré écart,27,27.74,1.329
+Blitz,repondéré écart,27,30.27,1.269
+Blitz,repondéré écart,27,33.04,1.206
+Blitz,repondéré écart,27,36.05,1.14
+Blitz,repondéré écart,27,39.35,1.073
+Blitz,repondéré écart,27,42.94,1.005
+Blitz,repondéré écart,27,46.87,0.9377
+Blitz,repondéré écart,27,51.15,0.8711
+Blitz,repondéré écart,27,55.83,0.8062
+Blitz,repondéré écart,27,60.93,0.7437
+Blitz,repondéré écart,27,66.49,0.684
+Blitz,repondéré écart,27,72.57,0.6274
+Blitz,repondéré écart,27,79.2,0.5743
+Blitz,repondéré écart,27,86.44,0.5246
+Blitz,repondéré écart,27,94.34,0.4786
+Blitz,repondéré écart,27,103,0.4361
+Blitz,repondéré écart,27,112.4,0.397
+Blitz,repondéré écart,27,122.6,0.3611
+Blitz,repondéré écart,27,133.8,0.3284
+Blitz,repondéré écart,27,146.1,0.2986
+Blitz,repondéré écart,27,159.4,0.2714
+Blitz,repondéré écart,27,174,0.2467
+Blitz,repondéré écart,27,189.9,0.2243
+Blitz,repondéré écart,27,207.2,0.204
+Blitz,repondéré écart,27,226.2,0.1855
+Blitz,repondéré écart,27,246.8,0.1688
+Blitz,repondéré écart,27,269.4,0.1536
+Blitz,repondéré écart,27,294,0.1399
+Blitz,repondéré écart,27,320.9,0.1274
+Blitz,repondéré écart,27,350.2,0.1161
+Blitz,repondéré écart,27,382.2,0.1058
+Blitz,repondéré écart,27,417.1,0.09651
+Blitz,repondéré écart,27,455.2,0.08804
+Blitz,repondéré écart,27,496.8,0.08033
+Blitz,repondéré écart,27,542.2,0.07333
+Blitz,repondéré écart,27,591.8,0.06696
+Blitz,repondéré écart,27,645.8,0.06115
+Blitz,repondéré écart,27,704.9,0.05587
+Blitz,repondéré écart,27,769.3,0.05105
+Blitz,repondéré écart,27,839.6,0.04667
+Blitz,repondéré écart,27,916.3,0.04267
+Blitz,repondéré écart,27,1000,0.03902
+Blitz,repondéré écart,32,1,0.6562
+Blitz,repondéré écart,32,1.091,0.7102
+Blitz,repondéré écart,32,1.191,0.7669
+Blitz,repondéré écart,32,1.3,0.8262
+Blitz,repondéré écart,32,1.419,0.8876
+Blitz,repondéré écart,32,1.548,0.9509
+Blitz,repondéré écart,32,1.69,1.016
+Blitz,repondéré écart,32,1.844,1.081
+Blitz,repondéré écart,32,2.013,1.147
+Blitz,repondéré écart,32,2.197,1.213
+Blitz,repondéré écart,32,2.397,1.278
+Blitz,repondéré écart,32,2.617,1.342
+Blitz,repondéré écart,32,2.856,1.403
+Blitz,repondéré écart,32,3.117,1.462
+Blitz,repondéré écart,32,3.401,1.518
+Blitz,repondéré écart,32,3.712,1.569
+Blitz,repondéré écart,32,4.051,1.616
+Blitz,repondéré écart,32,4.421,1.659
+Blitz,repondéré écart,32,4.826,1.696
+Blitz,repondéré écart,32,5.266,1.729
+Blitz,repondéré écart,32,5.748,1.755
+Blitz,repondéré écart,32,6.273,1.777
+Blitz,repondéré écart,32,6.846,1.793
+Blitz,repondéré écart,32,7.472,1.804
+Blitz,repondéré écart,32,8.154,1.809
+Blitz,repondéré écart,32,8.9,1.81
+Blitz,repondéré écart,32,9.713,1.806
+Blitz,repondéré écart,32,10.6,1.798
+Blitz,repondéré écart,32,11.57,1.784
+Blitz,repondéré écart,32,12.63,1.766
+Blitz,repondéré écart,32,13.78,1.743
+Blitz,repondéré écart,32,15.04,1.715
+Blitz,repondéré écart,32,16.41,1.683
+Blitz,repondéré écart,32,17.91,1.645
+Blitz,repondéré écart,32,19.55,1.601
+Blitz,repondéré écart,32,21.34,1.553
+Blitz,repondéré écart,32,23.29,1.499
+Blitz,repondéré écart,32,25.41,1.441
+Blitz,repondéré écart,32,27.74,1.379
+Blitz,repondéré écart,32,30.27,1.313
+Blitz,repondéré écart,32,33.04,1.244
+Blitz,repondéré écart,32,36.05,1.173
+Blitz,repondéré écart,32,39.35,1.101
+Blitz,repondéré écart,32,42.94,1.029
+Blitz,repondéré écart,32,46.87,0.9582
+Blitz,repondéré écart,32,51.15,0.8884
+Blitz,repondéré écart,32,55.83,0.8207
+Blitz,repondéré écart,32,60.93,0.7557
+Blitz,repondéré écart,32,66.49,0.6939
+Blitz,repondéré écart,32,72.57,0.6356
+Blitz,repondéré écart,32,79.2,0.5809
+Blitz,repondéré écart,32,86.44,0.5301
+Blitz,repondéré écart,32,94.34,0.483
+Blitz,repondéré écart,32,103,0.4396
+Blitz,repondéré écart,32,112.4,0.3998
+Blitz,repondéré écart,32,122.6,0.3633
+Blitz,repondéré écart,32,133.8,0.3301
+Blitz,repondéré écart,32,146.1,0.2999
+Blitz,repondéré écart,32,159.4,0.2724
+Blitz,repondéré écart,32,174,0.2475
+Blitz,repondéré écart,32,189.9,0.2249
+Blitz,repondéré écart,32,207.2,0.2044
+Blitz,repondéré écart,32,226.2,0.1859
+Blitz,repondéré écart,32,246.8,0.1691
+Blitz,repondéré écart,32,269.4,0.1539
+Blitz,repondéré écart,32,294,0.1401
+Blitz,repondéré écart,32,320.9,0.1275
+Blitz,repondéré écart,32,350.2,0.1162
+Blitz,repondéré écart,32,382.2,0.1059
+Blitz,repondéré écart,32,417.1,0.09657
+Blitz,repondéré écart,32,455.2,0.08808
+Blitz,repondéré écart,32,496.8,0.08037
+Blitz,repondéré écart,32,542.2,0.07336
+Blitz,repondéré écart,32,591.8,0.06698
+Blitz,repondéré écart,32,645.8,0.06118
+Blitz,repondéré écart,32,704.9,0.05589
+Blitz,repondéré écart,32,769.3,0.05108
+Blitz,repondéré écart,32,839.6,0.04669
+Blitz,repondéré écart,32,916.3,0.04269
+Blitz,repondéré écart,32,1000,0.03904
+Blitz,repondéré écart,36,1,0.6695
+Blitz,repondéré écart,36,1.091,0.7258
+Blitz,repondéré écart,36,1.191,0.7849
+Blitz,repondéré écart,36,1.3,0.8465
+Blitz,repondéré écart,36,1.419,0.9103
+Blitz,repondéré écart,36,1.548,0.9759
+Blitz,repondéré écart,36,1.69,1.043
+Blitz,repondéré écart,36,1.844,1.11
+Blitz,repondéré écart,36,2.013,1.178
+Blitz,repondéré écart,36,2.197,1.245
+Blitz,repondéré écart,36,2.397,1.311
+Blitz,repondéré écart,36,2.617,1.375
+Blitz,repondéré écart,36,2.856,1.437
+Blitz,repondéré écart,36,3.117,1.496
+Blitz,repondéré écart,36,3.401,1.551
+Blitz,repondéré écart,36,3.712,1.603
+Blitz,repondéré écart,36,4.051,1.65
+Blitz,repondéré écart,36,4.421,1.692
+Blitz,repondéré écart,36,4.826,1.73
+Blitz,repondéré écart,36,5.266,1.763
+Blitz,repondéré écart,36,5.748,1.792
+Blitz,repondéré écart,36,6.273,1.816
+Blitz,repondéré écart,36,6.846,1.835
+Blitz,repondéré écart,36,7.472,1.85
+Blitz,repondéré écart,36,8.154,1.861
+Blitz,repondéré écart,36,8.9,1.868
+Blitz,repondéré écart,36,9.713,1.87
+Blitz,repondéré écart,36,10.6,1.869
+Blitz,repondéré écart,36,11.57,1.862
+Blitz,repondéré écart,36,12.63,1.851
+Blitz,repondéré écart,36,13.78,1.834
+Blitz,repondéré écart,36,15.04,1.811
+Blitz,repondéré écart,36,16.41,1.782
+Blitz,repondéré écart,36,17.91,1.747
+Blitz,repondéré écart,36,19.55,1.704
+Blitz,repondéré écart,36,21.34,1.654
+Blitz,repondéré écart,36,23.29,1.598
+Blitz,repondéré écart,36,25.41,1.535
+Blitz,repondéré écart,36,27.74,1.467
+Blitz,repondéré écart,36,30.27,1.394
+Blitz,repondéré écart,36,33.04,1.318
+Blitz,repondéré écart,36,36.05,1.239
+Blitz,repondéré écart,36,39.35,1.159
+Blitz,repondéré écart,36,42.94,1.079
+Blitz,repondéré écart,36,46.87,1.001
+Blitz,repondéré écart,36,51.15,0.9241
+Blitz,repondéré écart,36,55.83,0.8504
+Blitz,repondéré écart,36,60.93,0.7801
+Blitz,repondéré écart,36,66.49,0.7138
+Blitz,repondéré écart,36,72.57,0.6517
+Blitz,repondéré écart,36,79.2,0.5939
+Blitz,repondéré écart,36,86.44,0.5405
+Blitz,repondéré écart,36,94.34,0.4913
+Blitz,repondéré écart,36,103,0.4463
+Blitz,repondéré écart,36,112.4,0.4052
+Blitz,repondéré écart,36,122.6,0.3678
+Blitz,repondéré écart,36,133.8,0.3338
+Blitz,repondéré écart,36,146.1,0.3029
+Blitz,repondéré écart,36,159.4,0.275
+Blitz,repondéré écart,36,174,0.2497
+Blitz,repondéré écart,36,189.9,0.2268
+Blitz,repondéré écart,36,207.2,0.2062
+Blitz,repondéré écart,36,226.2,0.1874
+Blitz,repondéré écart,36,246.8,0.1705
+Blitz,repondéré écart,36,269.4,0.1552
+Blitz,repondéré écart,36,294,0.1413
+Blitz,repondéré écart,36,320.9,0.1287
+Blitz,repondéré écart,36,350.2,0.1173
+Blitz,repondéré écart,36,382.2,0.1069
+Blitz,repondéré écart,36,417.1,0.09753
+Blitz,repondéré écart,36,455.2,0.08899
+Blitz,repondéré écart,36,496.8,0.08123
+Blitz,repondéré écart,36,542.2,0.07417
+Blitz,repondéré écart,36,591.8,0.06775
+Blitz,repondéré écart,36,645.8,0.0619
+Blitz,repondéré écart,36,704.9,0.05658
+Blitz,repondéré écart,36,769.3,0.05172
+Blitz,repondéré écart,36,839.6,0.0473
+Blitz,repondéré écart,36,916.3,0.04326
+Blitz,repondéré écart,36,1000,0.03957
+Blitz,repondéré écart,40,1,0.6737
+Blitz,repondéré écart,40,1.091,0.7298
+Blitz,repondéré écart,40,1.191,0.7886
+Blitz,repondéré écart,40,1.3,0.8499
+Blitz,repondéré écart,40,1.419,0.9134
+Blitz,repondéré écart,40,1.548,0.9785
+Blitz,repondéré écart,40,1.69,1.045
+Blitz,repondéré écart,40,1.844,1.112
+Blitz,repondéré écart,40,2.013,1.179
+Blitz,repondéré écart,40,2.197,1.246
+Blitz,repondéré écart,40,2.397,1.313
+Blitz,repondéré écart,40,2.617,1.377
+Blitz,repondéré écart,40,2.856,1.44
+Blitz,repondéré écart,40,3.117,1.5
+Blitz,repondéré écart,40,3.401,1.558
+Blitz,repondéré écart,40,3.712,1.612
+Blitz,repondéré écart,40,4.051,1.663
+Blitz,repondéré écart,40,4.421,1.71
+Blitz,repondéré écart,40,4.826,1.754
+Blitz,repondéré écart,40,5.266,1.794
+Blitz,repondéré écart,40,5.748,1.83
+Blitz,repondéré écart,40,6.273,1.863
+Blitz,repondéré écart,40,6.846,1.892
+Blitz,repondéré écart,40,7.472,1.917
+Blitz,repondéré écart,40,8.154,1.938
+Blitz,repondéré écart,40,8.9,1.955
+Blitz,repondéré écart,40,9.713,1.967
+Blitz,repondéré écart,40,10.6,1.975
+Blitz,repondéré écart,40,11.57,1.977
+Blitz,repondéré écart,40,12.63,1.973
+Blitz,repondéré écart,40,13.78,1.962
+Blitz,repondéré écart,40,15.04,1.945
+Blitz,repondéré écart,40,16.41,1.919
+Blitz,repondéré écart,40,17.91,1.885
+Blitz,repondéré écart,40,19.55,1.843
+Blitz,repondéré écart,40,21.34,1.793
+Blitz,repondéré écart,40,23.29,1.735
+Blitz,repondéré écart,40,25.41,1.669
+Blitz,repondéré écart,40,27.74,1.597
+Blitz,repondéré écart,40,30.27,1.519
+Blitz,repondéré écart,40,33.04,1.437
+Blitz,repondéré écart,40,36.05,1.353
+Blitz,repondéré écart,40,39.35,1.266
+Blitz,repondéré écart,40,42.94,1.18
+Blitz,repondéré écart,40,46.87,1.094
+Blitz,repondéré écart,40,51.15,1.011
+Blitz,repondéré écart,40,55.83,0.9301
+Blitz,repondéré écart,40,60.93,0.8532
+Blitz,repondéré écart,40,66.49,0.7804
+Blitz,repondéré écart,40,72.57,0.7122
+Blitz,repondéré écart,40,79.2,0.6487
+Blitz,repondéré écart,40,86.44,0.5899
+Blitz,repondéré écart,40,94.34,0.5358
+Blitz,repondéré écart,40,103,0.4863
+Blitz,repondéré écart,40,112.4,0.441
+Blitz,repondéré écart,40,122.6,0.3999
+Blitz,repondéré écart,40,133.8,0.3625
+Blitz,repondéré écart,40,146.1,0.3286
+Blitz,repondéré écart,40,159.4,0.298
+Blitz,repondéré écart,40,174,0.2702
+Blitz,repondéré écart,40,189.9,0.2452
+Blitz,repondéré écart,40,207.2,0.2225
+Blitz,repondéré écart,40,226.2,0.202
+Blitz,repondéré écart,40,246.8,0.1835
+Blitz,repondéré écart,40,269.4,0.1668
+Blitz,repondéré écart,40,294,0.1517
+Blitz,repondéré écart,40,320.9,0.138
+Blitz,repondéré écart,40,350.2,0.1256
+Blitz,repondéré écart,40,382.2,0.1143
+Blitz,repondéré écart,40,417.1,0.1041
+Blitz,repondéré écart,40,455.2,0.0949
+Blitz,repondéré écart,40,496.8,0.08652
+Blitz,repondéré écart,40,542.2,0.0789
+Blitz,repondéré écart,40,591.8,0.07198
+Blitz,repondéré écart,40,645.8,0.06569
+Blitz,repondéré écart,40,704.9,0.05997
+Blitz,repondéré écart,40,769.3,0.05476
+Blitz,repondéré écart,40,839.6,0.05002
+Blitz,repondéré écart,40,916.3,0.0457
+Blitz,repondéré écart,40,1000,0.04176
+Blitz,repondéré écart+phase,0,1,0.6293
+Blitz,repondéré écart+phase,0,1.091,0.6794
+Blitz,repondéré écart+phase,0,1.191,0.7315
+Blitz,repondéré écart+phase,0,1.3,0.7851
+Blitz,repondéré écart+phase,0,1.419,0.84
+Blitz,repondéré écart+phase,0,1.548,0.8958
+Blitz,repondéré écart+phase,0,1.69,0.952
+Blitz,repondéré écart+phase,0,1.844,1.008
+Blitz,repondéré écart+phase,0,2.013,1.064
+Blitz,repondéré écart+phase,0,2.197,1.118
+Blitz,repondéré écart+phase,0,2.397,1.171
+Blitz,repondéré écart+phase,0,2.617,1.222
+Blitz,repondéré écart+phase,0,2.856,1.27
+Blitz,repondéré écart+phase,0,3.117,1.315
+Blitz,repondéré écart+phase,0,3.401,1.356
+Blitz,repondéré écart+phase,0,3.712,1.394
+Blitz,repondéré écart+phase,0,4.051,1.428
+Blitz,repondéré écart+phase,0,4.421,1.457
+Blitz,repondéré écart+phase,0,4.826,1.482
+Blitz,repondéré écart+phase,0,5.266,1.502
+Blitz,repondéré écart+phase,0,5.748,1.518
+Blitz,repondéré écart+phase,0,6.273,1.529
+Blitz,repondéré écart+phase,0,6.846,1.536
+Blitz,repondéré écart+phase,0,7.472,1.539
+Blitz,repondéré écart+phase,0,8.154,1.538
+Blitz,repondéré écart+phase,0,8.9,1.533
+Blitz,repondéré écart+phase,0,9.713,1.525
+Blitz,repondéré écart+phase,0,10.6,1.513
+Blitz,repondéré écart+phase,0,11.57,1.497
+Blitz,repondéré écart+phase,0,12.63,1.479
+Blitz,repondéré écart+phase,0,13.78,1.457
+Blitz,repondéré écart+phase,0,15.04,1.433
+Blitz,repondéré écart+phase,0,16.41,1.405
+Blitz,repondéré écart+phase,0,17.91,1.374
+Blitz,repondéré écart+phase,0,19.55,1.339
+Blitz,repondéré écart+phase,0,21.34,1.302
+Blitz,repondéré écart+phase,0,23.29,1.261
+Blitz,repondéré écart+phase,0,25.41,1.217
+Blitz,repondéré écart+phase,0,27.74,1.17
+Blitz,repondéré écart+phase,0,30.27,1.121
+Blitz,repondéré écart+phase,0,33.04,1.07
+Blitz,repondéré écart+phase,0,36.05,1.017
+Blitz,repondéré écart+phase,0,39.35,0.9626
+Blitz,repondéré écart+phase,0,42.94,0.9077
+Blitz,repondéré écart+phase,0,46.87,0.8526
+Blitz,repondéré écart+phase,0,51.15,0.7979
+Blitz,repondéré écart+phase,0,55.83,0.744
+Blitz,repondéré écart+phase,0,60.93,0.6915
+Blitz,repondéré écart+phase,0,66.49,0.6406
+Blitz,repondéré écart+phase,0,72.57,0.5919
+Blitz,repondéré écart+phase,0,79.2,0.5454
+Blitz,repondéré écart+phase,0,86.44,0.5014
+Blitz,repondéré écart+phase,0,94.34,0.4601
+Blitz,repondéré écart+phase,0,103,0.4214
+Blitz,repondéré écart+phase,0,112.4,0.3854
+Blitz,repondéré écart+phase,0,122.6,0.3521
+Blitz,repondéré écart+phase,0,133.8,0.3214
+Blitz,repondéré écart+phase,0,146.1,0.2931
+Blitz,repondéré écart+phase,0,159.4,0.2671
+Blitz,repondéré écart+phase,0,174,0.2434
+Blitz,repondéré écart+phase,0,189.9,0.2217
+Blitz,repondéré écart+phase,0,207.2,0.2019
+Blitz,repondéré écart+phase,0,226.2,0.1839
+Blitz,repondéré écart+phase,0,246.8,0.1675
+Blitz,repondéré écart+phase,0,269.4,0.1525
+Blitz,repondéré écart+phase,0,294,0.139
+Blitz,repondéré écart+phase,0,320.9,0.1266
+Blitz,repondéré écart+phase,0,350.2,0.1154
+Blitz,repondéré écart+phase,0,382.2,0.1052
+Blitz,repondéré écart+phase,0,417.1,0.09591
+Blitz,repondéré écart+phase,0,455.2,0.08748
+Blitz,repondéré écart+phase,0,496.8,0.07981
+Blitz,repondéré écart+phase,0,542.2,0.07283
+Blitz,repondéré écart+phase,0,591.8,0.06648
+Blitz,repondéré écart+phase,0,645.8,0.0607
+Blitz,repondéré écart+phase,0,704.9,0.05543
+Blitz,repondéré écart+phase,0,769.3,0.05064
+Blitz,repondéré écart+phase,0,839.6,0.04626
+Blitz,repondéré écart+phase,0,916.3,0.04228
+Blitz,repondéré écart+phase,0,1000,0.03865
+Blitz,repondéré écart+phase,27,1,0.6535
+Blitz,repondéré écart+phase,27,1.091,0.704
+Blitz,repondéré écart+phase,27,1.191,0.7566
+Blitz,repondéré écart+phase,27,1.3,0.8109
+Blitz,repondéré écart+phase,27,1.419,0.8667
+Blitz,repondéré écart+phase,27,1.548,0.9237
+Blitz,repondéré écart+phase,27,1.69,0.9813
+Blitz,repondéré écart+phase,27,1.844,1.039
+Blitz,repondéré écart+phase,27,2.013,1.097
+Blitz,repondéré écart+phase,27,2.197,1.155
+Blitz,repondéré écart+phase,27,2.397,1.211
+Blitz,repondéré écart+phase,27,2.617,1.265
+Blitz,repondéré écart+phase,27,2.856,1.318
+Blitz,repondéré écart+phase,27,3.117,1.368
+Blitz,repondéré écart+phase,27,3.401,1.416
+Blitz,repondéré écart+phase,27,3.712,1.46
+Blitz,repondéré écart+phase,27,4.051,1.5
+Blitz,repondéré écart+phase,27,4.421,1.537
+Blitz,repondéré écart+phase,27,4.826,1.569
+Blitz,repondéré écart+phase,27,5.266,1.598
+Blitz,repondéré écart+phase,27,5.748,1.622
+Blitz,repondéré écart+phase,27,6.273,1.642
+Blitz,repondéré écart+phase,27,6.846,1.658
+Blitz,repondéré écart+phase,27,7.472,1.669
+Blitz,repondéré écart+phase,27,8.154,1.677
+Blitz,repondéré écart+phase,27,8.9,1.681
+Blitz,repondéré écart+phase,27,9.713,1.68
+Blitz,repondéré écart+phase,27,10.6,1.676
+Blitz,repondéré écart+phase,27,11.57,1.667
+Blitz,repondéré écart+phase,27,12.63,1.655
+Blitz,repondéré écart+phase,27,13.78,1.638
+Blitz,repondéré écart+phase,27,15.04,1.617
+Blitz,repondéré écart+phase,27,16.41,1.591
+Blitz,repondéré écart+phase,27,17.91,1.56
+Blitz,repondéré écart+phase,27,19.55,1.523
+Blitz,repondéré écart+phase,27,21.34,1.482
+Blitz,repondéré écart+phase,27,23.29,1.436
+Blitz,repondéré écart+phase,27,25.41,1.385
+Blitz,repondéré écart+phase,27,27.74,1.33
+Blitz,repondéré écart+phase,27,30.27,1.271
+Blitz,repondéré écart+phase,27,33.04,1.208
+Blitz,repondéré écart+phase,27,36.05,1.143
+Blitz,repondéré écart+phase,27,39.35,1.077
+Blitz,repondéré écart+phase,27,42.94,1.009
+Blitz,repondéré écart+phase,27,46.87,0.9423
+Blitz,repondéré écart+phase,27,51.15,0.876
+Blitz,repondéré écart+phase,27,55.83,0.8114
+Blitz,repondéré écart+phase,27,60.93,0.7489
+Blitz,repondéré écart+phase,27,66.49,0.6892
+Blitz,repondéré écart+phase,27,72.57,0.6326
+Blitz,repondéré écart+phase,27,79.2,0.5793
+Blitz,repondéré écart+phase,27,86.44,0.5294
+Blitz,repondéré écart+phase,27,94.34,0.4832
+Blitz,repondéré écart+phase,27,103,0.4404
+Blitz,repondéré écart+phase,27,112.4,0.401
+Blitz,repondéré écart+phase,27,122.6,0.3649
+Blitz,repondéré écart+phase,27,133.8,0.3319
+Blitz,repondéré écart+phase,27,146.1,0.3018
+Blitz,repondéré écart+phase,27,159.4,0.2744
+Blitz,repondéré écart+phase,27,174,0.2495
+Blitz,repondéré écart+phase,27,189.9,0.2269
+Blitz,repondéré écart+phase,27,207.2,0.2063
+Blitz,repondéré écart+phase,27,226.2,0.1877
+Blitz,repondéré écart+phase,27,246.8,0.1708
+Blitz,repondéré écart+phase,27,269.4,0.1555
+Blitz,repondéré écart+phase,27,294,0.1416
+Blitz,repondéré écart+phase,27,320.9,0.129
+Blitz,repondéré écart+phase,27,350.2,0.1175
+Blitz,repondéré écart+phase,27,382.2,0.1071
+Blitz,repondéré écart+phase,27,417.1,0.09771
+Blitz,repondéré écart+phase,27,455.2,0.08913
+Blitz,repondéré écart+phase,27,496.8,0.08134
+Blitz,repondéré écart+phase,27,542.2,0.07425
+Blitz,repondéré écart+phase,27,591.8,0.0678
+Blitz,repondéré écart+phase,27,645.8,0.06193
+Blitz,repondéré écart+phase,27,704.9,0.05658
+Blitz,repondéré écart+phase,27,769.3,0.05171
+Blitz,repondéré écart+phase,27,839.6,0.04727
+Blitz,repondéré écart+phase,27,916.3,0.04322
+Blitz,repondéré écart+phase,27,1000,0.03952
+Blitz,repondéré écart+phase,32,1,0.6654
+Blitz,repondéré écart+phase,32,1.091,0.7192
+Blitz,repondéré écart+phase,32,1.191,0.7755
+Blitz,repondéré écart+phase,32,1.3,0.834
+Blitz,repondéré écart+phase,32,1.419,0.8945
+Blitz,repondéré écart+phase,32,1.548,0.9566
+Blitz,repondéré écart+phase,32,1.69,1.02
+Blitz,repondéré écart+phase,32,1.844,1.084
+Blitz,repondéré écart+phase,32,2.013,1.148
+Blitz,repondéré écart+phase,32,2.197,1.212
+Blitz,repondéré écart+phase,32,2.397,1.276
+Blitz,repondéré écart+phase,32,2.617,1.337
+Blitz,repondéré écart+phase,32,2.856,1.397
+Blitz,repondéré écart+phase,32,3.117,1.454
+Blitz,repondéré écart+phase,32,3.401,1.508
+Blitz,repondéré écart+phase,32,3.712,1.559
+Blitz,repondéré écart+phase,32,4.051,1.605
+Blitz,repondéré écart+phase,32,4.421,1.647
+Blitz,repondéré écart+phase,32,4.826,1.684
+Blitz,repondéré écart+phase,32,5.266,1.715
+Blitz,repondéré écart+phase,32,5.748,1.742
+Blitz,repondéré écart+phase,32,6.273,1.763
+Blitz,repondéré écart+phase,32,6.846,1.78
+Blitz,repondéré écart+phase,32,7.472,1.791
+Blitz,repondéré écart+phase,32,8.154,1.797
+Blitz,repondéré écart+phase,32,8.9,1.798
+Blitz,repondéré écart+phase,32,9.713,1.795
+Blitz,repondéré écart+phase,32,10.6,1.787
+Blitz,repondéré écart+phase,32,11.57,1.774
+Blitz,repondéré écart+phase,32,12.63,1.757
+Blitz,repondéré écart+phase,32,13.78,1.735
+Blitz,repondéré écart+phase,32,15.04,1.708
+Blitz,repondéré écart+phase,32,16.41,1.676
+Blitz,repondéré écart+phase,32,17.91,1.639
+Blitz,repondéré écart+phase,32,19.55,1.597
+Blitz,repondéré écart+phase,32,21.34,1.55
+Blitz,repondéré écart+phase,32,23.29,1.498
+Blitz,repondéré écart+phase,32,25.41,1.441
+Blitz,repondéré écart+phase,32,27.74,1.38
+Blitz,repondéré écart+phase,32,30.27,1.316
+Blitz,repondéré écart+phase,32,33.04,1.248
+Blitz,repondéré écart+phase,32,36.05,1.179
+Blitz,repondéré écart+phase,32,39.35,1.108
+Blitz,repondéré écart+phase,32,42.94,1.037
+Blitz,repondéré écart+phase,32,46.87,0.9659
+Blitz,repondéré écart+phase,32,51.15,0.8965
+Blitz,repondéré écart+phase,32,55.83,0.8292
+Blitz,repondéré écart+phase,32,60.93,0.7644
+Blitz,repondéré écart+phase,32,66.49,0.7026
+Blitz,repondéré écart+phase,32,72.57,0.6443
+Blitz,repondéré écart+phase,32,79.2,0.5895
+Blitz,repondéré écart+phase,32,86.44,0.5384
+Blitz,repondéré écart+phase,32,94.34,0.4911
+Blitz,repondéré écart+phase,32,103,0.4474
+Blitz,repondéré écart+phase,32,112.4,0.4073
+Blitz,repondéré écart+phase,32,122.6,0.3705
+Blitz,repondéré écart+phase,32,133.8,0.3369
+Blitz,repondéré écart+phase,32,146.1,0.3064
+Blitz,repondéré écart+phase,32,159.4,0.2785
+Blitz,repondéré écart+phase,32,174,0.2533
+Blitz,repondéré écart+phase,32,189.9,0.2303
+Blitz,repondéré écart+phase,32,207.2,0.2095
+Blitz,repondéré écart+phase,32,226.2,0.1906
+Blitz,repondéré écart+phase,32,246.8,0.1735
+Blitz,repondéré écart+phase,32,269.4,0.158
+Blitz,repondéré écart+phase,32,294,0.1439
+Blitz,repondéré écart+phase,32,320.9,0.1312
+Blitz,repondéré écart+phase,32,350.2,0.1196
+Blitz,repondéré écart+phase,32,382.2,0.109
+Blitz,repondéré écart+phase,32,417.1,0.09947
+Blitz,repondéré écart+phase,32,455.2,0.09078
+Blitz,repondéré écart+phase,32,496.8,0.08287
+Blitz,repondéré écart+phase,32,542.2,0.07568
+Blitz,repondéré écart+phase,32,591.8,0.06913
+Blitz,repondéré écart+phase,32,645.8,0.06316
+Blitz,repondéré écart+phase,32,704.9,0.05773
+Blitz,repondéré écart+phase,32,769.3,0.05277
+Blitz,repondéré écart+phase,32,839.6,0.04825
+Blitz,repondéré écart+phase,32,916.3,0.04413
+Blitz,repondéré écart+phase,32,1000,0.04037
+Blitz,repondéré écart+phase,36,1,0.6573
+Blitz,repondéré écart+phase,36,1.091,0.7121
+Blitz,repondéré écart+phase,36,1.191,0.7697
+Blitz,repondéré écart+phase,36,1.3,0.8299
+Blitz,repondéré écart+phase,36,1.419,0.8925
+Blitz,repondéré écart+phase,36,1.548,0.9569
+Blitz,repondéré écart+phase,36,1.69,1.023
+Blitz,repondéré écart+phase,36,1.844,1.09
+Blitz,repondéré écart+phase,36,2.013,1.157
+Blitz,repondéré écart+phase,36,2.197,1.224
+Blitz,repondéré écart+phase,36,2.397,1.29
+Blitz,repondéré écart+phase,36,2.617,1.354
+Blitz,repondéré écart+phase,36,2.856,1.417
+Blitz,repondéré écart+phase,36,3.117,1.476
+Blitz,repondéré écart+phase,36,3.401,1.532
+Blitz,repondéré écart+phase,36,3.712,1.585
+Blitz,repondéré écart+phase,36,4.051,1.633
+Blitz,repondéré écart+phase,36,4.421,1.677
+Blitz,repondéré écart+phase,36,4.826,1.716
+Blitz,repondéré écart+phase,36,5.266,1.751
+Blitz,repondéré écart+phase,36,5.748,1.781
+Blitz,repondéré écart+phase,36,6.273,1.807
+Blitz,repondéré écart+phase,36,6.846,1.828
+Blitz,repondéré écart+phase,36,7.472,1.844
+Blitz,repondéré écart+phase,36,8.154,1.857
+Blitz,repondéré écart+phase,36,8.9,1.865
+Blitz,repondéré écart+phase,36,9.713,1.869
+Blitz,repondéré écart+phase,36,10.6,1.869
+Blitz,repondéré écart+phase,36,11.57,1.864
+Blitz,repondéré écart+phase,36,12.63,1.853
+Blitz,repondéré écart+phase,36,13.78,1.838
+Blitz,repondéré écart+phase,36,15.04,1.816
+Blitz,repondéré écart+phase,36,16.41,1.788
+Blitz,repondéré écart+phase,36,17.91,1.753
+Blitz,repondéré écart+phase,36,19.55,1.711
+Blitz,repondéré écart+phase,36,21.34,1.662
+Blitz,repondéré écart+phase,36,23.29,1.607
+Blitz,repondéré écart+phase,36,25.41,1.545
+Blitz,repondéré écart+phase,36,27.74,1.477
+Blitz,repondéré écart+phase,36,30.27,1.405
+Blitz,repondéré écart+phase,36,33.04,1.329
+Blitz,repondéré écart+phase,36,36.05,1.251
+Blitz,repondéré écart+phase,36,39.35,1.172
+Blitz,repondéré écart+phase,36,42.94,1.092
+Blitz,repondéré écart+phase,36,46.87,1.014
+Blitz,repondéré écart+phase,36,51.15,0.9375
+Blitz,repondéré écart+phase,36,55.83,0.8639
+Blitz,repondéré écart+phase,36,60.93,0.7937
+Blitz,repondéré écart+phase,36,66.49,0.7273
+Blitz,repondéré écart+phase,36,72.57,0.6649
+Blitz,repondéré écart+phase,36,79.2,0.6068
+Blitz,repondéré écart+phase,36,86.44,0.553
+Blitz,repondéré écart+phase,36,94.34,0.5034
+Blitz,repondéré écart+phase,36,103,0.4579
+Blitz,repondéré écart+phase,36,112.4,0.4162
+Blitz,repondéré écart+phase,36,122.6,0.3783
+Blitz,repondéré écart+phase,36,133.8,0.3437
+Blitz,repondéré écart+phase,36,146.1,0.3123
+Blitz,repondéré écart+phase,36,159.4,0.2838
+Blitz,repondéré écart+phase,36,174,0.258
+Blitz,repondéré écart+phase,36,189.9,0.2345
+Blitz,repondéré écart+phase,36,207.2,0.2133
+Blitz,repondéré écart+phase,36,226.2,0.1941
+Blitz,repondéré écart+phase,36,246.8,0.1767
+Blitz,repondéré écart+phase,36,269.4,0.1609
+Blitz,repondéré écart+phase,36,294,0.1466
+Blitz,repondéré écart+phase,36,320.9,0.1336
+Blitz,repondéré écart+phase,36,350.2,0.1218
+Blitz,repondéré écart+phase,36,382.2,0.1111
+Blitz,repondéré écart+phase,36,417.1,0.1014
+Blitz,repondéré écart+phase,36,455.2,0.09253
+Blitz,repondéré écart+phase,36,496.8,0.08448
+Blitz,repondéré écart+phase,36,542.2,0.07716
+Blitz,repondéré écart+phase,36,591.8,0.0705
+Blitz,repondéré écart+phase,36,645.8,0.06443
+Blitz,repondéré écart+phase,36,704.9,0.05889
+Blitz,repondéré écart+phase,36,769.3,0.05385
+Blitz,repondéré écart+phase,36,839.6,0.04924
+Blitz,repondéré écart+phase,36,916.3,0.04504
+Blitz,repondéré écart+phase,36,1000,0.04121
+Blitz,repondéré écart+phase,40,1,0.6856
+Blitz,repondéré écart+phase,40,1.091,0.7432
+Blitz,repondéré écart+phase,40,1.191,0.8036
+Blitz,repondéré écart+phase,40,1.3,0.8665
+Blitz,repondéré écart+phase,40,1.419,0.9315
+Blitz,repondéré écart+phase,40,1.548,0.9982
+Blitz,repondéré écart+phase,40,1.69,1.066
+Blitz,repondéré écart+phase,40,1.844,1.134
+Blitz,repondéré écart+phase,40,2.013,1.202
+Blitz,repondéré écart+phase,40,2.197,1.27
+Blitz,repondéré écart+phase,40,2.397,1.336
+Blitz,repondéré écart+phase,40,2.617,1.4
+Blitz,repondéré écart+phase,40,2.856,1.462
+Blitz,repondéré écart+phase,40,3.117,1.521
+Blitz,repondéré écart+phase,40,3.401,1.577
+Blitz,repondéré écart+phase,40,3.712,1.629
+Blitz,repondéré écart+phase,40,4.051,1.678
+Blitz,repondéré écart+phase,40,4.421,1.722
+Blitz,repondéré écart+phase,40,4.826,1.763
+Blitz,repondéré écart+phase,40,5.266,1.799
+Blitz,repondéré écart+phase,40,5.748,1.832
+Blitz,repondéré écart+phase,40,6.273,1.861
+Blitz,repondéré écart+phase,40,6.846,1.886
+Blitz,repondéré écart+phase,40,7.472,1.907
+Blitz,repondéré écart+phase,40,8.154,1.925
+Blitz,repondéré écart+phase,40,8.9,1.939
+Blitz,repondéré écart+phase,40,9.713,1.948
+Blitz,repondéré écart+phase,40,10.6,1.953
+Blitz,repondéré écart+phase,40,11.57,1.953
+Blitz,repondéré écart+phase,40,12.63,1.948
+Blitz,repondéré écart+phase,40,13.78,1.937
+Blitz,repondéré écart+phase,40,15.04,1.918
+Blitz,repondéré écart+phase,40,16.41,1.893
+Blitz,repondéré écart+phase,40,17.91,1.86
+Blitz,repondéré écart+phase,40,19.55,1.819
+Blitz,repondéré écart+phase,40,21.34,1.77
+Blitz,repondéré écart+phase,40,23.29,1.713
+Blitz,repondéré écart+phase,40,25.41,1.65
+Blitz,repondéré écart+phase,40,27.74,1.579
+Blitz,repondéré écart+phase,40,30.27,1.504
+Blitz,repondéré écart+phase,40,33.04,1.424
+Blitz,repondéré écart+phase,40,36.05,1.341
+Blitz,repondéré écart+phase,40,39.35,1.256
+Blitz,repondéré écart+phase,40,42.94,1.171
+Blitz,repondéré écart+phase,40,46.87,1.087
+Blitz,repondéré écart+phase,40,51.15,1.005
+Blitz,repondéré écart+phase,40,55.83,0.9256
+Blitz,repondéré écart+phase,40,60.93,0.8496
+Blitz,repondéré écart+phase,40,66.49,0.7777
+Blitz,repondéré écart+phase,40,72.57,0.7102
+Blitz,repondéré écart+phase,40,79.2,0.6474
+Blitz,repondéré écart+phase,40,86.44,0.5892
+Blitz,repondéré écart+phase,40,94.34,0.5356
+Blitz,repondéré écart+phase,40,103,0.4865
+Blitz,repondéré écart+phase,40,112.4,0.4416
+Blitz,repondéré écart+phase,40,122.6,0.4007
+Blitz,repondéré écart+phase,40,133.8,0.3636
+Blitz,repondéré écart+phase,40,146.1,0.3299
+Blitz,repondéré écart+phase,40,159.4,0.2994
+Blitz,repondéré écart+phase,40,174,0.2718
+Blitz,repondéré écart+phase,40,189.9,0.2468
+Blitz,repondéré écart+phase,40,207.2,0.2242
+Blitz,repondéré écart+phase,40,226.2,0.2037
+Blitz,repondéré écart+phase,40,246.8,0.1852
+Blitz,repondéré écart+phase,40,269.4,0.1685
+Blitz,repondéré écart+phase,40,294,0.1533
+Blitz,repondéré écart+phase,40,320.9,0.1396
+Blitz,repondéré écart+phase,40,350.2,0.1271
+Blitz,repondéré écart+phase,40,382.2,0.1158
+Blitz,repondéré écart+phase,40,417.1,0.1056
+Blitz,repondéré écart+phase,40,455.2,0.09629
+Blitz,repondéré écart+phase,40,496.8,0.08784
+Blitz,repondéré écart+phase,40,542.2,0.08016
+Blitz,repondéré écart+phase,40,591.8,0.07318
+Blitz,repondéré écart+phase,40,645.8,0.06682
+Blitz,repondéré écart+phase,40,704.9,0.06104
+Blitz,repondéré écart+phase,40,769.3,0.05577
+Blitz,repondéré écart+phase,40,839.6,0.05097
+Blitz,repondéré écart+phase,40,916.3,0.04659
+Blitz,repondéré écart+phase,40,1000,0.0426
+Blitz,témoin (>=40 réduits),0,1,0.357
+Blitz,témoin (>=40 réduits),0,1.091,0.3917
+Blitz,témoin (>=40 réduits),0,1.191,0.429
+Blitz,témoin (>=40 réduits),0,1.3,0.4689
+Blitz,témoin (>=40 réduits),0,1.419,0.5113
+Blitz,témoin (>=40 réduits),0,1.548,0.5561
+Blitz,témoin (>=40 réduits),0,1.69,0.6031
+Blitz,témoin (>=40 réduits),0,1.844,0.6522
+Blitz,témoin (>=40 réduits),0,2.013,0.703
+Blitz,témoin (>=40 réduits),0,2.197,0.7552
+Blitz,témoin (>=40 réduits),0,2.397,0.8086
+Blitz,témoin (>=40 réduits),0,2.617,0.8628
+Blitz,témoin (>=40 réduits),0,2.856,0.9173
+Blitz,témoin (>=40 réduits),0,3.117,0.9718
+Blitz,témoin (>=40 réduits),0,3.401,1.026
+Blitz,témoin (>=40 réduits),0,3.712,1.079
+Blitz,témoin (>=40 réduits),0,4.051,1.132
+Blitz,témoin (>=40 réduits),0,4.421,1.183
+Blitz,témoin (>=40 réduits),0,4.826,1.232
+Blitz,témoin (>=40 réduits),0,5.266,1.28
+Blitz,témoin (>=40 réduits),0,5.748,1.326
+Blitz,témoin (>=40 réduits),0,6.273,1.369
+Blitz,témoin (>=40 réduits),0,6.846,1.411
+Blitz,témoin (>=40 réduits),0,7.472,1.45
+Blitz,témoin (>=40 réduits),0,8.154,1.486
+Blitz,témoin (>=40 réduits),0,8.9,1.519
+Blitz,témoin (>=40 réduits),0,9.713,1.55
+Blitz,témoin (>=40 réduits),0,10.6,1.577
+Blitz,témoin (>=40 réduits),0,11.57,1.6
+Blitz,témoin (>=40 réduits),0,12.63,1.619
+Blitz,témoin (>=40 réduits),0,13.78,1.634
+Blitz,témoin (>=40 réduits),0,15.04,1.643
+Blitz,témoin (>=40 réduits),0,16.41,1.646
+Blitz,témoin (>=40 réduits),0,17.91,1.643
+Blitz,témoin (>=40 réduits),0,19.55,1.633
+Blitz,témoin (>=40 réduits),0,21.34,1.616
+Blitz,témoin (>=40 réduits),0,23.29,1.592
+Blitz,témoin (>=40 réduits),0,25.41,1.561
+Blitz,témoin (>=40 réduits),0,27.74,1.522
+Blitz,témoin (>=40 réduits),0,30.27,1.477
+Blitz,témoin (>=40 réduits),0,33.04,1.426
+Blitz,témoin (>=40 réduits),0,36.05,1.369
+Blitz,témoin (>=40 réduits),0,39.35,1.307
+Blitz,témoin (>=40 réduits),0,42.94,1.242
+Blitz,témoin (>=40 réduits),0,46.87,1.174
+Blitz,témoin (>=40 réduits),0,51.15,1.105
+Blitz,témoin (>=40 réduits),0,55.83,1.035
+Blitz,témoin (>=40 réduits),0,60.93,0.9652
+Blitz,témoin (>=40 réduits),0,66.49,0.8966
+Blitz,témoin (>=40 réduits),0,72.57,0.83
+Blitz,témoin (>=40 réduits),0,79.2,0.7658
+Blitz,témoin (>=40 réduits),0,86.44,0.7045
+Blitz,témoin (>=40 réduits),0,94.34,0.6465
+Blitz,témoin (>=40 réduits),0,103,0.592
+Blitz,témoin (>=40 réduits),0,112.4,0.541
+Blitz,témoin (>=40 réduits),0,122.6,0.4936
+Blitz,témoin (>=40 réduits),0,133.8,0.4498
+Blitz,témoin (>=40 réduits),0,146.1,0.4095
+Blitz,témoin (>=40 réduits),0,159.4,0.3725
+Blitz,témoin (>=40 réduits),0,174,0.3386
+Blitz,témoin (>=40 réduits),0,189.9,0.3076
+Blitz,témoin (>=40 réduits),0,207.2,0.2794
+Blitz,témoin (>=40 réduits),0,226.2,0.2537
+Blitz,témoin (>=40 réduits),0,246.8,0.2304
+Blitz,témoin (>=40 réduits),0,269.4,0.2092
+Blitz,témoin (>=40 réduits),0,294,0.19
+Blitz,témoin (>=40 réduits),0,320.9,0.1726
+Blitz,témoin (>=40 réduits),0,350.2,0.1568
+Blitz,témoin (>=40 réduits),0,382.2,0.1425
+Blitz,témoin (>=40 réduits),0,417.1,0.1296
+Blitz,témoin (>=40 réduits),0,455.2,0.1178
+Blitz,témoin (>=40 réduits),0,496.8,0.1071
+Blitz,témoin (>=40 réduits),0,542.2,0.09748
+Blitz,témoin (>=40 réduits),0,591.8,0.08872
+Blitz,témoin (>=40 réduits),0,645.8,0.08077
+Blitz,témoin (>=40 réduits),0,704.9,0.07356
+Blitz,témoin (>=40 réduits),0,769.3,0.06701
+Blitz,témoin (>=40 réduits),0,839.6,0.06106
+Blitz,témoin (>=40 réduits),0,916.3,0.05565
+Blitz,témoin (>=40 réduits),0,1000,0.05074
+Blitz,témoin (>=40 réduits),27,1,0.4799
+Blitz,témoin (>=40 réduits),27,1.091,0.5234
+Blitz,témoin (>=40 réduits),27,1.191,0.5697
+Blitz,témoin (>=40 réduits),27,1.3,0.6185
+Blitz,témoin (>=40 réduits),27,1.419,0.6698
+Blitz,témoin (>=40 réduits),27,1.548,0.7233
+Blitz,témoin (>=40 réduits),27,1.69,0.7788
+Blitz,témoin (>=40 réduits),27,1.844,0.8359
+Blitz,témoin (>=40 réduits),27,2.013,0.8942
+Blitz,témoin (>=40 réduits),27,2.197,0.9535
+Blitz,témoin (>=40 réduits),27,2.397,1.013
+Blitz,témoin (>=40 réduits),27,2.617,1.073
+Blitz,témoin (>=40 réduits),27,2.856,1.132
+Blitz,témoin (>=40 réduits),27,3.117,1.191
+Blitz,témoin (>=40 réduits),27,3.401,1.248
+Blitz,témoin (>=40 réduits),27,3.712,1.304
+Blitz,témoin (>=40 réduits),27,4.051,1.358
+Blitz,témoin (>=40 réduits),27,4.421,1.41
+Blitz,témoin (>=40 réduits),27,4.826,1.46
+Blitz,témoin (>=40 réduits),27,5.266,1.507
+Blitz,témoin (>=40 réduits),27,5.748,1.552
+Blitz,témoin (>=40 réduits),27,6.273,1.594
+Blitz,témoin (>=40 réduits),27,6.846,1.633
+Blitz,témoin (>=40 réduits),27,7.472,1.669
+Blitz,témoin (>=40 réduits),27,8.154,1.701
+Blitz,témoin (>=40 réduits),27,8.9,1.731
+Blitz,témoin (>=40 réduits),27,9.713,1.756
+Blitz,témoin (>=40 réduits),27,10.6,1.777
+Blitz,témoin (>=40 réduits),27,11.57,1.793
+Blitz,témoin (>=40 réduits),27,12.63,1.803
+Blitz,témoin (>=40 réduits),27,13.78,1.808
+Blitz,témoin (>=40 réduits),27,15.04,1.807
+Blitz,témoin (>=40 réduits),27,16.41,1.798
+Blitz,témoin (>=40 réduits),27,17.91,1.782
+Blitz,témoin (>=40 réduits),27,19.55,1.758
+Blitz,témoin (>=40 réduits),27,21.34,1.726
+Blitz,témoin (>=40 réduits),27,23.29,1.686
+Blitz,témoin (>=40 réduits),27,25.41,1.638
+Blitz,témoin (>=40 réduits),27,27.74,1.583
+Blitz,témoin (>=40 réduits),27,30.27,1.522
+Blitz,témoin (>=40 réduits),27,33.04,1.455
+Blitz,témoin (>=40 réduits),27,36.05,1.384
+Blitz,témoin (>=40 réduits),27,39.35,1.309
+Blitz,témoin (>=40 réduits),27,42.94,1.231
+Blitz,témoin (>=40 réduits),27,46.87,1.153
+Blitz,témoin (>=40 réduits),27,51.15,1.075
+Blitz,témoin (>=40 réduits),27,55.83,0.9978
+Blitz,témoin (>=40 réduits),27,60.93,0.9227
+Blitz,témoin (>=40 réduits),27,66.49,0.8502
+Blitz,témoin (>=40 réduits),27,72.57,0.781
+Blitz,témoin (>=40 réduits),27,79.2,0.7155
+Blitz,témoin (>=40 réduits),27,86.44,0.654
+Blitz,témoin (>=40 réduits),27,94.34,0.5967
+Blitz,témoin (>=40 réduits),27,103,0.5435
+Blitz,témoin (>=40 réduits),27,112.4,0.4944
+Blitz,témoin (>=40 réduits),27,122.6,0.4493
+Blitz,témoin (>=40 réduits),27,133.8,0.408
+Blitz,témoin (>=40 réduits),27,146.1,0.3703
+Blitz,témoin (>=40 réduits),27,159.4,0.3359
+Blitz,témoin (>=40 réduits),27,174,0.3047
+Blitz,témoin (>=40 réduits),27,189.9,0.2764
+Blitz,témoin (>=40 réduits),27,207.2,0.2508
+Blitz,témoin (>=40 réduits),27,226.2,0.2275
+Blitz,témoin (>=40 réduits),27,246.8,0.2065
+Blitz,témoin (>=40 réduits),27,269.4,0.1874
+Blitz,témoin (>=40 réduits),27,294,0.1702
+Blitz,témoin (>=40 réduits),27,320.9,0.1546
+Blitz,témoin (>=40 réduits),27,350.2,0.1405
+Blitz,témoin (>=40 réduits),27,382.2,0.1277
+Blitz,témoin (>=40 réduits),27,417.1,0.1161
+Blitz,témoin (>=40 réduits),27,455.2,0.1057
+Blitz,témoin (>=40 réduits),27,496.8,0.09616
+Blitz,témoin (>=40 réduits),27,542.2,0.08755
+Blitz,témoin (>=40 réduits),27,591.8,0.07974
+Blitz,témoin (>=40 réduits),27,645.8,0.07265
+Blitz,témoin (>=40 réduits),27,704.9,0.06621
+Blitz,témoin (>=40 réduits),27,769.3,0.06036
+Blitz,témoin (>=40 réduits),27,839.6,0.05505
+Blitz,témoin (>=40 réduits),27,916.3,0.05022
+Blitz,témoin (>=40 réduits),27,1000,0.04583
+Blitz,témoin (>=40 réduits),32,1,0.5371
+Blitz,témoin (>=40 réduits),32,1.091,0.5854
+Blitz,témoin (>=40 réduits),32,1.191,0.6366
+Blitz,témoin (>=40 réduits),32,1.3,0.6905
+Blitz,témoin (>=40 réduits),32,1.419,0.7469
+Blitz,témoin (>=40 réduits),32,1.548,0.8056
+Blitz,témoin (>=40 réduits),32,1.69,0.8663
+Blitz,témoin (>=40 réduits),32,1.844,0.9285
+Blitz,témoin (>=40 réduits),32,2.013,0.9917
+Blitz,témoin (>=40 réduits),32,2.197,1.056
+Blitz,témoin (>=40 réduits),32,2.397,1.12
+Blitz,témoin (>=40 réduits),32,2.617,1.183
+Blitz,témoin (>=40 réduits),32,2.856,1.246
+Blitz,témoin (>=40 réduits),32,3.117,1.308
+Blitz,témoin (>=40 réduits),32,3.401,1.368
+Blitz,témoin (>=40 réduits),32,3.712,1.425
+Blitz,témoin (>=40 réduits),32,4.051,1.481
+Blitz,témoin (>=40 réduits),32,4.421,1.534
+Blitz,témoin (>=40 réduits),32,4.826,1.583
+Blitz,témoin (>=40 réduits),32,5.266,1.63
+Blitz,témoin (>=40 réduits),32,5.748,1.674
+Blitz,témoin (>=40 réduits),32,6.273,1.715
+Blitz,témoin (>=40 réduits),32,6.846,1.752
+Blitz,témoin (>=40 réduits),32,7.472,1.786
+Blitz,témoin (>=40 réduits),32,8.154,1.816
+Blitz,témoin (>=40 réduits),32,8.9,1.842
+Blitz,témoin (>=40 réduits),32,9.713,1.864
+Blitz,témoin (>=40 réduits),32,10.6,1.881
+Blitz,témoin (>=40 réduits),32,11.57,1.893
+Blitz,témoin (>=40 réduits),32,12.63,1.898
+Blitz,témoin (>=40 réduits),32,13.78,1.897
+Blitz,témoin (>=40 réduits),32,15.04,1.889
+Blitz,témoin (>=40 réduits),32,16.41,1.874
+Blitz,témoin (>=40 réduits),32,17.91,1.85
+Blitz,témoin (>=40 réduits),32,19.55,1.817
+Blitz,témoin (>=40 réduits),32,21.34,1.776
+Blitz,témoin (>=40 réduits),32,23.29,1.727
+Blitz,témoin (>=40 réduits),32,25.41,1.67
+Blitz,témoin (>=40 réduits),32,27.74,1.606
+Blitz,témoin (>=40 réduits),32,30.27,1.536
+Blitz,témoin (>=40 réduits),32,33.04,1.46
+Blitz,témoin (>=40 réduits),32,36.05,1.381
+Blitz,témoin (>=40 réduits),32,39.35,1.3
+Blitz,témoin (>=40 réduits),32,42.94,1.217
+Blitz,témoin (>=40 réduits),32,46.87,1.134
+Blitz,témoin (>=40 réduits),32,51.15,1.052
+Blitz,témoin (>=40 réduits),32,55.83,0.9726
+Blitz,témoin (>=40 réduits),32,60.93,0.8957
+Blitz,témoin (>=40 réduits),32,66.49,0.8223
+Blitz,témoin (>=40 réduits),32,72.57,0.7528
+Blitz,témoin (>=40 réduits),32,79.2,0.6877
+Blitz,témoin (>=40 réduits),32,86.44,0.6269
+Blitz,témoin (>=40 réduits),32,94.34,0.5706
+Blitz,témoin (>=40 réduits),32,103,0.5187
+Blitz,témoin (>=40 réduits),32,112.4,0.4711
+Blitz,témoin (>=40 réduits),32,122.6,0.4275
+Blitz,témoin (>=40 réduits),32,133.8,0.3878
+Blitz,témoin (>=40 réduits),32,146.1,0.3517
+Blitz,témoin (>=40 réduits),32,159.4,0.3189
+Blitz,témoin (>=40 réduits),32,174,0.2892
+Blitz,témoin (>=40 réduits),32,189.9,0.2623
+Blitz,témoin (>=40 réduits),32,207.2,0.2379
+Blitz,témoin (>=40 réduits),32,226.2,0.2159
+Blitz,témoin (>=40 réduits),32,246.8,0.196
+Blitz,témoin (>=40 réduits),32,269.4,0.178
+Blitz,témoin (>=40 réduits),32,294,0.1617
+Blitz,témoin (>=40 réduits),32,320.9,0.1469
+Blitz,témoin (>=40 réduits),32,350.2,0.1336
+Blitz,témoin (>=40 réduits),32,382.2,0.1215
+Blitz,témoin (>=40 réduits),32,417.1,0.1105
+Blitz,témoin (>=40 réduits),32,455.2,0.1006
+Blitz,témoin (>=40 réduits),32,496.8,0.09164
+Blitz,témoin (>=40 réduits),32,542.2,0.08348
+Blitz,témoin (>=40 réduits),32,591.8,0.07608
+Blitz,témoin (>=40 réduits),32,645.8,0.06936
+Blitz,témoin (>=40 réduits),32,704.9,0.06325
+Blitz,témoin (>=40 réduits),32,769.3,0.0577
+Blitz,témoin (>=40 réduits),32,839.6,0.05265
+Blitz,témoin (>=40 réduits),32,916.3,0.04806
+Blitz,témoin (>=40 réduits),32,1000,0.04388
+Blitz,témoin (>=40 réduits),36,1,0.5735
+Blitz,témoin (>=40 réduits),36,1.091,0.6242
+Blitz,témoin (>=40 réduits),36,1.191,0.6779
+Blitz,témoin (>=40 réduits),36,1.3,0.7342
+Blitz,témoin (>=40 réduits),36,1.419,0.793
+Blitz,témoin (>=40 réduits),36,1.548,0.8539
+Blitz,témoin (>=40 réduits),36,1.69,0.9166
+Blitz,témoin (>=40 réduits),36,1.844,0.9807
+Blitz,témoin (>=40 réduits),36,2.013,1.046
+Blitz,témoin (>=40 réduits),36,2.197,1.111
+Blitz,témoin (>=40 réduits),36,2.397,1.176
+Blitz,témoin (>=40 réduits),36,2.617,1.241
+Blitz,témoin (>=40 réduits),36,2.856,1.305
+Blitz,témoin (>=40 réduits),36,3.117,1.367
+Blitz,témoin (>=40 réduits),36,3.401,1.427
+Blitz,témoin (>=40 réduits),36,3.712,1.485
+Blitz,témoin (>=40 réduits),36,4.051,1.54
+Blitz,témoin (>=40 réduits),36,4.421,1.592
+Blitz,témoin (>=40 réduits),36,4.826,1.642
+Blitz,témoin (>=40 réduits),36,5.266,1.688
+Blitz,témoin (>=40 réduits),36,5.748,1.731
+Blitz,témoin (>=40 réduits),36,6.273,1.77
+Blitz,témoin (>=40 réduits),36,6.846,1.806
+Blitz,témoin (>=40 réduits),36,7.472,1.838
+Blitz,témoin (>=40 réduits),36,8.154,1.867
+Blitz,témoin (>=40 réduits),36,8.9,1.891
+Blitz,témoin (>=40 réduits),36,9.713,1.911
+Blitz,témoin (>=40 réduits),36,10.6,1.926
+Blitz,témoin (>=40 réduits),36,11.57,1.935
+Blitz,témoin (>=40 réduits),36,12.63,1.938
+Blitz,témoin (>=40 réduits),36,13.78,1.935
+Blitz,témoin (>=40 réduits),36,15.04,1.924
+Blitz,témoin (>=40 réduits),36,16.41,1.904
+Blitz,témoin (>=40 réduits),36,17.91,1.877
+Blitz,témoin (>=40 réduits),36,19.55,1.84
+Blitz,témoin (>=40 réduits),36,21.34,1.796
+Blitz,témoin (>=40 réduits),36,23.29,1.742
+Blitz,témoin (>=40 réduits),36,25.41,1.681
+Blitz,témoin (>=40 réduits),36,27.74,1.613
+Blitz,témoin (>=40 réduits),36,30.27,1.539
+Blitz,témoin (>=40 réduits),36,33.04,1.461
+Blitz,témoin (>=40 réduits),36,36.05,1.379
+Blitz,témoin (>=40 réduits),36,39.35,1.295
+Blitz,témoin (>=40 réduits),36,42.94,1.209
+Blitz,témoin (>=40 réduits),36,46.87,1.125
+Blitz,témoin (>=40 réduits),36,51.15,1.042
+Blitz,témoin (>=40 réduits),36,55.83,0.9611
+Blitz,témoin (>=40 réduits),36,60.93,0.8837
+Blitz,témoin (>=40 réduits),36,66.49,0.81
+Blitz,témoin (>=40 réduits),36,72.57,0.7406
+Blitz,témoin (>=40 réduits),36,79.2,0.6757
+Blitz,témoin (>=40 réduits),36,86.44,0.6154
+Blitz,témoin (>=40 réduits),36,94.34,0.5596
+Blitz,témoin (>=40 réduits),36,103,0.5083
+Blitz,témoin (>=40 réduits),36,112.4,0.4614
+Blitz,témoin (>=40 réduits),36,122.6,0.4185
+Blitz,témoin (>=40 réduits),36,133.8,0.3795
+Blitz,témoin (>=40 réduits),36,146.1,0.344
+Blitz,témoin (>=40 réduits),36,159.4,0.3119
+Blitz,témoin (>=40 réduits),36,174,0.2828
+Blitz,témoin (>=40 réduits),36,189.9,0.2565
+Blitz,témoin (>=40 réduits),36,207.2,0.2327
+Blitz,témoin (>=40 réduits),36,226.2,0.2111
+Blitz,témoin (>=40 réduits),36,246.8,0.1917
+Blitz,témoin (>=40 réduits),36,269.4,0.1741
+Blitz,témoin (>=40 réduits),36,294,0.1582
+Blitz,témoin (>=40 réduits),36,320.9,0.1438
+Blitz,témoin (>=40 réduits),36,350.2,0.1308
+Blitz,témoin (>=40 réduits),36,382.2,0.119
+Blitz,témoin (>=40 réduits),36,417.1,0.1083
+Blitz,témoin (>=40 réduits),36,455.2,0.0986
+Blitz,témoin (>=40 réduits),36,496.8,0.08982
+Blitz,témoin (>=40 réduits),36,542.2,0.08185
+Blitz,témoin (>=40 réduits),36,591.8,0.07462
+Blitz,témoin (>=40 réduits),36,645.8,0.06805
+Blitz,témoin (>=40 réduits),36,704.9,0.06208
+Blitz,témoin (>=40 réduits),36,769.3,0.05664
+Blitz,témoin (>=40 réduits),36,839.6,0.0517
+Blitz,témoin (>=40 réduits),36,916.3,0.04721
+Blitz,témoin (>=40 réduits),36,1000,0.04311
+Blitz,témoin (>=40 réduits),40,1,0.6096
+Blitz,témoin (>=40 réduits),40,1.091,0.6624
+Blitz,témoin (>=40 réduits),40,1.191,0.718
+Blitz,témoin (>=40 réduits),40,1.3,0.7764
+Blitz,témoin (>=40 réduits),40,1.419,0.8371
+Blitz,témoin (>=40 réduits),40,1.548,0.8998
+Blitz,témoin (>=40 réduits),40,1.69,0.9642
+Blitz,témoin (>=40 réduits),40,1.844,1.03
+Blitz,témoin (>=40 réduits),40,2.013,1.096
+Blitz,témoin (>=40 réduits),40,2.197,1.163
+Blitz,témoin (>=40 réduits),40,2.397,1.229
+Blitz,témoin (>=40 réduits),40,2.617,1.294
+Blitz,témoin (>=40 réduits),40,2.856,1.359
+Blitz,témoin (>=40 réduits),40,3.117,1.421
+Blitz,témoin (>=40 réduits),40,3.401,1.481
+Blitz,témoin (>=40 réduits),40,3.712,1.539
+Blitz,témoin (>=40 réduits),40,4.051,1.594
+Blitz,témoin (>=40 réduits),40,4.421,1.646
+Blitz,témoin (>=40 réduits),40,4.826,1.695
+Blitz,témoin (>=40 réduits),40,5.266,1.741
+Blitz,témoin (>=40 réduits),40,5.748,1.783
+Blitz,témoin (>=40 réduits),40,6.273,1.822
+Blitz,témoin (>=40 réduits),40,6.846,1.857
+Blitz,témoin (>=40 réduits),40,7.472,1.888
+Blitz,témoin (>=40 réduits),40,8.154,1.915
+Blitz,témoin (>=40 réduits),40,8.9,1.937
+Blitz,témoin (>=40 réduits),40,9.713,1.955
+Blitz,témoin (>=40 réduits),40,10.6,1.968
+Blitz,témoin (>=40 réduits),40,11.57,1.975
+Blitz,témoin (>=40 réduits),40,12.63,1.975
+Blitz,témoin (>=40 réduits),40,13.78,1.968
+Blitz,témoin (>=40 réduits),40,15.04,1.954
+Blitz,témoin (>=40 réduits),40,16.41,1.931
+Blitz,témoin (>=40 réduits),40,17.91,1.9
+Blitz,témoin (>=40 réduits),40,19.55,1.86
+Blitz,témoin (>=40 réduits),40,21.34,1.811
+Blitz,témoin (>=40 réduits),40,23.29,1.755
+Blitz,témoin (>=40 réduits),40,25.41,1.69
+Blitz,témoin (>=40 réduits),40,27.74,1.619
+Blitz,témoin (>=40 réduits),40,30.27,1.541
+Blitz,témoin (>=40 réduits),40,33.04,1.46
+Blitz,témoin (>=40 réduits),40,36.05,1.375
+Blitz,témoin (>=40 réduits),40,39.35,1.289
+Blitz,témoin (>=40 réduits),40,42.94,1.202
+Blitz,témoin (>=40 réduits),40,46.87,1.115
+Blitz,témoin (>=40 réduits),40,51.15,1.031
+Blitz,témoin (>=40 réduits),40,55.83,0.9496
+Blitz,témoin (>=40 réduits),40,60.93,0.8716
+Blitz,témoin (>=40 réduits),40,66.49,0.7978
+Blitz,témoin (>=40 réduits),40,72.57,0.7284
+Blitz,témoin (>=40 réduits),40,79.2,0.6637
+Blitz,témoin (>=40 réduits),40,86.44,0.6037
+Blitz,témoin (>=40 réduits),40,94.34,0.5485
+Blitz,témoin (>=40 réduits),40,103,0.4978
+Blitz,témoin (>=40 réduits),40,112.4,0.4516
+Blitz,témoin (>=40 réduits),40,122.6,0.4094
+Blitz,témoin (>=40 réduits),40,133.8,0.3711
+Blitz,témoin (>=40 réduits),40,146.1,0.3363
+Blitz,témoin (>=40 réduits),40,159.4,0.3049
+Blitz,témoin (>=40 réduits),40,174,0.2764
+Blitz,témoin (>=40 réduits),40,189.9,0.2507
+Blitz,témoin (>=40 réduits),40,207.2,0.2274
+Blitz,témoin (>=40 réduits),40,226.2,0.2064
+Blitz,témoin (>=40 réduits),40,246.8,0.1874
+Blitz,témoin (>=40 réduits),40,269.4,0.1702
+Blitz,témoin (>=40 réduits),40,294,0.1547
+Blitz,témoin (>=40 réduits),40,320.9,0.1407
+Blitz,témoin (>=40 réduits),40,350.2,0.1279
+Blitz,témoin (>=40 réduits),40,382.2,0.1164
+Blitz,témoin (>=40 réduits),40,417.1,0.106
+Blitz,témoin (>=40 réduits),40,455.2,0.09656
+Blitz,témoin (>=40 réduits),40,496.8,0.08798
+Blitz,témoin (>=40 réduits),40,542.2,0.0802
+Blitz,témoin (>=40 réduits),40,591.8,0.07313
+Blitz,témoin (>=40 réduits),40,645.8,0.06671
+Blitz,témoin (>=40 réduits),40,704.9,0.06087
+Blitz,témoin (>=40 réduits),40,769.3,0.05556
+Blitz,témoin (>=40 réduits),40,839.6,0.05073
+Blitz,témoin (>=40 réduits),40,916.3,0.04633
+Blitz,témoin (>=40 réduits),40,1000,0.04232
+Rapid,brut,0,1,0.5063
+Rapid,brut,0,1.091,0.5383
+Rapid,brut,0,1.191,0.5716
+Rapid,brut,0,1.3,0.6062
+Rapid,brut,0,1.419,0.6419
+Rapid,brut,0,1.548,0.6786
+Rapid,brut,0,1.69,0.716
+Rapid,brut,0,1.844,0.754
+Rapid,brut,0,2.013,0.7923
+Rapid,brut,0,2.197,0.8305
+Rapid,brut,0,2.397,0.8685
+Rapid,brut,0,2.617,0.9057
+Rapid,brut,0,2.856,0.942
+Rapid,brut,0,3.117,0.9769
+Rapid,brut,0,3.401,1.01
+Rapid,brut,0,3.712,1.042
+Rapid,brut,0,4.051,1.071
+Rapid,brut,0,4.421,1.098
+Rapid,brut,0,4.826,1.123
+Rapid,brut,0,5.266,1.145
+Rapid,brut,0,5.748,1.164
+Rapid,brut,0,6.273,1.182
+Rapid,brut,0,6.846,1.196
+Rapid,brut,0,7.472,1.209
+Rapid,brut,0,8.154,1.22
+Rapid,brut,0,8.9,1.228
+Rapid,brut,0,9.713,1.235
+Rapid,brut,0,10.6,1.24
+Rapid,brut,0,11.57,1.243
+Rapid,brut,0,12.63,1.244
+Rapid,brut,0,13.78,1.244
+Rapid,brut,0,15.04,1.241
+Rapid,brut,0,16.41,1.236
+Rapid,brut,0,17.91,1.229
+Rapid,brut,0,19.55,1.219
+Rapid,brut,0,21.34,1.206
+Rapid,brut,0,23.29,1.189
+Rapid,brut,0,25.41,1.169
+Rapid,brut,0,27.74,1.146
+Rapid,brut,0,30.27,1.119
+Rapid,brut,0,33.04,1.088
+Rapid,brut,0,36.05,1.054
+Rapid,brut,0,39.35,1.016
+Rapid,brut,0,42.94,0.9755
+Rapid,brut,0,46.87,0.9323
+Rapid,brut,0,51.15,0.8869
+Rapid,brut,0,55.83,0.8399
+Rapid,brut,0,60.93,0.792
+Rapid,brut,0,66.49,0.7435
+Rapid,brut,0,72.57,0.6953
+Rapid,brut,0,79.2,0.6476
+Rapid,brut,0,86.44,0.6011
+Rapid,brut,0,94.34,0.5561
+Rapid,brut,0,103,0.513
+Rapid,brut,0,112.4,0.472
+Rapid,brut,0,122.6,0.4332
+Rapid,brut,0,133.8,0.3969
+Rapid,brut,0,146.1,0.363
+Rapid,brut,0,159.4,0.3315
+Rapid,brut,0,174,0.3024
+Rapid,brut,0,189.9,0.2756
+Rapid,brut,0,207.2,0.251
+Rapid,brut,0,226.2,0.2284
+Rapid,brut,0,246.8,0.2078
+Rapid,brut,0,269.4,0.189
+Rapid,brut,0,294,0.1719
+Rapid,brut,0,320.9,0.1563
+Rapid,brut,0,350.2,0.1421
+Rapid,brut,0,382.2,0.1292
+Rapid,brut,0,417.1,0.1175
+Rapid,brut,0,455.2,0.1069
+Rapid,brut,0,496.8,0.09721
+Rapid,brut,0,542.2,0.08843
+Rapid,brut,0,591.8,0.08045
+Rapid,brut,0,645.8,0.0732
+Rapid,brut,0,704.9,0.06662
+Rapid,brut,0,769.3,0.06063
+Rapid,brut,0,839.6,0.05519
+Rapid,brut,0,916.3,0.05025
+Rapid,brut,0,1000,0.04575
+Rapid,brut,27,1,0.5225
+Rapid,brut,27,1.091,0.5665
+Rapid,brut,27,1.191,0.6131
+Rapid,brut,27,1.3,0.6621
+Rapid,brut,27,1.419,0.7133
+Rapid,brut,27,1.548,0.7666
+Rapid,brut,27,1.69,0.8215
+Rapid,brut,27,1.844,0.8778
+Rapid,brut,27,2.013,0.935
+Rapid,brut,27,2.197,0.9926
+Rapid,brut,27,2.397,1.05
+Rapid,brut,27,2.617,1.107
+Rapid,brut,27,2.856,1.162
+Rapid,brut,27,3.117,1.216
+Rapid,brut,27,3.401,1.267
+Rapid,brut,27,3.712,1.316
+Rapid,brut,27,4.051,1.361
+Rapid,brut,27,4.421,1.403
+Rapid,brut,27,4.826,1.441
+Rapid,brut,27,5.266,1.475
+Rapid,brut,27,5.748,1.505
+Rapid,brut,27,6.273,1.531
+Rapid,brut,27,6.846,1.553
+Rapid,brut,27,7.472,1.571
+Rapid,brut,27,8.154,1.586
+Rapid,brut,27,8.9,1.596
+Rapid,brut,27,9.713,1.604
+Rapid,brut,27,10.6,1.607
+Rapid,brut,27,11.57,1.607
+Rapid,brut,27,12.63,1.604
+Rapid,brut,27,13.78,1.597
+Rapid,brut,27,15.04,1.585
+Rapid,brut,27,16.41,1.57
+Rapid,brut,27,17.91,1.55
+Rapid,brut,27,19.55,1.525
+Rapid,brut,27,21.34,1.495
+Rapid,brut,27,23.29,1.46
+Rapid,brut,27,25.41,1.42
+Rapid,brut,27,27.74,1.375
+Rapid,brut,27,30.27,1.325
+Rapid,brut,27,33.04,1.27
+Rapid,brut,27,36.05,1.212
+Rapid,brut,27,39.35,1.15
+Rapid,brut,27,42.94,1.087
+Rapid,brut,27,46.87,1.022
+Rapid,brut,27,51.15,0.9559
+Rapid,brut,27,55.83,0.8903
+Rapid,brut,27,60.93,0.8258
+Rapid,brut,27,66.49,0.7629
+Rapid,brut,27,72.57,0.7023
+Rapid,brut,27,79.2,0.6444
+Rapid,brut,27,86.44,0.5897
+Rapid,brut,27,94.34,0.5382
+Rapid,brut,27,103,0.4902
+Rapid,brut,27,112.4,0.4457
+Rapid,brut,27,122.6,0.4047
+Rapid,brut,27,133.8,0.367
+Rapid,brut,27,146.1,0.3326
+Rapid,brut,27,159.4,0.3012
+Rapid,brut,27,174,0.2727
+Rapid,brut,27,189.9,0.2468
+Rapid,brut,27,207.2,0.2234
+Rapid,brut,27,226.2,0.2022
+Rapid,brut,27,246.8,0.183
+Rapid,brut,27,269.4,0.1657
+Rapid,brut,27,294,0.1501
+Rapid,brut,27,320.9,0.136
+Rapid,brut,27,350.2,0.1233
+Rapid,brut,27,382.2,0.1118
+Rapid,brut,27,417.1,0.1014
+Rapid,brut,27,455.2,0.09198
+Rapid,brut,27,496.8,0.08349
+Rapid,brut,27,542.2,0.07581
+Rapid,brut,27,591.8,0.06885
+Rapid,brut,27,645.8,0.06256
+Rapid,brut,27,704.9,0.05686
+Rapid,brut,27,769.3,0.05169
+Rapid,brut,27,839.6,0.047
+Rapid,brut,27,916.3,0.04275
+Rapid,brut,27,1000,0.0389
+Rapid,brut,32,1,0.5211
+Rapid,brut,32,1.091,0.5687
+Rapid,brut,32,1.191,0.6193
+Rapid,brut,32,1.3,0.6729
+Rapid,brut,32,1.419,0.7292
+Rapid,brut,32,1.548,0.7881
+Rapid,brut,32,1.69,0.8491
+Rapid,brut,32,1.844,0.9119
+Rapid,brut,32,2.013,0.976
+Rapid,brut,32,2.197,1.041
+Rapid,brut,32,2.397,1.106
+Rapid,brut,32,2.617,1.17
+Rapid,brut,32,2.856,1.233
+Rapid,brut,32,3.117,1.294
+Rapid,brut,32,3.401,1.353
+Rapid,brut,32,3.712,1.408
+Rapid,brut,32,4.051,1.459
+Rapid,brut,32,4.421,1.506
+Rapid,brut,32,4.826,1.548
+Rapid,brut,32,5.266,1.586
+Rapid,brut,32,5.748,1.618
+Rapid,brut,32,6.273,1.645
+Rapid,brut,32,6.846,1.667
+Rapid,brut,32,7.472,1.685
+Rapid,brut,32,8.154,1.697
+Rapid,brut,32,8.9,1.706
+Rapid,brut,32,9.713,1.711
+Rapid,brut,32,10.6,1.712
+Rapid,brut,32,11.57,1.709
+Rapid,brut,32,12.63,1.703
+Rapid,brut,32,13.78,1.694
+Rapid,brut,32,15.04,1.68
+Rapid,brut,32,16.41,1.663
+Rapid,brut,32,17.91,1.641
+Rapid,brut,32,19.55,1.614
+Rapid,brut,32,21.34,1.581
+Rapid,brut,32,23.29,1.543
+Rapid,brut,32,25.41,1.498
+Rapid,brut,32,27.74,1.448
+Rapid,brut,32,30.27,1.392
+Rapid,brut,32,33.04,1.331
+Rapid,brut,32,36.05,1.266
+Rapid,brut,32,39.35,1.198
+Rapid,brut,32,42.94,1.127
+Rapid,brut,32,46.87,1.055
+Rapid,brut,32,51.15,0.983
+Rapid,brut,32,55.83,0.9117
+Rapid,brut,32,60.93,0.842
+Rapid,brut,32,66.49,0.7747
+Rapid,brut,32,72.57,0.7104
+Rapid,brut,32,79.2,0.6496
+Rapid,brut,32,86.44,0.5924
+Rapid,brut,32,94.34,0.5391
+Rapid,brut,32,103,0.4897
+Rapid,brut,32,112.4,0.4443
+Rapid,brut,32,122.6,0.4026
+Rapid,brut,32,133.8,0.3646
+Rapid,brut,32,146.1,0.33
+Rapid,brut,32,159.4,0.2986
+Rapid,brut,32,174,0.2701
+Rapid,brut,32,189.9,0.2444
+Rapid,brut,32,207.2,0.2211
+Rapid,brut,32,226.2,0.2001
+Rapid,brut,32,246.8,0.1812
+Rapid,brut,32,269.4,0.1641
+Rapid,brut,32,294,0.1486
+Rapid,brut,32,320.9,0.1347
+Rapid,brut,32,350.2,0.1222
+Rapid,brut,32,382.2,0.1108
+Rapid,brut,32,417.1,0.1005
+Rapid,brut,32,455.2,0.09128
+Rapid,brut,32,496.8,0.08289
+Rapid,brut,32,542.2,0.0753
+Rapid,brut,32,591.8,0.06843
+Rapid,brut,32,645.8,0.06221
+Rapid,brut,32,704.9,0.05657
+Rapid,brut,32,769.3,0.05145
+Rapid,brut,32,839.6,0.04681
+Rapid,brut,32,916.3,0.0426
+Rapid,brut,32,1000,0.03877
+Rapid,brut,36,1,0.4897
+Rapid,brut,36,1.091,0.5343
+Rapid,brut,36,1.191,0.582
+Rapid,brut,36,1.3,0.6329
+Rapid,brut,36,1.419,0.6867
+Rapid,brut,36,1.548,0.7435
+Rapid,brut,36,1.69,0.8028
+Rapid,brut,36,1.844,0.8645
+Rapid,brut,36,2.013,0.9282
+Rapid,brut,36,2.197,0.9935
+Rapid,brut,36,2.397,1.06
+Rapid,brut,36,2.617,1.127
+Rapid,brut,36,2.856,1.193
+Rapid,brut,36,3.117,1.259
+Rapid,brut,36,3.401,1.324
+Rapid,brut,36,3.712,1.387
+Rapid,brut,36,4.051,1.447
+Rapid,brut,36,4.421,1.504
+Rapid,brut,36,4.826,1.557
+Rapid,brut,36,5.266,1.607
+Rapid,brut,36,5.748,1.651
+Rapid,brut,36,6.273,1.692
+Rapid,brut,36,6.846,1.727
+Rapid,brut,36,7.472,1.758
+Rapid,brut,36,8.154,1.784
+Rapid,brut,36,8.9,1.806
+Rapid,brut,36,9.713,1.823
+Rapid,brut,36,10.6,1.835
+Rapid,brut,36,11.57,1.843
+Rapid,brut,36,12.63,1.845
+Rapid,brut,36,13.78,1.842
+Rapid,brut,36,15.04,1.833
+Rapid,brut,36,16.41,1.818
+Rapid,brut,36,17.91,1.796
+Rapid,brut,36,19.55,1.767
+Rapid,brut,36,21.34,1.729
+Rapid,brut,36,23.29,1.685
+Rapid,brut,36,25.41,1.633
+Rapid,brut,36,27.74,1.573
+Rapid,brut,36,30.27,1.507
+Rapid,brut,36,33.04,1.436
+Rapid,brut,36,36.05,1.361
+Rapid,brut,36,39.35,1.282
+Rapid,brut,36,42.94,1.201
+Rapid,brut,36,46.87,1.12
+Rapid,brut,36,51.15,1.039
+Rapid,brut,36,55.83,0.96
+Rapid,brut,36,60.93,0.8834
+Rapid,brut,36,66.49,0.8101
+Rapid,brut,36,72.57,0.7405
+Rapid,brut,36,79.2,0.6751
+Rapid,brut,36,86.44,0.6141
+Rapid,brut,36,94.34,0.5576
+Rapid,brut,36,103,0.5055
+Rapid,brut,36,112.4,0.4578
+Rapid,brut,36,122.6,0.4143
+Rapid,brut,36,133.8,0.3748
+Rapid,brut,36,146.1,0.3389
+Rapid,brut,36,159.4,0.3064
+Rapid,brut,36,174,0.277
+Rapid,brut,36,189.9,0.2505
+Rapid,brut,36,207.2,0.2266
+Rapid,brut,36,226.2,0.2051
+Rapid,brut,36,246.8,0.1856
+Rapid,brut,36,269.4,0.1681
+Rapid,brut,36,294,0.1523
+Rapid,brut,36,320.9,0.138
+Rapid,brut,36,350.2,0.1252
+Rapid,brut,36,382.2,0.1135
+Rapid,brut,36,417.1,0.103
+Rapid,brut,36,455.2,0.09354
+Rapid,brut,36,496.8,0.08495
+Rapid,brut,36,542.2,0.07717
+Rapid,brut,36,591.8,0.07013
+Rapid,brut,36,645.8,0.06375
+Rapid,brut,36,704.9,0.05797
+Rapid,brut,36,769.3,0.05273
+Rapid,brut,36,839.6,0.04797
+Rapid,brut,36,916.3,0.04365
+Rapid,brut,36,1000,0.03973
+Rapid,brut,40,1,0.4856
+Rapid,brut,40,1.091,0.5322
+Rapid,brut,40,1.191,0.5823
+Rapid,brut,40,1.3,0.6359
+Rapid,brut,40,1.419,0.6927
+Rapid,brut,40,1.548,0.7526
+Rapid,brut,40,1.69,0.8154
+Rapid,brut,40,1.844,0.8806
+Rapid,brut,40,2.013,0.9478
+Rapid,brut,40,2.197,1.016
+Rapid,brut,40,2.397,1.086
+Rapid,brut,40,2.617,1.156
+Rapid,brut,40,2.856,1.226
+Rapid,brut,40,3.117,1.295
+Rapid,brut,40,3.401,1.363
+Rapid,brut,40,3.712,1.428
+Rapid,brut,40,4.051,1.491
+Rapid,brut,40,4.421,1.552
+Rapid,brut,40,4.826,1.608
+Rapid,brut,40,5.266,1.661
+Rapid,brut,40,5.748,1.71
+Rapid,brut,40,6.273,1.755
+Rapid,brut,40,6.846,1.794
+Rapid,brut,40,7.472,1.83
+Rapid,brut,40,8.154,1.86
+Rapid,brut,40,8.9,1.886
+Rapid,brut,40,9.713,1.907
+Rapid,brut,40,10.6,1.923
+Rapid,brut,40,11.57,1.933
+Rapid,brut,40,12.63,1.938
+Rapid,brut,40,13.78,1.937
+Rapid,brut,40,15.04,1.93
+Rapid,brut,40,16.41,1.917
+Rapid,brut,40,17.91,1.896
+Rapid,brut,40,19.55,1.868
+Rapid,brut,40,21.34,1.832
+Rapid,brut,40,23.29,1.788
+Rapid,brut,40,25.41,1.736
+Rapid,brut,40,27.74,1.676
+Rapid,brut,40,30.27,1.609
+Rapid,brut,40,33.04,1.536
+Rapid,brut,40,36.05,1.458
+Rapid,brut,40,39.35,1.376
+Rapid,brut,40,42.94,1.291
+Rapid,brut,40,46.87,1.205
+Rapid,brut,40,51.15,1.119
+Rapid,brut,40,55.83,1.035
+Rapid,brut,40,60.93,0.9529
+Rapid,brut,40,66.49,0.8742
+Rapid,brut,40,72.57,0.7994
+Rapid,brut,40,79.2,0.729
+Rapid,brut,40,86.44,0.6633
+Rapid,brut,40,94.34,0.6023
+Rapid,brut,40,103,0.5461
+Rapid,brut,40,112.4,0.4946
+Rapid,brut,40,122.6,0.4476
+Rapid,brut,40,133.8,0.4048
+Rapid,brut,40,146.1,0.366
+Rapid,brut,40,159.4,0.3309
+Rapid,brut,40,174,0.2991
+Rapid,brut,40,189.9,0.2704
+Rapid,brut,40,207.2,0.2445
+Rapid,brut,40,226.2,0.2211
+Rapid,brut,40,246.8,0.2
+Rapid,brut,40,269.4,0.1811
+Rapid,brut,40,294,0.1639
+Rapid,brut,40,320.9,0.1485
+Rapid,brut,40,350.2,0.1345
+Rapid,brut,40,382.2,0.1219
+Rapid,brut,40,417.1,0.1106
+Rapid,brut,40,455.2,0.1003
+Rapid,brut,40,496.8,0.09102
+Rapid,brut,40,542.2,0.08263
+Rapid,brut,40,591.8,0.07503
+Rapid,brut,40,645.8,0.06815
+Rapid,brut,40,704.9,0.06192
+Rapid,brut,40,769.3,0.05628
+Rapid,brut,40,839.6,0.05116
+Rapid,brut,40,916.3,0.04652
+Rapid,brut,40,1000,0.04231
+Rapid,repondéré écart,0,1,0.4778
+Rapid,repondéré écart,0,1.091,0.5113
+Rapid,repondéré écart,0,1.191,0.5466
+Rapid,repondéré écart,0,1.3,0.5836
+Rapid,repondéré écart,0,1.419,0.6221
+Rapid,repondéré écart,0,1.548,0.662
+Rapid,repondéré écart,0,1.69,0.703
+Rapid,repondéré écart,0,1.844,0.745
+Rapid,repondéré écart,0,2.013,0.7877
+Rapid,repondéré écart,0,2.197,0.8308
+Rapid,repondéré écart,0,2.397,0.8739
+Rapid,repondéré écart,0,2.617,0.9167
+Rapid,repondéré écart,0,2.856,0.9587
+Rapid,repondéré écart,0,3.117,0.9997
+Rapid,repondéré écart,0,3.401,1.039
+Rapid,repondéré écart,0,3.712,1.077
+Rapid,repondéré écart,0,4.051,1.112
+Rapid,repondéré écart,0,4.421,1.146
+Rapid,repondéré écart,0,4.826,1.176
+Rapid,repondéré écart,0,5.266,1.204
+Rapid,repondéré écart,0,5.748,1.229
+Rapid,repondéré écart,0,6.273,1.251
+Rapid,repondéré écart,0,6.846,1.27
+Rapid,repondéré écart,0,7.472,1.286
+Rapid,repondéré écart,0,8.154,1.299
+Rapid,repondéré écart,0,8.9,1.31
+Rapid,repondéré écart,0,9.713,1.318
+Rapid,repondéré écart,0,10.6,1.323
+Rapid,repondéré écart,0,11.57,1.325
+Rapid,repondéré écart,0,12.63,1.324
+Rapid,repondéré écart,0,13.78,1.321
+Rapid,repondéré écart,0,15.04,1.314
+Rapid,repondéré écart,0,16.41,1.304
+Rapid,repondéré écart,0,17.91,1.291
+Rapid,repondéré écart,0,19.55,1.274
+Rapid,repondéré écart,0,21.34,1.254
+Rapid,repondéré écart,0,23.29,1.23
+Rapid,repondéré écart,0,25.41,1.202
+Rapid,repondéré écart,0,27.74,1.17
+Rapid,repondéré écart,0,30.27,1.135
+Rapid,repondéré écart,0,33.04,1.097
+Rapid,repondéré écart,0,36.05,1.056
+Rapid,repondéré écart,0,39.35,1.012
+Rapid,repondéré écart,0,42.94,0.9664
+Rapid,repondéré écart,0,46.87,0.9187
+Rapid,repondéré écart,0,51.15,0.8697
+Rapid,repondéré écart,0,55.83,0.8201
+Rapid,repondéré écart,0,60.93,0.7703
+Rapid,repondéré écart,0,66.49,0.7208
+Rapid,repondéré écart,0,72.57,0.6722
+Rapid,repondéré écart,0,79.2,0.6247
+Rapid,repondéré écart,0,86.44,0.5788
+Rapid,repondéré écart,0,94.34,0.5348
+Rapid,repondéré écart,0,103,0.4929
+Rapid,repondéré écart,0,112.4,0.4532
+Rapid,repondéré écart,0,122.6,0.416
+Rapid,repondéré écart,0,133.8,0.3811
+Rapid,repondéré écart,0,146.1,0.3487
+Rapid,repondéré écart,0,159.4,0.3186
+Rapid,repondéré écart,0,174,0.2908
+Rapid,repondéré écart,0,189.9,0.2653
+Rapid,repondéré écart,0,207.2,0.2418
+Rapid,repondéré écart,0,226.2,0.2203
+Rapid,repondéré écart,0,246.8,0.2006
+Rapid,repondéré écart,0,269.4,0.1827
+Rapid,repondéré écart,0,294,0.1663
+Rapid,repondéré écart,0,320.9,0.1513
+Rapid,repondéré écart,0,350.2,0.1377
+Rapid,repondéré écart,0,382.2,0.1254
+Rapid,repondéré écart,0,417.1,0.1141
+Rapid,repondéré écart,0,455.2,0.1038
+Rapid,repondéré écart,0,496.8,0.09452
+Rapid,repondéré écart,0,542.2,0.08604
+Rapid,repondéré écart,0,591.8,0.07833
+Rapid,repondéré écart,0,645.8,0.07132
+Rapid,repondéré écart,0,704.9,0.06494
+Rapid,repondéré écart,0,769.3,0.05914
+Rapid,repondéré écart,0,839.6,0.05386
+Rapid,repondéré écart,0,916.3,0.04906
+Rapid,repondéré écart,0,1000,0.04469
+Rapid,repondéré écart,27,1,0.5136
+Rapid,repondéré écart,27,1.091,0.5582
+Rapid,repondéré écart,27,1.191,0.6055
+Rapid,repondéré écart,27,1.3,0.6553
+Rapid,repondéré écart,27,1.419,0.7076
+Rapid,repondéré écart,27,1.548,0.762
+Rapid,repondéré écart,27,1.69,0.8182
+Rapid,repondéré écart,27,1.844,0.8759
+Rapid,repondéré écart,27,2.013,0.9345
+Rapid,repondéré écart,27,2.197,0.9937
+Rapid,repondéré écart,27,2.397,1.053
+Rapid,repondéré écart,27,2.617,1.111
+Rapid,repondéré écart,27,2.856,1.168
+Rapid,repondéré écart,27,3.117,1.224
+Rapid,repondéré écart,27,3.401,1.277
+Rapid,repondéré écart,27,3.712,1.327
+Rapid,repondéré écart,27,4.051,1.373
+Rapid,repondéré écart,27,4.421,1.417
+Rapid,repondéré écart,27,4.826,1.456
+Rapid,repondéré écart,27,5.266,1.491
+Rapid,repondéré écart,27,5.748,1.522
+Rapid,repondéré écart,27,6.273,1.548
+Rapid,repondéré écart,27,6.846,1.571
+Rapid,repondéré écart,27,7.472,1.589
+Rapid,repondéré écart,27,8.154,1.604
+Rapid,repondéré écart,27,8.9,1.614
+Rapid,repondéré écart,27,9.713,1.621
+Rapid,repondéré écart,27,10.6,1.624
+Rapid,repondéré écart,27,11.57,1.623
+Rapid,repondéré écart,27,12.63,1.618
+Rapid,repondéré écart,27,13.78,1.61
+Rapid,repondéré écart,27,15.04,1.597
+Rapid,repondéré écart,27,16.41,1.58
+Rapid,repondéré écart,27,17.91,1.559
+Rapid,repondéré écart,27,19.55,1.532
+Rapid,repondéré écart,27,21.34,1.501
+Rapid,repondéré écart,27,23.29,1.464
+Rapid,repondéré écart,27,25.41,1.423
+Rapid,repondéré écart,27,27.74,1.376
+Rapid,repondéré écart,27,30.27,1.325
+Rapid,repondéré écart,27,33.04,1.269
+Rapid,repondéré écart,27,36.05,1.21
+Rapid,repondéré écart,27,39.35,1.148
+Rapid,repondéré écart,27,42.94,1.084
+Rapid,repondéré écart,27,46.87,1.018
+Rapid,repondéré écart,27,51.15,0.952
+Rapid,repondéré écart,27,55.83,0.8863
+Rapid,repondéré écart,27,60.93,0.8218
+Rapid,repondéré écart,27,66.49,0.759
+Rapid,repondéré écart,27,72.57,0.6986
+Rapid,repondéré écart,27,79.2,0.6409
+Rapid,repondéré écart,27,86.44,0.5864
+Rapid,repondéré écart,27,94.34,0.5353
+Rapid,repondéré écart,27,103,0.4876
+Rapid,repondéré écart,27,112.4,0.4433
+Rapid,repondéré écart,27,122.6,0.4026
+Rapid,repondéré écart,27,133.8,0.3652
+Rapid,repondéré écart,27,146.1,0.331
+Rapid,repondéré écart,27,159.4,0.2998
+Rapid,repondéré écart,27,174,0.2715
+Rapid,repondéré écart,27,189.9,0.2457
+Rapid,repondéré écart,27,207.2,0.2225
+Rapid,repondéré écart,27,226.2,0.2014
+Rapid,repondéré écart,27,246.8,0.1823
+Rapid,repondéré écart,27,269.4,0.1651
+Rapid,repondéré écart,27,294,0.1496
+Rapid,repondéré écart,27,320.9,0.1356
+Rapid,repondéré écart,27,350.2,0.1229
+Rapid,repondéré écart,27,382.2,0.1114
+Rapid,repondéré écart,27,417.1,0.1011
+Rapid,repondéré écart,27,455.2,0.09172
+Rapid,repondéré écart,27,496.8,0.08326
+Rapid,repondéré écart,27,542.2,0.07561
+Rapid,repondéré écart,27,591.8,0.06868
+Rapid,repondéré écart,27,645.8,0.06241
+Rapid,repondéré écart,27,704.9,0.05672
+Rapid,repondéré écart,27,769.3,0.05157
+Rapid,repondéré écart,27,839.6,0.0469
+Rapid,repondéré écart,27,916.3,0.04266
+Rapid,repondéré écart,27,1000,0.03881
+Rapid,repondéré écart,32,1,0.5245
+Rapid,repondéré écart,32,1.091,0.5715
+Rapid,repondéré écart,32,1.191,0.6216
+Rapid,repondéré écart,32,1.3,0.6745
+Rapid,repondéré écart,32,1.419,0.7301
+Rapid,repondéré écart,32,1.548,0.7881
+Rapid,repondéré écart,32,1.69,0.8482
+Rapid,repondéré écart,32,1.844,0.9099
+Rapid,repondéré écart,32,2.013,0.9729
+Rapid,repondéré écart,32,2.197,1.037
+Rapid,repondéré écart,32,2.397,1.1
+Rapid,repondéré écart,32,2.617,1.163
+Rapid,repondéré écart,32,2.856,1.225
+Rapid,repondéré écart,32,3.117,1.285
+Rapid,repondéré écart,32,3.401,1.343
+Rapid,repondéré écart,32,3.712,1.397
+Rapid,repondéré écart,32,4.051,1.447
+Rapid,repondéré écart,32,4.421,1.494
+Rapid,repondéré écart,32,4.826,1.535
+Rapid,repondéré écart,32,5.266,1.572
+Rapid,repondéré écart,32,5.748,1.605
+Rapid,repondéré écart,32,6.273,1.632
+Rapid,repondéré écart,32,6.846,1.654
+Rapid,repondéré écart,32,7.472,1.672
+Rapid,repondéré écart,32,8.154,1.686
+Rapid,repondéré écart,32,8.9,1.695
+Rapid,repondéré écart,32,9.713,1.701
+Rapid,repondéré écart,32,10.6,1.703
+Rapid,repondéré écart,32,11.57,1.703
+Rapid,repondéré écart,32,12.63,1.698
+Rapid,repondéré écart,32,13.78,1.69
+Rapid,repondéré écart,32,15.04,1.679
+Rapid,repondéré écart,32,16.41,1.663
+Rapid,repondéré écart,32,17.91,1.642
+Rapid,repondéré écart,32,19.55,1.616
+Rapid,repondéré écart,32,21.34,1.585
+Rapid,repondéré écart,32,23.29,1.547
+Rapid,repondéré écart,32,25.41,1.504
+Rapid,repondéré écart,32,27.74,1.454
+Rapid,repondéré écart,32,30.27,1.398
+Rapid,repondéré écart,32,33.04,1.337
+Rapid,repondéré écart,32,36.05,1.272
+Rapid,repondéré écart,32,39.35,1.204
+Rapid,repondéré écart,32,42.94,1.133
+Rapid,repondéré écart,32,46.87,1.06
+Rapid,repondéré écart,32,51.15,0.9879
+Rapid,repondéré écart,32,55.83,0.9161
+Rapid,repondéré écart,32,60.93,0.846
+Rapid,repondéré écart,32,66.49,0.7783
+Rapid,repondéré écart,32,72.57,0.7136
+Rapid,repondéré écart,32,79.2,0.6523
+Rapid,repondéré écart,32,86.44,0.5948
+Rapid,repondéré écart,32,94.34,0.5412
+Rapid,repondéré écart,32,103,0.4915
+Rapid,repondéré écart,32,112.4,0.4458
+Rapid,repondéré écart,32,122.6,0.404
+Rapid,repondéré écart,32,133.8,0.3657
+Rapid,repondéré écart,32,146.1,0.3309
+Rapid,repondéré écart,32,159.4,0.2994
+Rapid,repondéré écart,32,174,0.2708
+Rapid,repondéré écart,32,189.9,0.2449
+Rapid,repondéré écart,32,207.2,0.2216
+Rapid,repondéré écart,32,226.2,0.2005
+Rapid,repondéré écart,32,246.8,0.1815
+Rapid,repondéré écart,32,269.4,0.1644
+Rapid,repondéré écart,32,294,0.1489
+Rapid,repondéré écart,32,320.9,0.1349
+Rapid,repondéré écart,32,350.2,0.1223
+Rapid,repondéré écart,32,382.2,0.111
+Rapid,repondéré écart,32,417.1,0.1007
+Rapid,repondéré écart,32,455.2,0.09138
+Rapid,repondéré écart,32,496.8,0.08298
+Rapid,repondéré écart,32,542.2,0.07538
+Rapid,repondéré écart,32,591.8,0.06849
+Rapid,repondéré écart,32,645.8,0.06226
+Rapid,repondéré écart,32,704.9,0.05661
+Rapid,repondéré écart,32,769.3,0.05149
+Rapid,repondéré écart,32,839.6,0.04684
+Rapid,repondéré écart,32,916.3,0.04262
+Rapid,repondéré écart,32,1000,0.03879
+Rapid,repondéré écart,36,1,0.5
+Rapid,repondéré écart,36,1.091,0.5446
+Rapid,repondéré écart,36,1.191,0.5922
+Rapid,repondéré écart,36,1.3,0.6429
+Rapid,repondéré écart,36,1.419,0.6964
+Rapid,repondéré écart,36,1.548,0.7527
+Rapid,repondéré écart,36,1.69,0.8114
+Rapid,repondéré écart,36,1.844,0.8724
+Rapid,repondéré écart,36,2.013,0.9352
+Rapid,repondéré écart,36,2.197,0.9994
+Rapid,repondéré écart,36,2.397,1.064
+Rapid,repondéré écart,36,2.617,1.13
+Rapid,repondéré écart,36,2.856,1.195
+Rapid,repondéré écart,36,3.117,1.259
+Rapid,repondéré écart,36,3.401,1.322
+Rapid,repondéré écart,36,3.712,1.383
+Rapid,repondéré écart,36,4.051,1.441
+Rapid,repondéré écart,36,4.421,1.496
+Rapid,repondéré écart,36,4.826,1.548
+Rapid,repondéré écart,36,5.266,1.595
+Rapid,repondéré écart,36,5.748,1.638
+Rapid,repondéré écart,36,6.273,1.676
+Rapid,repondéré écart,36,6.846,1.71
+Rapid,repondéré écart,36,7.472,1.739
+Rapid,repondéré écart,36,8.154,1.764
+Rapid,repondéré écart,36,8.9,1.785
+Rapid,repondéré écart,36,9.713,1.801
+Rapid,repondéré écart,36,10.6,1.813
+Rapid,repondéré écart,36,11.57,1.82
+Rapid,repondéré écart,36,12.63,1.823
+Rapid,repondéré écart,36,13.78,1.821
+Rapid,repondéré écart,36,15.04,1.813
+Rapid,repondéré écart,36,16.41,1.799
+Rapid,repondéré écart,36,17.91,1.779
+Rapid,repondéré écart,36,19.55,1.752
+Rapid,repondéré écart,36,21.34,1.718
+Rapid,repondéré écart,36,23.29,1.675
+Rapid,repondéré écart,36,25.41,1.626
+Rapid,repondéré écart,36,27.74,1.569
+Rapid,repondéré écart,36,30.27,1.505
+Rapid,repondéré écart,36,33.04,1.436
+Rapid,repondéré écart,36,36.05,1.362
+Rapid,repondéré écart,36,39.35,1.285
+Rapid,repondéré écart,36,42.94,1.205
+Rapid,repondéré écart,36,46.87,1.125
+Rapid,repondéré écart,36,51.15,1.044
+Rapid,repondéré écart,36,55.83,0.9652
+Rapid,repondéré écart,36,60.93,0.8885
+Rapid,repondéré écart,36,66.49,0.8149
+Rapid,repondéré écart,36,72.57,0.745
+Rapid,repondéré écart,36,79.2,0.6792
+Rapid,repondéré écart,36,86.44,0.6178
+Rapid,repondéré écart,36,94.34,0.5609
+Rapid,repondéré écart,36,103,0.5084
+Rapid,repondéré écart,36,112.4,0.4604
+Rapid,repondéré écart,36,122.6,0.4165
+Rapid,repondéré écart,36,133.8,0.3766
+Rapid,repondéré écart,36,146.1,0.3404
+Rapid,repondéré écart,36,159.4,0.3077
+Rapid,repondéré écart,36,174,0.2782
+Rapid,repondéré écart,36,189.9,0.2515
+Rapid,repondéré écart,36,207.2,0.2274
+Rapid,repondéré écart,36,226.2,0.2057
+Rapid,repondéré écart,36,246.8,0.1862
+Rapid,repondéré écart,36,269.4,0.1686
+Rapid,repondéré écart,36,294,0.1527
+Rapid,repondéré écart,36,320.9,0.1384
+Rapid,repondéré écart,36,350.2,0.1255
+Rapid,repondéré écart,36,382.2,0.1138
+Rapid,repondéré écart,36,417.1,0.1032
+Rapid,repondéré écart,36,455.2,0.09372
+Rapid,repondéré écart,36,496.8,0.0851
+Rapid,repondéré écart,36,542.2,0.0773
+Rapid,repondéré écart,36,591.8,0.07025
+Rapid,repondéré écart,36,645.8,0.06385
+Rapid,repondéré écart,36,704.9,0.05806
+Rapid,repondéré écart,36,769.3,0.0528
+Rapid,repondéré écart,36,839.6,0.04804
+Rapid,repondéré écart,36,916.3,0.04371
+Rapid,repondéré écart,36,1000,0.03978
+Rapid,repondéré écart,40,1,0.499
+Rapid,repondéré écart,40,1.091,0.5456
+Rapid,repondéré écart,40,1.191,0.5955
+Rapid,repondéré écart,40,1.3,0.6486
+Rapid,repondéré écart,40,1.419,0.7049
+Rapid,repondéré écart,40,1.548,0.7641
+Rapid,repondéré écart,40,1.69,0.8259
+Rapid,repondéré écart,40,1.844,0.8899
+Rapid,repondéré écart,40,2.013,0.9556
+Rapid,repondéré écart,40,2.197,1.023
+Rapid,repondéré écart,40,2.397,1.09
+Rapid,repondéré écart,40,2.617,1.158
+Rapid,repondéré écart,40,2.856,1.225
+Rapid,repondéré écart,40,3.117,1.292
+Rapid,repondéré écart,40,3.401,1.356
+Rapid,repondéré écart,40,3.712,1.419
+Rapid,repondéré écart,40,4.051,1.479
+Rapid,repondéré écart,40,4.421,1.536
+Rapid,repondéré écart,40,4.826,1.589
+Rapid,repondéré écart,40,5.266,1.639
+Rapid,repondéré écart,40,5.748,1.685
+Rapid,repondéré écart,40,6.273,1.726
+Rapid,repondéré écart,40,6.846,1.764
+Rapid,repondéré écart,40,7.472,1.797
+Rapid,repondéré écart,40,8.154,1.826
+Rapid,repondéré écart,40,8.9,1.85
+Rapid,repondéré écart,40,9.713,1.871
+Rapid,repondéré écart,40,10.6,1.886
+Rapid,repondéré écart,40,11.57,1.898
+Rapid,repondéré écart,40,12.63,1.904
+Rapid,repondéré écart,40,13.78,1.905
+Rapid,repondéré écart,40,15.04,1.901
+Rapid,repondéré écart,40,16.41,1.891
+Rapid,repondéré écart,40,17.91,1.874
+Rapid,repondéré écart,40,19.55,1.85
+Rapid,repondéré écart,40,21.34,1.819
+Rapid,repondéré écart,40,23.29,1.779
+Rapid,repondéré écart,40,25.41,1.732
+Rapid,repondéré écart,40,27.74,1.676
+Rapid,repondéré écart,40,30.27,1.613
+Rapid,repondéré écart,40,33.04,1.543
+Rapid,repondéré écart,40,36.05,1.467
+Rapid,repondéré écart,40,39.35,1.387
+Rapid,repondéré écart,40,42.94,1.304
+Rapid,repondéré écart,40,46.87,1.218
+Rapid,repondéré écart,40,51.15,1.133
+Rapid,repondéré écart,40,55.83,1.048
+Rapid,repondéré écart,40,60.93,0.9656
+Rapid,repondéré écart,40,66.49,0.886
+Rapid,repondéré écart,40,72.57,0.8102
+Rapid,repondéré écart,40,79.2,0.7387
+Rapid,repondéré écart,40,86.44,0.6719
+Rapid,repondéré écart,40,94.34,0.6099
+Rapid,repondéré écart,40,103,0.5527
+Rapid,repondéré écart,40,112.4,0.5003
+Rapid,repondéré écart,40,122.6,0.4525
+Rapid,repondéré écart,40,133.8,0.409
+Rapid,repondéré écart,40,146.1,0.3695
+Rapid,repondéré écart,40,159.4,0.3339
+Rapid,repondéré écart,40,174,0.3016
+Rapid,repondéré écart,40,189.9,0.2725
+Rapid,repondéré écart,40,207.2,0.2463
+Rapid,repondéré écart,40,226.2,0.2227
+Rapid,repondéré écart,40,246.8,0.2014
+Rapid,repondéré écart,40,269.4,0.1822
+Rapid,repondéré écart,40,294,0.1649
+Rapid,repondéré écart,40,320.9,0.1493
+Rapid,repondéré écart,40,350.2,0.1352
+Rapid,repondéré écart,40,382.2,0.1225
+Rapid,repondéré écart,40,417.1,0.1111
+Rapid,repondéré écart,40,455.2,0.1007
+Rapid,repondéré écart,40,496.8,0.09141
+Rapid,repondéré écart,40,542.2,0.08296
+Rapid,repondéré écart,40,591.8,0.07532
+Rapid,repondéré écart,40,645.8,0.06841
+Rapid,repondéré écart,40,704.9,0.06215
+Rapid,repondéré écart,40,769.3,0.05648
+Rapid,repondéré écart,40,839.6,0.05134
+Rapid,repondéré écart,40,916.3,0.04668
+Rapid,repondéré écart,40,1000,0.04245
+Rapid,repondéré écart+phase,0,1,0.4969
+Rapid,repondéré écart+phase,0,1.091,0.5367
+Rapid,repondéré écart+phase,0,1.191,0.5787
+Rapid,repondéré écart+phase,0,1.3,0.6229
+Rapid,repondéré écart+phase,0,1.419,0.6691
+Rapid,repondéré écart+phase,0,1.548,0.717
+Rapid,repondéré écart+phase,0,1.69,0.7664
+Rapid,repondéré écart+phase,0,1.844,0.8169
+Rapid,repondéré écart+phase,0,2.013,0.8682
+Rapid,repondéré écart+phase,0,2.197,0.9197
+Rapid,repondéré écart+phase,0,2.397,0.971
+Rapid,repondéré écart+phase,0,2.617,1.022
+Rapid,repondéré écart+phase,0,2.856,1.071
+Rapid,repondéré écart+phase,0,3.117,1.118
+Rapid,repondéré écart+phase,0,3.401,1.164
+Rapid,repondéré écart+phase,0,3.712,1.206
+Rapid,repondéré écart+phase,0,4.051,1.245
+Rapid,repondéré écart+phase,0,4.421,1.281
+Rapid,repondéré écart+phase,0,4.826,1.313
+Rapid,repondéré écart+phase,0,5.266,1.341
+Rapid,repondéré écart+phase,0,5.748,1.366
+Rapid,repondéré écart+phase,0,6.273,1.386
+Rapid,repondéré écart+phase,0,6.846,1.402
+Rapid,repondéré écart+phase,0,7.472,1.415
+Rapid,repondéré écart+phase,0,8.154,1.424
+Rapid,repondéré écart+phase,0,8.9,1.43
+Rapid,repondéré écart+phase,0,9.713,1.432
+Rapid,repondéré écart+phase,0,10.6,1.432
+Rapid,repondéré écart+phase,0,11.57,1.429
+Rapid,repondéré écart+phase,0,12.63,1.423
+Rapid,repondéré écart+phase,0,13.78,1.414
+Rapid,repondéré écart+phase,0,15.04,1.403
+Rapid,repondéré écart+phase,0,16.41,1.388
+Rapid,repondéré écart+phase,0,17.91,1.371
+Rapid,repondéré écart+phase,0,19.55,1.35
+Rapid,repondéré écart+phase,0,21.34,1.325
+Rapid,repondéré écart+phase,0,23.29,1.297
+Rapid,repondéré écart+phase,0,25.41,1.265
+Rapid,repondéré écart+phase,0,27.74,1.23
+Rapid,repondéré écart+phase,0,30.27,1.19
+Rapid,repondéré écart+phase,0,33.04,1.147
+Rapid,repondéré écart+phase,0,36.05,1.101
+Rapid,repondéré écart+phase,0,39.35,1.051
+Rapid,repondéré écart+phase,0,42.94,0.9999
+Rapid,repondéré écart+phase,0,46.87,0.9466
+Rapid,repondéré écart+phase,0,51.15,0.8921
+Rapid,repondéré écart+phase,0,55.83,0.8371
+Rapid,repondéré écart+phase,0,60.93,0.7822
+Rapid,repondéré écart+phase,0,66.49,0.7279
+Rapid,repondéré écart+phase,0,72.57,0.6749
+Rapid,repondéré écart+phase,0,79.2,0.6235
+Rapid,repondéré écart+phase,0,86.44,0.5742
+Rapid,repondéré écart+phase,0,94.34,0.5273
+Rapid,repondéré écart+phase,0,103,0.4829
+Rapid,repondéré écart+phase,0,112.4,0.4412
+Rapid,repondéré écart+phase,0,122.6,0.4024
+Rapid,repondéré écart+phase,0,133.8,0.3663
+Rapid,repondéré écart+phase,0,146.1,0.333
+Rapid,repondéré écart+phase,0,159.4,0.3024
+Rapid,repondéré écart+phase,0,174,0.2744
+Rapid,repondéré écart+phase,0,189.9,0.2488
+Rapid,repondéré écart+phase,0,207.2,0.2255
+Rapid,repondéré écart+phase,0,226.2,0.2043
+Rapid,repondéré écart+phase,0,246.8,0.1851
+Rapid,repondéré écart+phase,0,269.4,0.1676
+Rapid,repondéré écart+phase,0,294,0.1518
+Rapid,repondéré écart+phase,0,320.9,0.1376
+Rapid,repondéré écart+phase,0,350.2,0.1246
+Rapid,repondéré écart+phase,0,382.2,0.113
+Rapid,repondéré écart+phase,0,417.1,0.1024
+Rapid,repondéré écart+phase,0,455.2,0.09286
+Rapid,repondéré écart+phase,0,496.8,0.08422
+Rapid,repondéré écart+phase,0,542.2,0.07642
+Rapid,repondéré écart+phase,0,591.8,0.06935
+Rapid,repondéré écart+phase,0,645.8,0.06296
+Rapid,repondéré écart+phase,0,704.9,0.05717
+Rapid,repondéré écart+phase,0,769.3,0.05193
+Rapid,repondéré écart+phase,0,839.6,0.04718
+Rapid,repondéré écart+phase,0,916.3,0.04288
+Rapid,repondéré écart+phase,0,1000,0.03897
+Rapid,repondéré écart+phase,27,1,0.518
+Rapid,repondéré écart+phase,27,1.091,0.5622
+Rapid,repondéré écart+phase,27,1.191,0.6091
+Rapid,repondéré écart+phase,27,1.3,0.6585
+Rapid,repondéré écart+phase,27,1.419,0.7101
+Rapid,repondéré écart+phase,27,1.548,0.7639
+Rapid,repondéré écart+phase,27,1.69,0.8194
+Rapid,repondéré écart+phase,27,1.844,0.8763
+Rapid,repondéré écart+phase,27,2.013,0.9341
+Rapid,repondéré écart+phase,27,2.197,0.9924
+Rapid,repondéré écart+phase,27,2.397,1.051
+Rapid,repondéré écart+phase,27,2.617,1.108
+Rapid,repondéré écart+phase,27,2.856,1.165
+Rapid,repondéré écart+phase,27,3.117,1.219
+Rapid,repondéré écart+phase,27,3.401,1.271
+Rapid,repondéré écart+phase,27,3.712,1.321
+Rapid,repondéré écart+phase,27,4.051,1.367
+Rapid,repondéré écart+phase,27,4.421,1.409
+Rapid,repondéré écart+phase,27,4.826,1.448
+Rapid,repondéré écart+phase,27,5.266,1.483
+Rapid,repondéré écart+phase,27,5.748,1.513
+Rapid,repondéré écart+phase,27,6.273,1.54
+Rapid,repondéré écart+phase,27,6.846,1.562
+Rapid,repondéré écart+phase,27,7.472,1.581
+Rapid,repondéré écart+phase,27,8.154,1.595
+Rapid,repondéré écart+phase,27,8.9,1.606
+Rapid,repondéré écart+phase,27,9.713,1.613
+Rapid,repondéré écart+phase,27,10.6,1.616
+Rapid,repondéré écart+phase,27,11.57,1.616
+Rapid,repondéré écart+phase,27,12.63,1.612
+Rapid,repondéré écart+phase,27,13.78,1.605
+Rapid,repondéré écart+phase,27,15.04,1.593
+Rapid,repondéré écart+phase,27,16.41,1.577
+Rapid,repondéré écart+phase,27,17.91,1.556
+Rapid,repondéré écart+phase,27,19.55,1.531
+Rapid,repondéré écart+phase,27,21.34,1.5
+Rapid,repondéré écart+phase,27,23.29,1.464
+Rapid,repondéré écart+phase,27,25.41,1.423
+Rapid,repondéré écart+phase,27,27.74,1.377
+Rapid,repondéré écart+phase,27,30.27,1.326
+Rapid,repondéré écart+phase,27,33.04,1.271
+Rapid,repondéré écart+phase,27,36.05,1.212
+Rapid,repondéré écart+phase,27,39.35,1.15
+Rapid,repondéré écart+phase,27,42.94,1.086
+Rapid,repondéré écart+phase,27,46.87,1.021
+Rapid,repondéré écart+phase,27,51.15,0.9549
+Rapid,repondéré écart+phase,27,55.83,0.8894
+Rapid,repondéré écart+phase,27,60.93,0.8249
+Rapid,repondéré écart+phase,27,66.49,0.7622
+Rapid,repondéré écart+phase,27,72.57,0.7018
+Rapid,repondéré écart+phase,27,79.2,0.6442
+Rapid,repondéré écart+phase,27,86.44,0.5896
+Rapid,repondéré écart+phase,27,94.34,0.5384
+Rapid,repondéré écart+phase,27,103,0.4907
+Rapid,repondéré écart+phase,27,112.4,0.4464
+Rapid,repondéré écart+phase,27,122.6,0.4055
+Rapid,repondéré écart+phase,27,133.8,0.368
+Rapid,repondéré écart+phase,27,146.1,0.3336
+Rapid,repondéré écart+phase,27,159.4,0.3023
+Rapid,repondéré écart+phase,27,174,0.2738
+Rapid,repondéré écart+phase,27,189.9,0.248
+Rapid,repondéré écart+phase,27,207.2,0.2245
+Rapid,repondéré écart+phase,27,226.2,0.2033
+Rapid,repondéré écart+phase,27,246.8,0.1841
+Rapid,repondéré écart+phase,27,269.4,0.1668
+Rapid,repondéré écart+phase,27,294,0.1511
+Rapid,repondéré écart+phase,27,320.9,0.137
+Rapid,repondéré écart+phase,27,350.2,0.1242
+Rapid,repondéré écart+phase,27,382.2,0.1126
+Rapid,repondéré écart+phase,27,417.1,0.1022
+Rapid,repondéré écart+phase,27,455.2,0.09271
+Rapid,repondéré écart+phase,27,496.8,0.08417
+Rapid,repondéré écart+phase,27,542.2,0.07643
+Rapid,repondéré écart+phase,27,591.8,0.06943
+Rapid,repondéré écart+phase,27,645.8,0.06309
+Rapid,repondéré écart+phase,27,704.9,0.05735
+Rapid,repondéré écart+phase,27,769.3,0.05214
+Rapid,repondéré écart+phase,27,839.6,0.04742
+Rapid,repondéré écart+phase,27,916.3,0.04313
+Rapid,repondéré écart+phase,27,1000,0.03924
+Rapid,repondéré écart+phase,32,1,0.5169
+Rapid,repondéré écart+phase,32,1.091,0.5627
+Rapid,repondéré écart+phase,32,1.191,0.6112
+Rapid,repondéré écart+phase,32,1.3,0.6624
+Rapid,repondéré écart+phase,32,1.419,0.7161
+Rapid,repondéré écart+phase,32,1.548,0.7721
+Rapid,repondéré écart+phase,32,1.69,0.8301
+Rapid,repondéré écart+phase,32,1.844,0.8898
+Rapid,repondéré écart+phase,32,2.013,0.9507
+Rapid,repondéré écart+phase,32,2.197,1.012
+Rapid,repondéré écart+phase,32,2.397,1.074
+Rapid,repondéré écart+phase,32,2.617,1.136
+Rapid,repondéré écart+phase,32,2.856,1.196
+Rapid,repondéré écart+phase,32,3.117,1.255
+Rapid,repondéré écart+phase,32,3.401,1.312
+Rapid,repondéré écart+phase,32,3.712,1.365
+Rapid,repondéré écart+phase,32,4.051,1.416
+Rapid,repondéré écart+phase,32,4.421,1.463
+Rapid,repondéré écart+phase,32,4.826,1.505
+Rapid,repondéré écart+phase,32,5.266,1.543
+Rapid,repondéré écart+phase,32,5.748,1.577
+Rapid,repondéré écart+phase,32,6.273,1.606
+Rapid,repondéré écart+phase,32,6.846,1.631
+Rapid,repondéré écart+phase,32,7.472,1.651
+Rapid,repondéré écart+phase,32,8.154,1.667
+Rapid,repondéré écart+phase,32,8.9,1.679
+Rapid,repondéré écart+phase,32,9.713,1.687
+Rapid,repondéré écart+phase,32,10.6,1.692
+Rapid,repondéré écart+phase,32,11.57,1.694
+Rapid,repondéré écart+phase,32,12.63,1.692
+Rapid,repondéré écart+phase,32,13.78,1.687
+Rapid,repondéré écart+phase,32,15.04,1.678
+Rapid,repondéré écart+phase,32,16.41,1.664
+Rapid,repondéré écart+phase,32,17.91,1.646
+Rapid,repondéré écart+phase,32,19.55,1.623
+Rapid,repondéré écart+phase,32,21.34,1.594
+Rapid,repondéré écart+phase,32,23.29,1.559
+Rapid,repondéré écart+phase,32,25.41,1.518
+Rapid,repondéré écart+phase,32,27.74,1.47
+Rapid,repondéré écart+phase,32,30.27,1.417
+Rapid,repondéré écart+phase,32,33.04,1.359
+Rapid,repondéré écart+phase,32,36.05,1.295
+Rapid,repondéré écart+phase,32,39.35,1.228
+Rapid,repondéré écart+phase,32,42.94,1.159
+Rapid,repondéré écart+phase,32,46.87,1.087
+Rapid,repondéré écart+phase,32,51.15,1.016
+Rapid,repondéré écart+phase,32,55.83,0.9441
+Rapid,repondéré écart+phase,32,60.93,0.8739
+Rapid,repondéré écart+phase,32,66.49,0.8058
+Rapid,repondéré écart+phase,32,72.57,0.7404
+Rapid,repondéré écart+phase,32,79.2,0.6782
+Rapid,repondéré écart+phase,32,86.44,0.6196
+Rapid,repondéré écart+phase,32,94.34,0.5647
+Rapid,repondéré écart+phase,32,103,0.5137
+Rapid,repondéré écart+phase,32,112.4,0.4666
+Rapid,repondéré écart+phase,32,122.6,0.4233
+Rapid,repondéré écart+phase,32,133.8,0.3836
+Rapid,repondéré écart+phase,32,146.1,0.3475
+Rapid,repondéré écart+phase,32,159.4,0.3146
+Rapid,repondéré écart+phase,32,174,0.2847
+Rapid,repondéré écart+phase,32,189.9,0.2577
+Rapid,repondéré écart+phase,32,207.2,0.2332
+Rapid,repondéré écart+phase,32,226.2,0.2111
+Rapid,repondéré écart+phase,32,246.8,0.1912
+Rapid,repondéré écart+phase,32,269.4,0.1731
+Rapid,repondéré écart+phase,32,294,0.1568
+Rapid,repondéré écart+phase,32,320.9,0.1421
+Rapid,repondéré écart+phase,32,350.2,0.1289
+Rapid,repondéré écart+phase,32,382.2,0.1169
+Rapid,repondéré écart+phase,32,417.1,0.106
+Rapid,repondéré écart+phase,32,455.2,0.09624
+Rapid,repondéré écart+phase,32,496.8,0.08737
+Rapid,repondéré écart+phase,32,542.2,0.07935
+Rapid,repondéré écart+phase,32,591.8,0.07209
+Rapid,repondéré écart+phase,32,645.8,0.06552
+Rapid,repondéré écart+phase,32,704.9,0.05956
+Rapid,repondéré écart+phase,32,769.3,0.05416
+Rapid,repondéré écart+phase,32,839.6,0.04926
+Rapid,repondéré écart+phase,32,916.3,0.04481
+Rapid,repondéré écart+phase,32,1000,0.04078
+Rapid,repondéré écart+phase,36,1,0.503
+Rapid,repondéré écart+phase,36,1.091,0.5479
+Rapid,repondéré écart+phase,36,1.191,0.596
+Rapid,repondéré écart+phase,36,1.3,0.6471
+Rapid,repondéré écart+phase,36,1.419,0.7012
+Rapid,repondéré écart+phase,36,1.548,0.7581
+Rapid,repondéré écart+phase,36,1.69,0.8175
+Rapid,repondéré écart+phase,36,1.844,0.8792
+Rapid,repondéré écart+phase,36,2.013,0.9427
+Rapid,repondéré écart+phase,36,2.197,1.008
+Rapid,repondéré écart+phase,36,2.397,1.073
+Rapid,repondéré écart+phase,36,2.617,1.139
+Rapid,repondéré écart+phase,36,2.856,1.205
+Rapid,repondéré écart+phase,36,3.117,1.269
+Rapid,repondéré écart+phase,36,3.401,1.332
+Rapid,repondéré écart+phase,36,3.712,1.392
+Rapid,repondéré écart+phase,36,4.051,1.45
+Rapid,repondéré écart+phase,36,4.421,1.503
+Rapid,repondéré écart+phase,36,4.826,1.553
+Rapid,repondéré écart+phase,36,5.266,1.599
+Rapid,repondéré écart+phase,36,5.748,1.639
+Rapid,repondéré écart+phase,36,6.273,1.675
+Rapid,repondéré écart+phase,36,6.846,1.707
+Rapid,repondéré écart+phase,36,7.472,1.733
+Rapid,repondéré écart+phase,36,8.154,1.756
+Rapid,repondéré écart+phase,36,8.9,1.773
+Rapid,repondéré écart+phase,36,9.713,1.787
+Rapid,repondéré écart+phase,36,10.6,1.796
+Rapid,repondéré écart+phase,36,11.57,1.802
+Rapid,repondéré écart+phase,36,12.63,1.803
+Rapid,repondéré écart+phase,36,13.78,1.799
+Rapid,repondéré écart+phase,36,15.04,1.79
+Rapid,repondéré écart+phase,36,16.41,1.776
+Rapid,repondéré écart+phase,36,17.91,1.755
+Rapid,repondéré écart+phase,36,19.55,1.729
+Rapid,repondéré écart+phase,36,21.34,1.695
+Rapid,repondéré écart+phase,36,23.29,1.654
+Rapid,repondéré écart+phase,36,25.41,1.606
+Rapid,repondéré écart+phase,36,27.74,1.551
+Rapid,repondéré écart+phase,36,30.27,1.49
+Rapid,repondéré écart+phase,36,33.04,1.423
+Rapid,repondéré écart+phase,36,36.05,1.351
+Rapid,repondéré écart+phase,36,39.35,1.276
+Rapid,repondéré écart+phase,36,42.94,1.198
+Rapid,repondéré écart+phase,36,46.87,1.119
+Rapid,repondéré écart+phase,36,51.15,1.041
+Rapid,repondéré écart+phase,36,55.83,0.9632
+Rapid,repondéré écart+phase,36,60.93,0.8877
+Rapid,repondéré écart+phase,36,66.49,0.8152
+Rapid,repondéré écart+phase,36,72.57,0.7462
+Rapid,repondéré écart+phase,36,79.2,0.6812
+Rapid,repondéré écart+phase,36,86.44,0.6204
+Rapid,repondéré écart+phase,36,94.34,0.564
+Rapid,repondéré écart+phase,36,103,0.512
+Rapid,repondéré écart+phase,36,112.4,0.4642
+Rapid,repondéré écart+phase,36,122.6,0.4206
+Rapid,repondéré écart+phase,36,133.8,0.3808
+Rapid,repondéré écart+phase,36,146.1,0.3447
+Rapid,repondéré écart+phase,36,159.4,0.312
+Rapid,repondéré écart+phase,36,174,0.2825
+Rapid,repondéré écart+phase,36,189.9,0.2557
+Rapid,repondéré écart+phase,36,207.2,0.2316
+Rapid,repondéré écart+phase,36,226.2,0.2098
+Rapid,repondéré écart+phase,36,246.8,0.1901
+Rapid,repondéré écart+phase,36,269.4,0.1723
+Rapid,repondéré écart+phase,36,294,0.1562
+Rapid,repondéré écart+phase,36,320.9,0.1417
+Rapid,repondéré écart+phase,36,350.2,0.1286
+Rapid,repondéré écart+phase,36,382.2,0.1168
+Rapid,repondéré écart+phase,36,417.1,0.1061
+Rapid,repondéré écart+phase,36,455.2,0.09637
+Rapid,repondéré écart+phase,36,496.8,0.08759
+Rapid,repondéré écart+phase,36,542.2,0.07963
+Rapid,repondéré écart+phase,36,591.8,0.07241
+Rapid,repondéré écart+phase,36,645.8,0.06587
+Rapid,repondéré écart+phase,36,704.9,0.05993
+Rapid,repondéré écart+phase,36,769.3,0.05454
+Rapid,repondéré écart+phase,36,839.6,0.04965
+Rapid,repondéré écart+phase,36,916.3,0.0452
+Rapid,repondéré écart+phase,36,1000,0.04116
+Rapid,repondéré écart+phase,40,1,0.5035
+Rapid,repondéré écart+phase,40,1.091,0.55
+Rapid,repondéré écart+phase,40,1.191,0.5997
+Rapid,repondéré écart+phase,40,1.3,0.6525
+Rapid,repondéré écart+phase,40,1.419,0.7084
+Rapid,repondéré écart+phase,40,1.548,0.7671
+Rapid,repondéré écart+phase,40,1.69,0.8282
+Rapid,repondéré écart+phase,40,1.844,0.8914
+Rapid,repondéré écart+phase,40,2.013,0.9562
+Rapid,repondéré écart+phase,40,2.197,1.022
+Rapid,repondéré écart+phase,40,2.397,1.089
+Rapid,repondéré écart+phase,40,2.617,1.155
+Rapid,repondéré écart+phase,40,2.856,1.221
+Rapid,repondéré écart+phase,40,3.117,1.286
+Rapid,repondéré écart+phase,40,3.401,1.35
+Rapid,repondéré écart+phase,40,3.712,1.411
+Rapid,repondéré écart+phase,40,4.051,1.469
+Rapid,repondéré écart+phase,40,4.421,1.525
+Rapid,repondéré écart+phase,40,4.826,1.577
+Rapid,repondéré écart+phase,40,5.266,1.625
+Rapid,repondéré écart+phase,40,5.748,1.67
+Rapid,repondéré écart+phase,40,6.273,1.71
+Rapid,repondéré écart+phase,40,6.846,1.747
+Rapid,repondéré écart+phase,40,7.472,1.779
+Rapid,repondéré écart+phase,40,8.154,1.807
+Rapid,repondéré écart+phase,40,8.9,1.832
+Rapid,repondéré écart+phase,40,9.713,1.852
+Rapid,repondéré écart+phase,40,10.6,1.867
+Rapid,repondéré écart+phase,40,11.57,1.879
+Rapid,repondéré écart+phase,40,12.63,1.885
+Rapid,repondéré écart+phase,40,13.78,1.887
+Rapid,repondéré écart+phase,40,15.04,1.884
+Rapid,repondéré écart+phase,40,16.41,1.875
+Rapid,repondéré écart+phase,40,17.91,1.859
+Rapid,repondéré écart+phase,40,19.55,1.837
+Rapid,repondéré écart+phase,40,21.34,1.807
+Rapid,repondéré écart+phase,40,23.29,1.769
+Rapid,repondéré écart+phase,40,25.41,1.723
+Rapid,repondéré écart+phase,40,27.74,1.669
+Rapid,repondéré écart+phase,40,30.27,1.608
+Rapid,repondéré écart+phase,40,33.04,1.54
+Rapid,repondéré écart+phase,40,36.05,1.466
+Rapid,repondéré écart+phase,40,39.35,1.387
+Rapid,repondéré écart+phase,40,42.94,1.306
+Rapid,repondéré écart+phase,40,46.87,1.222
+Rapid,repondéré écart+phase,40,51.15,1.138
+Rapid,repondéré écart+phase,40,55.83,1.055
+Rapid,repondéré écart+phase,40,60.93,0.973
+Rapid,repondéré écart+phase,40,66.49,0.8942
+Rapid,repondéré écart+phase,40,72.57,0.8191
+Rapid,repondéré écart+phase,40,79.2,0.748
+Rapid,repondéré écart+phase,40,86.44,0.6815
+Rapid,repondéré écart+phase,40,94.34,0.6196
+Rapid,repondéré écart+phase,40,103,0.5625
+Rapid,repondéré écart+phase,40,112.4,0.51
+Rapid,repondéré écart+phase,40,122.6,0.462
+Rapid,repondéré écart+phase,40,133.8,0.4182
+Rapid,repondéré écart+phase,40,146.1,0.3784
+Rapid,repondéré écart+phase,40,159.4,0.3424
+Rapid,repondéré écart+phase,40,174,0.3097
+Rapid,repondéré écart+phase,40,189.9,0.2802
+Rapid,repondéré écart+phase,40,207.2,0.2536
+Rapid,repondéré écart+phase,40,226.2,0.2295
+Rapid,repondéré écart+phase,40,246.8,0.2078
+Rapid,repondéré écart+phase,40,269.4,0.1882
+Rapid,repondéré écart+phase,40,294,0.1704
+Rapid,repondéré écart+phase,40,320.9,0.1545
+Rapid,repondéré écart+phase,40,350.2,0.14
+Rapid,repondéré écart+phase,40,382.2,0.127
+Rapid,repondéré écart+phase,40,417.1,0.1152
+Rapid,repondéré écart+phase,40,455.2,0.1045
+Rapid,repondéré écart+phase,40,496.8,0.0949
+Rapid,repondéré écart+phase,40,542.2,0.08618
+Rapid,repondéré écart+phase,40,591.8,0.07828
+Rapid,repondéré écart+phase,40,645.8,0.07112
+Rapid,repondéré écart+phase,40,704.9,0.06464
+Rapid,repondéré écart+phase,40,769.3,0.05876
+Rapid,repondéré écart+phase,40,839.6,0.05343
+Rapid,repondéré écart+phase,40,916.3,0.0486
+Rapid,repondéré écart+phase,40,1000,0.04421
+Rapid,témoin (>=40 réduits),0,1,0.2626
+Rapid,témoin (>=40 réduits),0,1.091,0.2897
+Rapid,témoin (>=40 réduits),0,1.191,0.3193
+Rapid,témoin (>=40 réduits),0,1.3,0.3515
+Rapid,témoin (>=40 réduits),0,1.419,0.3865
+Rapid,témoin (>=40 réduits),0,1.548,0.4241
+Rapid,témoin (>=40 réduits),0,1.69,0.4646
+Rapid,témoin (>=40 réduits),0,1.844,0.5076
+Rapid,témoin (>=40 réduits),0,2.013,0.5532
+Rapid,témoin (>=40 réduits),0,2.197,0.6012
+Rapid,témoin (>=40 réduits),0,2.397,0.6513
+Rapid,témoin (>=40 réduits),0,2.617,0.7033
+Rapid,témoin (>=40 réduits),0,2.856,0.7568
+Rapid,témoin (>=40 réduits),0,3.117,0.8114
+Rapid,témoin (>=40 réduits),0,3.401,0.8668
+Rapid,témoin (>=40 réduits),0,3.712,0.9225
+Rapid,témoin (>=40 réduits),0,4.051,0.9781
+Rapid,témoin (>=40 réduits),0,4.421,1.033
+Rapid,témoin (>=40 réduits),0,4.826,1.087
+Rapid,témoin (>=40 réduits),0,5.266,1.14
+Rapid,témoin (>=40 réduits),0,5.748,1.192
+Rapid,témoin (>=40 réduits),0,6.273,1.241
+Rapid,témoin (>=40 réduits),0,6.846,1.288
+Rapid,témoin (>=40 réduits),0,7.472,1.333
+Rapid,témoin (>=40 réduits),0,8.154,1.375
+Rapid,témoin (>=40 réduits),0,8.9,1.414
+Rapid,témoin (>=40 réduits),0,9.713,1.45
+Rapid,témoin (>=40 réduits),0,10.6,1.483
+Rapid,témoin (>=40 réduits),0,11.57,1.512
+Rapid,témoin (>=40 réduits),0,12.63,1.538
+Rapid,témoin (>=40 réduits),0,13.78,1.559
+Rapid,témoin (>=40 réduits),0,15.04,1.576
+Rapid,témoin (>=40 réduits),0,16.41,1.588
+Rapid,témoin (>=40 réduits),0,17.91,1.594
+Rapid,témoin (>=40 réduits),0,19.55,1.595
+Rapid,témoin (>=40 réduits),0,21.34,1.589
+Rapid,témoin (>=40 réduits),0,23.29,1.577
+Rapid,témoin (>=40 réduits),0,25.41,1.558
+Rapid,témoin (>=40 réduits),0,27.74,1.531
+Rapid,témoin (>=40 réduits),0,30.27,1.498
+Rapid,témoin (>=40 réduits),0,33.04,1.457
+Rapid,témoin (>=40 réduits),0,36.05,1.41
+Rapid,témoin (>=40 réduits),0,39.35,1.357
+Rapid,témoin (>=40 réduits),0,42.94,1.299
+Rapid,témoin (>=40 réduits),0,46.87,1.236
+Rapid,témoin (>=40 réduits),0,51.15,1.171
+Rapid,témoin (>=40 réduits),0,55.83,1.103
+Rapid,témoin (>=40 réduits),0,60.93,1.034
+Rapid,témoin (>=40 réduits),0,66.49,0.9644
+Rapid,témoin (>=40 réduits),0,72.57,0.8958
+Rapid,témoin (>=40 réduits),0,79.2,0.8289
+Rapid,témoin (>=40 réduits),0,86.44,0.7641
+Rapid,témoin (>=40 réduits),0,94.34,0.7021
+Rapid,témoin (>=40 réduits),0,103,0.6433
+Rapid,témoin (>=40 réduits),0,112.4,0.5879
+Rapid,témoin (>=40 réduits),0,122.6,0.5361
+Rapid,témoin (>=40 réduits),0,133.8,0.488
+Rapid,témoin (>=40 réduits),0,146.1,0.4435
+Rapid,témoin (>=40 réduits),0,159.4,0.4026
+Rapid,témoin (>=40 réduits),0,174,0.3651
+Rapid,témoin (>=40 réduits),0,189.9,0.3308
+Rapid,témoin (>=40 réduits),0,207.2,0.2996
+Rapid,témoin (>=40 réduits),0,226.2,0.2712
+Rapid,témoin (>=40 réduits),0,246.8,0.2455
+Rapid,témoin (>=40 réduits),0,269.4,0.2222
+Rapid,témoin (>=40 réduits),0,294,0.201
+Rapid,témoin (>=40 réduits),0,320.9,0.1819
+Rapid,témoin (>=40 réduits),0,350.2,0.1647
+Rapid,témoin (>=40 réduits),0,382.2,0.1491
+Rapid,témoin (>=40 réduits),0,417.1,0.135
+Rapid,témoin (>=40 réduits),0,455.2,0.1222
+Rapid,témoin (>=40 réduits),0,496.8,0.1107
+Rapid,témoin (>=40 réduits),0,542.2,0.1003
+Rapid,témoin (>=40 réduits),0,591.8,0.09093
+Rapid,témoin (>=40 réduits),0,645.8,0.08244
+Rapid,témoin (>=40 réduits),0,704.9,0.07476
+Rapid,témoin (>=40 réduits),0,769.3,0.06781
+Rapid,témoin (>=40 réduits),0,839.6,0.06153
+Rapid,témoin (>=40 réduits),0,916.3,0.05584
+Rapid,témoin (>=40 réduits),0,1000,0.05069
+Rapid,témoin (>=40 réduits),27,1,0.3483
+Rapid,témoin (>=40 réduits),27,1.091,0.3834
+Rapid,témoin (>=40 réduits),27,1.191,0.4214
+Rapid,témoin (>=40 réduits),27,1.3,0.4624
+Rapid,témoin (>=40 réduits),27,1.419,0.5064
+Rapid,témoin (>=40 réduits),27,1.548,0.5535
+Rapid,témoin (>=40 réduits),27,1.69,0.6034
+Rapid,témoin (>=40 réduits),27,1.844,0.6561
+Rapid,témoin (>=40 réduits),27,2.013,0.7112
+Rapid,témoin (>=40 réduits),27,2.197,0.7685
+Rapid,témoin (>=40 réduits),27,2.397,0.8277
+Rapid,témoin (>=40 réduits),27,2.617,0.8884
+Rapid,témoin (>=40 réduits),27,2.856,0.95
+Rapid,témoin (>=40 réduits),27,3.117,1.012
+Rapid,témoin (>=40 réduits),27,3.401,1.074
+Rapid,témoin (>=40 réduits),27,3.712,1.136
+Rapid,témoin (>=40 réduits),27,4.051,1.197
+Rapid,témoin (>=40 réduits),27,4.421,1.256
+Rapid,témoin (>=40 réduits),27,4.826,1.313
+Rapid,témoin (>=40 réduits),27,5.266,1.368
+Rapid,témoin (>=40 réduits),27,5.748,1.421
+Rapid,témoin (>=40 réduits),27,6.273,1.47
+Rapid,témoin (>=40 réduits),27,6.846,1.516
+Rapid,témoin (>=40 réduits),27,7.472,1.559
+Rapid,témoin (>=40 réduits),27,8.154,1.597
+Rapid,témoin (>=40 réduits),27,8.9,1.632
+Rapid,témoin (>=40 réduits),27,9.713,1.663
+Rapid,témoin (>=40 réduits),27,10.6,1.69
+Rapid,témoin (>=40 réduits),27,11.57,1.712
+Rapid,témoin (>=40 réduits),27,12.63,1.729
+Rapid,témoin (>=40 réduits),27,13.78,1.742
+Rapid,témoin (>=40 réduits),27,15.04,1.749
+Rapid,témoin (>=40 réduits),27,16.41,1.751
+Rapid,témoin (>=40 réduits),27,17.91,1.747
+Rapid,témoin (>=40 réduits),27,19.55,1.736
+Rapid,témoin (>=40 réduits),27,21.34,1.718
+Rapid,témoin (>=40 réduits),27,23.29,1.692
+Rapid,témoin (>=40 réduits),27,25.41,1.659
+Rapid,témoin (>=40 réduits),27,27.74,1.619
+Rapid,témoin (>=40 réduits),27,30.27,1.571
+Rapid,témoin (>=40 réduits),27,33.04,1.516
+Rapid,témoin (>=40 réduits),27,36.05,1.455
+Rapid,témoin (>=40 réduits),27,39.35,1.388
+Rapid,témoin (>=40 réduits),27,42.94,1.317
+Rapid,témoin (>=40 réduits),27,46.87,1.243
+Rapid,témoin (>=40 réduits),27,51.15,1.166
+Rapid,témoin (>=40 réduits),27,55.83,1.089
+Rapid,témoin (>=40 réduits),27,60.93,1.012
+Rapid,témoin (>=40 réduits),27,66.49,0.9365
+Rapid,témoin (>=40 réduits),27,72.57,0.863
+Rapid,témoin (>=40 réduits),27,79.2,0.7924
+Rapid,témoin (>=40 réduits),27,86.44,0.7253
+Rapid,témoin (>=40 réduits),27,94.34,0.6621
+Rapid,témoin (>=40 réduits),27,103,0.6029
+Rapid,témoin (>=40 réduits),27,112.4,0.548
+Rapid,témoin (>=40 réduits),27,122.6,0.4973
+Rapid,témoin (>=40 réduits),27,133.8,0.4507
+Rapid,témoin (>=40 réduits),27,146.1,0.4081
+Rapid,témoin (>=40 réduits),27,159.4,0.3693
+Rapid,témoin (>=40 réduits),27,174,0.334
+Rapid,témoin (>=40 réduits),27,189.9,0.3019
+Rapid,témoin (>=40 réduits),27,207.2,0.273
+Rapid,témoin (>=40 réduits),27,226.2,0.2467
+Rapid,témoin (>=40 réduits),27,246.8,0.2231
+Rapid,témoin (>=40 réduits),27,269.4,0.2017
+Rapid,témoin (>=40 réduits),27,294,0.1824
+Rapid,témoin (>=40 réduits),27,320.9,0.165
+Rapid,témoin (>=40 réduits),27,350.2,0.1493
+Rapid,témoin (>=40 réduits),27,382.2,0.1352
+Rapid,témoin (>=40 réduits),27,417.1,0.1224
+Rapid,témoin (>=40 réduits),27,455.2,0.1109
+Rapid,témoin (>=40 réduits),27,496.8,0.1005
+Rapid,témoin (>=40 réduits),27,542.2,0.09106
+Rapid,témoin (>=40 réduits),27,591.8,0.08257
+Rapid,témoin (>=40 réduits),27,645.8,0.0749
+Rapid,témoin (>=40 réduits),27,704.9,0.06796
+Rapid,témoin (>=40 réduits),27,769.3,0.06168
+Rapid,témoin (>=40 réduits),27,839.6,0.056
+Rapid,témoin (>=40 réduits),27,916.3,0.05086
+Rapid,témoin (>=40 réduits),27,1000,0.0462
+Rapid,témoin (>=40 réduits),32,1,0.394
+Rapid,témoin (>=40 réduits),32,1.091,0.4338
+Rapid,témoin (>=40 réduits),32,1.191,0.4768
+Rapid,témoin (>=40 réduits),32,1.3,0.5231
+Rapid,témoin (>=40 réduits),32,1.419,0.5727
+Rapid,témoin (>=40 réduits),32,1.548,0.6253
+Rapid,témoin (>=40 réduits),32,1.69,0.6809
+Rapid,témoin (>=40 réduits),32,1.844,0.7392
+Rapid,témoin (>=40 réduits),32,2.013,0.7999
+Rapid,témoin (>=40 réduits),32,2.197,0.8624
+Rapid,témoin (>=40 réduits),32,2.397,0.9266
+Rapid,témoin (>=40 réduits),32,2.617,0.9917
+Rapid,témoin (>=40 réduits),32,2.856,1.057
+Rapid,témoin (>=40 réduits),32,3.117,1.123
+Rapid,témoin (>=40 réduits),32,3.401,1.188
+Rapid,témoin (>=40 réduits),32,3.712,1.252
+Rapid,témoin (>=40 réduits),32,4.051,1.314
+Rapid,témoin (>=40 réduits),32,4.421,1.374
+Rapid,témoin (>=40 réduits),32,4.826,1.432
+Rapid,témoin (>=40 réduits),32,5.266,1.487
+Rapid,témoin (>=40 réduits),32,5.748,1.538
+Rapid,témoin (>=40 réduits),32,6.273,1.586
+Rapid,témoin (>=40 réduits),32,6.846,1.63
+Rapid,témoin (>=40 réduits),32,7.472,1.67
+Rapid,témoin (>=40 réduits),32,8.154,1.706
+Rapid,témoin (>=40 réduits),32,8.9,1.737
+Rapid,témoin (>=40 réduits),32,9.713,1.764
+Rapid,témoin (>=40 réduits),32,10.6,1.787
+Rapid,témoin (>=40 réduits),32,11.57,1.804
+Rapid,témoin (>=40 réduits),32,12.63,1.817
+Rapid,témoin (>=40 réduits),32,13.78,1.824
+Rapid,témoin (>=40 réduits),32,15.04,1.826
+Rapid,témoin (>=40 réduits),32,16.41,1.822
+Rapid,témoin (>=40 réduits),32,17.91,1.811
+Rapid,témoin (>=40 réduits),32,19.55,1.793
+Rapid,témoin (>=40 réduits),32,21.34,1.767
+Rapid,témoin (>=40 réduits),32,23.29,1.734
+Rapid,témoin (>=40 réduits),32,25.41,1.693
+Rapid,témoin (>=40 réduits),32,27.74,1.645
+Rapid,témoin (>=40 réduits),32,30.27,1.589
+Rapid,témoin (>=40 réduits),32,33.04,1.527
+Rapid,témoin (>=40 réduits),32,36.05,1.459
+Rapid,témoin (>=40 réduits),32,39.35,1.385
+Rapid,témoin (>=40 réduits),32,42.94,1.309
+Rapid,témoin (>=40 réduits),32,46.87,1.229
+Rapid,témoin (>=40 réduits),32,51.15,1.149
+Rapid,témoin (>=40 réduits),32,55.83,1.069
+Rapid,témoin (>=40 réduits),32,60.93,0.9892
+Rapid,témoin (>=40 réduits),32,66.49,0.9121
+Rapid,témoin (>=40 réduits),32,72.57,0.8378
+Rapid,témoin (>=40 réduits),32,79.2,0.7671
+Rapid,témoin (>=40 réduits),32,86.44,0.7004
+Rapid,témoin (>=40 réduits),32,94.34,0.6379
+Rapid,témoin (>=40 réduits),32,103,0.5799
+Rapid,témoin (>=40 réduits),32,112.4,0.5263
+Rapid,témoin (>=40 réduits),32,122.6,0.4771
+Rapid,témoin (>=40 réduits),32,133.8,0.432
+Rapid,témoin (>=40 réduits),32,146.1,0.3909
+Rapid,témoin (>=40 réduits),32,159.4,0.3536
+Rapid,témoin (>=40 réduits),32,174,0.3197
+Rapid,témoin (>=40 réduits),32,189.9,0.289
+Rapid,témoin (>=40 réduits),32,207.2,0.2613
+Rapid,témoin (>=40 réduits),32,226.2,0.2363
+Rapid,témoin (>=40 réduits),32,246.8,0.2137
+Rapid,témoin (>=40 réduits),32,269.4,0.1933
+Rapid,témoin (>=40 réduits),32,294,0.1749
+Rapid,témoin (>=40 réduits),32,320.9,0.1583
+Rapid,témoin (>=40 réduits),32,350.2,0.1433
+Rapid,témoin (>=40 réduits),32,382.2,0.1298
+Rapid,témoin (>=40 réduits),32,417.1,0.1176
+Rapid,témoin (>=40 réduits),32,455.2,0.1066
+Rapid,témoin (>=40 réduits),32,496.8,0.09665
+Rapid,témoin (>=40 réduits),32,542.2,0.08766
+Rapid,témoin (>=40 réduits),32,591.8,0.07954
+Rapid,témoin (>=40 réduits),32,645.8,0.07219
+Rapid,témoin (>=40 réduits),32,704.9,0.06554
+Rapid,témoin (>=40 réduits),32,769.3,0.05951
+Rapid,témoin (>=40 réduits),32,839.6,0.05406
+Rapid,témoin (>=40 réduits),32,916.3,0.04912
+Rapid,témoin (>=40 réduits),32,1000,0.04465
+Rapid,témoin (>=40 réduits),36,1,0.4308
+Rapid,témoin (>=40 réduits),36,1.091,0.4728
+Rapid,témoin (>=40 réduits),36,1.191,0.5182
+Rapid,témoin (>=40 réduits),36,1.3,0.5667
+Rapid,témoin (>=40 réduits),36,1.419,0.6184
+Rapid,témoin (>=40 réduits),36,1.548,0.6732
+Rapid,témoin (>=40 réduits),36,1.69,0.7307
+Rapid,témoin (>=40 réduits),36,1.844,0.7908
+Rapid,témoin (>=40 réduits),36,2.013,0.853
+Rapid,témoin (>=40 réduits),36,2.197,0.917
+Rapid,témoin (>=40 réduits),36,2.397,0.9822
+Rapid,témoin (>=40 réduits),36,2.617,1.048
+Rapid,témoin (>=40 réduits),36,2.856,1.115
+Rapid,témoin (>=40 réduits),36,3.117,1.18
+Rapid,témoin (>=40 réduits),36,3.401,1.245
+Rapid,témoin (>=40 réduits),36,3.712,1.309
+Rapid,témoin (>=40 réduits),36,4.051,1.371
+Rapid,témoin (>=40 réduits),36,4.421,1.43
+Rapid,témoin (>=40 réduits),36,4.826,1.487
+Rapid,témoin (>=40 réduits),36,5.266,1.54
+Rapid,témoin (>=40 réduits),36,5.748,1.59
+Rapid,témoin (>=40 réduits),36,6.273,1.637
+Rapid,témoin (>=40 réduits),36,6.846,1.679
+Rapid,témoin (>=40 réduits),36,7.472,1.717
+Rapid,témoin (>=40 réduits),36,8.154,1.752
+Rapid,témoin (>=40 réduits),36,8.9,1.781
+Rapid,témoin (>=40 réduits),36,9.713,1.807
+Rapid,témoin (>=40 réduits),36,10.6,1.828
+Rapid,témoin (>=40 réduits),36,11.57,1.844
+Rapid,témoin (>=40 réduits),36,12.63,1.855
+Rapid,témoin (>=40 réduits),36,13.78,1.86
+Rapid,témoin (>=40 réduits),36,15.04,1.86
+Rapid,témoin (>=40 réduits),36,16.41,1.853
+Rapid,témoin (>=40 réduits),36,17.91,1.84
+Rapid,témoin (>=40 réduits),36,19.55,1.819
+Rapid,témoin (>=40 réduits),36,21.34,1.791
+Rapid,témoin (>=40 réduits),36,23.29,1.755
+Rapid,témoin (>=40 réduits),36,25.41,1.711
+Rapid,témoin (>=40 réduits),36,27.74,1.659
+Rapid,témoin (>=40 réduits),36,30.27,1.6
+Rapid,témoin (>=40 réduits),36,33.04,1.534
+Rapid,témoin (>=40 réduits),36,36.05,1.462
+Rapid,témoin (>=40 réduits),36,39.35,1.386
+Rapid,témoin (>=40 réduits),36,42.94,1.306
+Rapid,témoin (>=40 réduits),36,46.87,1.225
+Rapid,témoin (>=40 réduits),36,51.15,1.142
+Rapid,témoin (>=40 réduits),36,55.83,1.06
+Rapid,témoin (>=40 réduits),36,60.93,0.9795
+Rapid,témoin (>=40 réduits),36,66.49,0.9015
+Rapid,témoin (>=40 réduits),36,72.57,0.8267
+Rapid,témoin (>=40 réduits),36,79.2,0.7558
+Rapid,témoin (>=40 réduits),36,86.44,0.6891
+Rapid,témoin (>=40 réduits),36,94.34,0.6269
+Rapid,témoin (>=40 réduits),36,103,0.5692
+Rapid,témoin (>=40 réduits),36,112.4,0.5162
+Rapid,témoin (>=40 réduits),36,122.6,0.4675
+Rapid,témoin (>=40 réduits),36,133.8,0.423
+Rapid,témoin (>=40 réduits),36,146.1,0.3826
+Rapid,témoin (>=40 réduits),36,159.4,0.3459
+Rapid,témoin (>=40 réduits),36,174,0.3127
+Rapid,témoin (>=40 réduits),36,189.9,0.2826
+Rapid,témoin (>=40 réduits),36,207.2,0.2554
+Rapid,témoin (>=40 réduits),36,226.2,0.2309
+Rapid,témoin (>=40 réduits),36,246.8,0.2088
+Rapid,témoin (>=40 réduits),36,269.4,0.1889
+Rapid,témoin (>=40 réduits),36,294,0.1709
+Rapid,témoin (>=40 réduits),36,320.9,0.1547
+Rapid,témoin (>=40 réduits),36,350.2,0.1401
+Rapid,témoin (>=40 réduits),36,382.2,0.1269
+Rapid,témoin (>=40 réduits),36,417.1,0.115
+Rapid,témoin (>=40 réduits),36,455.2,0.1042
+Rapid,témoin (>=40 réduits),36,496.8,0.09452
+Rapid,témoin (>=40 réduits),36,542.2,0.08574
+Rapid,témoin (>=40 réduits),36,591.8,0.07781
+Rapid,témoin (>=40 réduits),36,645.8,0.07063
+Rapid,témoin (>=40 réduits),36,704.9,0.06413
+Rapid,témoin (>=40 réduits),36,769.3,0.05825
+Rapid,témoin (>=40 réduits),36,839.6,0.05292
+Rapid,témoin (>=40 réduits),36,916.3,0.04809
+Rapid,témoin (>=40 réduits),36,1000,0.04372
+Rapid,témoin (>=40 réduits),40,1,0.4538
+Rapid,témoin (>=40 réduits),40,1.091,0.4979
+Rapid,témoin (>=40 réduits),40,1.191,0.5454
+Rapid,témoin (>=40 réduits),40,1.3,0.5962
+Rapid,témoin (>=40 réduits),40,1.419,0.6504
+Rapid,témoin (>=40 réduits),40,1.548,0.7076
+Rapid,témoin (>=40 réduits),40,1.69,0.7677
+Rapid,témoin (>=40 réduits),40,1.844,0.8303
+Rapid,témoin (>=40 réduits),40,2.013,0.8951
+Rapid,témoin (>=40 réduits),40,2.197,0.9615
+Rapid,témoin (>=40 réduits),40,2.397,1.029
+Rapid,témoin (>=40 réduits),40,2.617,1.097
+Rapid,témoin (>=40 réduits),40,2.856,1.165
+Rapid,témoin (>=40 réduits),40,3.117,1.233
+Rapid,témoin (>=40 réduits),40,3.401,1.299
+Rapid,témoin (>=40 réduits),40,3.712,1.364
+Rapid,témoin (>=40 réduits),40,4.051,1.427
+Rapid,témoin (>=40 réduits),40,4.421,1.486
+Rapid,témoin (>=40 réduits),40,4.826,1.543
+Rapid,témoin (>=40 réduits),40,5.266,1.596
+Rapid,témoin (>=40 réduits),40,5.748,1.646
+Rapid,témoin (>=40 réduits),40,6.273,1.691
+Rapid,témoin (>=40 réduits),40,6.846,1.733
+Rapid,témoin (>=40 réduits),40,7.472,1.77
+Rapid,témoin (>=40 réduits),40,8.154,1.802
+Rapid,témoin (>=40 réduits),40,8.9,1.83
+Rapid,témoin (>=40 réduits),40,9.713,1.854
+Rapid,témoin (>=40 réduits),40,10.6,1.873
+Rapid,témoin (>=40 réduits),40,11.57,1.886
+Rapid,témoin (>=40 réduits),40,12.63,1.894
+Rapid,témoin (>=40 réduits),40,13.78,1.897
+Rapid,témoin (>=40 réduits),40,15.04,1.894
+Rapid,témoin (>=40 réduits),40,16.41,1.884
+Rapid,témoin (>=40 réduits),40,17.91,1.867
+Rapid,témoin (>=40 réduits),40,19.55,1.843
+Rapid,témoin (>=40 réduits),40,21.34,1.811
+Rapid,témoin (>=40 réduits),40,23.29,1.771
+Rapid,témoin (>=40 réduits),40,25.41,1.723
+Rapid,témoin (>=40 réduits),40,27.74,1.668
+Rapid,témoin (>=40 réduits),40,30.27,1.605
+Rapid,témoin (>=40 réduits),40,33.04,1.535
+Rapid,témoin (>=40 réduits),40,36.05,1.461
+Rapid,témoin (>=40 réduits),40,39.35,1.382
+Rapid,témoin (>=40 réduits),40,42.94,1.3
+Rapid,témoin (>=40 réduits),40,46.87,1.216
+Rapid,témoin (>=40 réduits),40,51.15,1.132
+Rapid,témoin (>=40 réduits),40,55.83,1.049
+Rapid,témoin (>=40 réduits),40,60.93,0.9674
+Rapid,témoin (>=40 réduits),40,66.49,0.889
+Rapid,témoin (>=40 réduits),40,72.57,0.8142
+Rapid,témoin (>=40 réduits),40,79.2,0.7434
+Rapid,témoin (>=40 réduits),40,86.44,0.6772
+Rapid,témoin (>=40 réduits),40,94.34,0.6156
+Rapid,témoin (>=40 réduits),40,103,0.5586
+Rapid,témoin (>=40 réduits),40,112.4,0.5063
+Rapid,témoin (>=40 réduits),40,122.6,0.4584
+Rapid,témoin (>=40 réduits),40,133.8,0.4147
+Rapid,témoin (>=40 réduits),40,146.1,0.375
+Rapid,témoin (>=40 réduits),40,159.4,0.3391
+Rapid,témoin (>=40 réduits),40,174,0.3065
+Rapid,témoin (>=40 réduits),40,189.9,0.2771
+Rapid,témoin (>=40 réduits),40,207.2,0.2505
+Rapid,témoin (>=40 réduits),40,226.2,0.2265
+Rapid,témoin (>=40 réduits),40,246.8,0.2049
+Rapid,témoin (>=40 réduits),40,269.4,0.1854
+Rapid,témoin (>=40 réduits),40,294,0.1678
+Rapid,témoin (>=40 réduits),40,320.9,0.152
+Rapid,témoin (>=40 réduits),40,350.2,0.1377
+Rapid,témoin (>=40 réduits),40,382.2,0.1247
+Rapid,témoin (>=40 réduits),40,417.1,0.1131
+Rapid,témoin (>=40 réduits),40,455.2,0.1025
+Rapid,témoin (>=40 réduits),40,496.8,0.09302
+Rapid,témoin (>=40 réduits),40,542.2,0.08441
+Rapid,témoin (>=40 réduits),40,591.8,0.07663
+Rapid,témoin (>=40 réduits),40,645.8,0.06958
+Rapid,témoin (>=40 réduits),40,704.9,0.0632
+Rapid,témoin (>=40 réduits),40,769.3,0.05742
+Rapid,témoin (>=40 réduits),40,839.6,0.05219
+Rapid,témoin (>=40 réduits),40,916.3,0.04744
+Rapid,témoin (>=40 réduits),40,1000,0.04314

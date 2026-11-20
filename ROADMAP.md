@@ -133,6 +133,23 @@
 - À faire : échantillon complet (~3 h), λ selon le score (lien piste 3 : « simplifier » = réduire l'entropie),
   seuil de 50 cp à faire varier, Rapid, entropie comme saillance de l'étage 1 (piste 7).
 
+## Recherche d'une vraie transition (faite, tests 1 et 2, sans Stockfish)
+- `python run.py transition`, results/transition*. Spectre complet, prof. 12, loi étirée par case.
+- Test 1, trouve / gaffe (analogue du 1er ordre ?) : en coup unique (écart > 300 cp) la perte est forcément 0 ou >= 300 :
+  la bimodalité est STRUCTURELLE (spectre), déjà prédite par le modèle. Gaffes x1,5 (Blitz) / x1,6 (Rapid) [IC 1,2-2,0].
+  Raideur : logit P(trouve) obs. = a + b logit P(prédit) : b < 1 partout (0,5-0,7 positions calmes ; 0,2 [0,1-0,4]
+  en coup unique). P(trouve) ≈ 0,85 presque plate quand le modèle prédit 0,68 -> 0,998 :
+  pas de bascule brutale, au contraire un PLANCHER de gaffes (« inattention » ~10-15 %) indépendant de la difficulté.
+  Par Elo : gaffes en coup unique 25 % (900) -> ~5 % (2500), décroissance graduelle, excès surtout au-dessus de 1500
+  (1900 : 16 % contre 7 % prédit). Réserve : le bruit de p_modèle atténue b (erreur sur la variable).
+  => modèle de mélange « distraction » (taux de lapsus fixe + loi étirée) plutôt que transition du 1er ordre.
+- Test 2, effet de taille (hors échec, quintiles de coups légaux 21 -> 44) : pic s* stable (8-11 cp Blitz, 10-14 Rapid),
+  C_max 1,54 -> 1,95, largeur 1,63 -> 1,54 décade (repondéré écart + phase).
+  Témoin (positions >= 40 coups réduites au hasard) : C_max 1,65 -> 1,98, largeur 1,48 constante.
+  La hausse de C_max est celle du simple comptage des niveaux (~ ln N) ; l'affinement résiduel (0,1 décade pour N x2,
+  ~N^-0,08) ne tend pas vers 0 : bosse, pas de transition. Test peu puissant (plage de N étroite).
+- Reste : test 3 (partie entière, points de bascule hors équilibre, > 1 h de Stockfish, à confirmer).
+
 ## Synthèse (après les pistes 1 à 7)
 - Loi de choix p ∝ exp(-(ΔE/s)^c), c ≈ 0,5 (0,45 positions calmes -> 0,65 quand un coup se détache),
   avec un étage d'attention (Ω_eff ~ 20 -> 14 coups envisagés).

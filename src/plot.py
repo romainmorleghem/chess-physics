@@ -337,3 +337,52 @@ def make_entropy(res, P, grid, outdir):
     fig.tight_layout(rect=(0, 0.04, 1, 1))
     fig.savefig(os.path.join(outdir, "entropy.png"))
     plt.close(fig)
+
+
+def make_transition(sh, cu, hi, sz, fs, outdir):
+    """Recherche d'une transition : histogramme de la perte (coup unique), bascule P(trouve), effet de taille."""
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.4), dpi=150)
+    fig.patch.set_facecolor("#fcfcfb")
+    gmax = hi.gap_lo.max()
+    ax = axes[0]
+    _style(ax, "fraction des positions")
+    ax.set_xlabel("perte du coup joué ΔE (cp, échelle log ; 0 placé à 0,5)", color=MUTED, fontsize=9)
+    ax.set_title(f"Blitz, coup unique (écart > {gmax:g} cp)", color=INK, fontsize=10, loc="left")
+    h = hi[(hi.cadence == "Blitz") & (hi.gap_lo == gmax)]
+    xc = np.where(h.lo == 0, 0.5, np.sqrt(h.lo.clip(lower=1) * h.hi))
+    ax.set_xscale("log")
+    obs_, pred_ = h.obs.where(h.obs > 0), h.pred.where(h.pred > 1e-4)
+    ax.plot(xc, obs_, "o", color=COLORS["Blitz"], ms=5, label="observé")
+    ax.plot(xc, pred_, "s", mfc="none", color=MUTED, ms=6, label="loi étirée (prédit)")
+    ax.set_yscale("log")
+    ax.legend(frameon=False, fontsize=8, labelcolor=INK)
+    ax = axes[1]
+    _style(ax, "P(coup à < 50 cp) observée")
+    ax.set_xlabel("P(coup à < 50 cp) prédite par la loi étirée", color=MUTED, fontsize=9)
+    ax.set_title("Bascule trouve / gaffe (Blitz)", color=INK, fontsize=10, loc="left")
+    gl = sorted(cu.gap_lo.unique())
+    cols = plt.cm.Blues(np.linspace(0.35, 0.95, len(gl)))
+    for g, col in zip(gl, cols):
+        q = cu[(cu.cadence == "Blitz") & (cu.gap_lo == g)]
+        b = sh[(sh.cadence == "Blitz") & (sh.gap_lo == g)].b.iloc[0]
+        ax.plot(q.p_model, q.p_obs, "-o", color=col, lw=1.5, ms=3, label=f"écart ≥ {g:g} (b = {b:.2f})")
+    ax.plot([0, 1], [0, 1], ":", color=MUTED, lw=1)
+    ax.legend(frameon=False, fontsize=7, labelcolor=INK)
+    ax = axes[2]
+    _style(ax, "C (repondéré à écart fixé)")
+    ax.set_xscale("log")
+    ax.set_xlabel("échelle s (cp)", color=MUTED, fontsize=9)
+    ax.set_title("Effet de taille : C(s) par nb de coups légaux (Blitz, hors échec)", color=INK, fontsize=9, loc="left")
+    q = fs[(fs.cadence == "Blitz") & (fs["mode"] == "repondéré écart")]
+    nl = sorted(q.n_lo.unique())
+    cols = plt.cm.Oranges(np.linspace(0.35, 0.95, len(nl)))
+    lab = sz[(sz.cadence == "Blitz") & (sz["mode"] == "repondéré écart")].set_index("n_lo")
+    for n_, col in zip(nl, cols):
+        r = q[q.n_lo == n_]
+        ax.plot(r.s, r.C, color=col, lw=1.8, label=f"{n_:g}–{lab.loc[n_, 'n_hi']:g} coups")
+    ax.legend(frameon=False, fontsize=7, labelcolor=INK)
+    fig.text(0.01, 0.01, "Spectre complet, prof. 12 ; loi étirée ajustée par case. b : pente de logit P(trouve) obs. "
+             "sur logit P prédite (1 = modèle continu, > 1 = bascule plus brutale).", color=MUTED, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(os.path.join(outdir, "transition.png"))
+    plt.close(fig)

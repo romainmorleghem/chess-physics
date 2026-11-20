@@ -234,6 +234,40 @@ La chaleur spécifique (sans dimension) mesure la sensibilité du choix à la te
   Droite : $C$ prédit et observé selon l'Elo.}
 \end{figure}
 
+
+\subsection{Y a-t-il une vraie transition de phase ?}
+Un pic de $C$ peut signaler une transition (comme l'eau qui bout) ou n'être qu'une bosse. Deux tests sur les
+données existantes (\texttt{run.py transition}).
+
+\emph{Trouve ou gaffe.} Une transition du premier ordre ferait coexister deux \og phases\fg{} (trouver /
+gaffer) avec une bascule brutale quand la difficulté change. On compare la probabilité de jouer un bon coup
+($<50$ cp de perte) observée à celle que prédit la loi étirée, par la pente $b$ de
+$\operatorname{logit}P_\text{obs} = a + b\,\operatorname{logit}P_\text{prédit}$ ($b>1$ : bascule plus brutale
+que le modèle).
+
+\emph{Effet de taille.} En physique, le pic d'une vraie transition s'affine et grandit quand le système grossit.
+Ici la \og taille\fg{} est le nombre de coups légaux (21 à 44 en moyenne par quintile, hors échec). Témoin :
+on retire au hasard des coups aux grandes positions, ce qui donne l'effet du simple comptage des niveaux.
+\begin{resultat}
+\begin{itemize}
+  \item Dans les positions à coup unique, \og 0 ou $\geq 300$ cp\fg{} est imposé par l'échiquier : cette
+        bimodalité est structurelle. Mais $b \approx 0{,}2$ [0,1-0,4] : la réussite reste vers 85 \% que le
+        modèle prédise 68 \% ou 99,8 \%. \textbf{Pas de bascule brutale, plutôt un plancher de gaffes}
+        (\og distraction\fg{}, 25 \% à 900 Elo, environ 5 \% à 2500) que la loi continue ne prévoit pas.
+  \item Taille : le pic reste à $s^*\approx 9$-$13$ cp ; $C_\text{max}$ passe de 1,54 à 1,95, comme le témoin
+        (1,65 à 1,98) ; la largeur ne baisse que de 1,63 à 1,54 décade. \textbf{Une bosse, pas une
+        transition} (test peu puissant, plage de tailles étroite).
+  \item Reste un candidat : la partie entière (passage \og équilibrée\fg{} $\to$ \og décidée\fg{}), à tester.
+\end{itemize}
+\end{resultat}
+
+\begin{figure}[h]
+  \centering\includegraphics[width=\linewidth]{transition.png}
+  \caption{Gauche : perte du coup joué en position à coup unique (observé contre prédit).
+  Milieu : réussite observée contre prédite (diagonale = modèle parfait).
+  Droite : $C(s)$ selon le nombre de coups légaux.}
+\end{figure}
+
 %=====================================================================
 \section{Résultat 5 : pas de « désordre » entre joueurs}
 
@@ -280,7 +314,7 @@ saillance approchée par le rang Stockfish.
 \subsection*{Prochaines étapes}
 Reproduire sur un autre mois ; remplacer le rang Stockfish par un modèle de choix humain (Maia) comme
 \og a priori\fg{} et mesurer le coût d'information en bits (Ortega et Braun) ; modèle de mélange
-\og voit / ne voit pas\fg{} pour les positions à coup unique ; démêler l'effet du numéro de coup ;
+\og distraction\fg{} (taux de gaffes fixe) pour les positions à coup unique ; transition à l'échelle de la partie ; démêler l'effet du numéro de coup ;
 étendre le pilote énergie/entropie.
 
 %=====================================================================
